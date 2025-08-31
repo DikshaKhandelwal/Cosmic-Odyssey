@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Productivity Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="description">
+        <h1>Solar System Productivity Hub</h1>
+        <p>Click on any planet to access its tools and features. Each celestial body offers unique productivity capabilities.</p>
+        <hr>
+        <p class="author">
+            Created with <span class="fa-heart">♥</span> using pure CSS astronomy
+        </p>
+    </div>
+
+    <div class="solar-syst">
+        <!-- Sun - Main Menu -->
+        <div class="sun">
+            <a href="#sun-menu" class="planet-link" title="Main Menu & Settings"></a>
+        </div>
+
+        <!-- Mercury -->
+        <div class="mercury">
+            <a href="#mercury-tools" class="planet-link" title="Quick Actions"></a>
+        </div>
+
+        <!-- Venus -->
+        <div class="venus">
+            <a href="#venus-inspiration" class="planet-link" title="Inspiration Hub"></a>
+        </div>
+
+        <!-- Earth -->
+        <div class="earth">
+            <a href="#earth-notes" class="planet-link" title="Notes & Daily Hub"></a>
+        </div>
+
+        <!-- Mars -->
+        <div class="mars">
+            <a href="#mars-projects" class="planet-link" title="Project Tracker"></a>
+        </div>
+
+        <!-- Asteroid Belt -->
+        <div class="asteroids-belt">
+            <a href="#asteroid-tools" class="planet-link" title="Mini Tools"></a>
+        </div>
+
+        <!-- Jupiter -->
+        <div class="jupiter">
+            <a href="#jupiter-knowledge" class="planet-link" title="Knowledge Base"></a>
+        </div>
+
+        <!-- Saturn -->
+        <div class="saturn">
+            <a href="#saturn-calendar" class="planet-link" title="Calendar & Tasks"></a>
+        </div>
+
+        <!-- Uranus -->
+        <div class="uranus">
+            <a href="#uranus-goals" class="planet-link" title="Goals & Planning"></a>
+        </div>
+
+        <!-- Neptune -->
+        <div class="neptune">
+            <a href="#neptune-focus" class="planet-link" title="Deep Focus Zone"></a>
+        </div>
+
+        <!-- Pluto -->
+        <div class="pluto">
+            <a href="#pluto-archive" class="planet-link" title="Archive & Memory"></a>
+        </div>
+    </div>
+
+    <!-- Planet Modals -->
+    
+    <!-- Sun Menu Modal -->
+    <div id="sun-menu" class="modal">
+        <div class="modal-content sun-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>🌞 Main Menu & Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" class="accessibility-toggle">
+                        <span class="toggle-slider"></span>
+                        Large Font Mode
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" class="dark-mode-toggle">
+                        <span class="toggle-slider"></span>
+                        High Contrast
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" class="animation-toggle">
+                        <span class="toggle-slider"></span>
+                        Reduce Motion
+                    </label>
+                </div>
+            </div>
+            <div class="menu-links">
+                <a href="#earth-notes" class="menu-link">📝 Daily Notes</a>
+                <a href="#saturn-calendar" class="menu-link">📅 Calendar</a>
+                <a href="#neptune-focus" class="menu-link">🧘 Focus Timer</a>
+                <a href="#asteroid-tools" class="menu-link">🔧 Quick Tools</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earth Notes Modal -->
+    <div id="earth-notes" class="modal">
+        <div class="modal-content earth-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>🌍 Daily Notes Hub</h2>
+            <div class="notes-container">
+                <div class="note-section">
+                    <h3>Today's Thoughts</h3>
+                    <textarea placeholder="What's on your mind today?" rows="6"></textarea>
+                </div>
+                <div class="note-section">
+                    <h3>Quick Captures</h3>
+                    <textarea placeholder="Jot down quick ideas, reminders, or observations..." rows="4"></textarea>
+                </div>
+                <div class="note-section">
+                    <h3>Daily Reflection</h3>
+                    <textarea placeholder="How did today go? What did you learn?" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saturn Calendar Modal -->
+    <div id="saturn-calendar" class="modal">
+        <div class="modal-content saturn-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>🪐 Task Rings & Calendar</h2>
+            <div class="calendar-container">
+                <div class="ring-system">
+                    <div class="task-ring urgent">
+                        <div class="ring-label">Urgent</div>
+                        <div class="task-items">
+                            <div class="task-item">Complete project proposal</div>
+                            <div class="task-item">Review quarterly reports</div>
+                            <div class="task-item">Client meeting preparation</div>
+                        </div>
+                    </div>
+                    <div class="task-ring important">
+                        <div class="ring-label">Important</div>
+                        <div class="task-items">
+                            <div class="task-item">Update portfolio website</div>
+                            <div class="task-item">Plan next week's schedule</div>
+                            <div class="task-item">Research new tools</div>
+                        </div>
+                    </div>
+                    <div class="task-ring routine">
+                        <div class="ring-label">Routine</div>
+                        <div class="task-items">
+                            <div class="task-item">Daily standup meeting</div>
+                            <div class="task-item">Check emails</div>
+                            <div class="task-item">Exercise routine</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Neptune Focus Modal -->
+    <div id="neptune-focus" class="modal">
+        <div class="modal-content neptune-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>🌊 Deep Focus Zone</h2>
+            <div class="focus-container">
+                <div class="timer-display">
+                    <div class="focus-timer">25:00</div>
+                    <div class="timer-label">Pomodoro Session</div>
+                </div>
+                <div class="focus-controls">
+                    <label class="timer-option">
+                        <input type="radio" name="timer" value="pomodoro" checked>
+                        <span class="radio-custom"></span>
+                        Pomodoro (25 min)
+                    </label>
+                    <label class="timer-option">
+                        <input type="radio" name="timer" value="deep">
+                        <span class="radio-custom"></span>
+                        Deep Focus (45 min)
+                    </label>
+                    <label class="timer-option">
+                        <input type="radio" name="timer" value="break">
+                        <span class="radio-custom"></span>
+                        Break (5 min)
+                    </label>
+                </div>
+                <div class="focus-ambient">
+                    <div class="wave wave1"></div>
+                    <div class="wave wave2"></div>
+                    <div class="wave wave3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asteroid Tools Modal -->
+    <div id="asteroid-tools" class="modal">
+        <div class="modal-content asteroid-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>☄️ Mini Tool Belt</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <h3>🧮 Calculator</h3>
+                    <div class="calculator">
+                        <input type="text" class="calc-display" readonly>
+                        <div class="calc-buttons">
+                            <button>7</button><button>8</button><button>9</button><button>/</button>
+                            <button>4</button><button>5</button><button>6</button><button>*</button>
+                            <button>1</button><button>2</button><button>3</button><button>-</button>
+                            <button>0</button><button>.</button><button>=</button><button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <h3>📏 Unit Converter</h3>
+                    <div class="converter">
+                        <input type="number" placeholder="Enter value">
+                        <select>
+                            <option>Kilometers → Miles</option>
+                            <option>Celsius → Fahrenheit</option>
+                            <option>Pounds → Kilograms</option>
+                        </select>
+                        <div class="conversion-result">Result appears here</div>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <h3>🎲 Random Generator</h3>
+                    <div class="randomizer">
+                        <div class="random-options">
+                            <label><input type="radio" name="random-type" checked> Number (1-100)</label>
+                            <label><input type="radio" name="random-type"> Color Palette</label>
+                            <label><input type="radio" name="random-type"> Yes/No Decision</label>
+                        </div>
+                        <div class="random-result">Click to generate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Planet Modals -->
+    <div id="mercury-tools" class="modal">
+        <div class="modal-content mercury-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>☿️ Quick Actions</h2>
+            <div class="quick-actions">
+                <button class="action-btn">Quick Note</button>
+                <button class="action-btn">Set Reminder</button>
+                <button class="action-btn">Time Check</button>
+                <button class="action-btn">Weather</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="venus-inspiration" class="modal">
+        <div class="modal-content venus-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>♀️ Inspiration Hub</h2>
+            <div class="inspiration-grid">
+                <div class="inspiration-card">
+                    <h3>Daily Quote</h3>
+                    <p>"The cosmos is within us. We are made of star-stuff." - Carl Sagan</p>
+                </div>
+                <div class="inspiration-card">
+                    <h3>Creative Prompt</h3>
+                    <p>Imagine a world where gravity works backwards for one day.</p>
+                </div>
+                <div class="inspiration-card">
+                    <h3>Color Palette</h3>
+                    <div class="color-swatch">
+                        <span style="background: #FFD700"></span>
+                        <span style="background: #FF6B6B"></span>
+                        <span style="background: #4ECDC4"></span>
+                        <span style="background: #45B7D1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mars-projects" class="modal">
+        <div class="modal-content mars-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>♂️ Project Tracker</h2>
+            <div class="projects-container">
+                <div class="project-status">
+                    <h3>Active Projects</h3>
+                    <div class="progress-item">
+                        <span>Website Redesign</span>
+                        <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <span>Mobile App Development</span>
+                        <div class="progress-bar"><div class="progress" style="width: 40%"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <span>Documentation Update</span>
+                        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="jupiter-knowledge" class="modal">
+        <div class="modal-content jupiter-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>♃ Knowledge Base</h2>
+            <div class="knowledge-sections">
+                <div class="knowledge-card">
+                    <h3>📚 Learning Paths</h3>
+                    <ul>
+                        <li>CSS Animations Mastery</li>
+                        <li>Productivity Systems</li>
+                        <li>Space Science Basics</li>
+                    </ul>
+                </div>
+                <div class="knowledge-card">
+                    <h3>🔖 Saved Resources</h3>
+                    <ul>
+                        <li>CSS-only Interactive Techniques</li>
+                        <li>Astronomical Data References</li>
+                        <li>Design Inspiration Gallery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="uranus-goals" class="modal">
+        <div class="modal-content uranus-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>⛢ Goals & Planning</h2>
+            <div class="goals-container">
+                <div class="goal-category">
+                    <h3>Short-term Goals</h3>
+                    <div class="goal-item">Finish solar system interface</div>
+                    <div class="goal-item">Learn advanced CSS techniques</div>
+                    <div class="goal-item">Complete project documentation</div>
+                </div>
+                <div class="goal-category">
+                    <h3>Long-term Vision</h3>
+                    <div class="goal-item">Master creative coding</div>
+                    <div class="goal-item">Build stellar portfolio</div>
+                    <div class="goal-item">Share knowledge with community</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pluto-archive" class="modal">
+        <div class="modal-content pluto-theme">
+            <a href="#" class="close">&times;</a>
+            <h2>♇ Archive & Memory</h2>
+            <div class="archive-container">
+                <div class="memory-section">
+                    <h3>Completed Projects</h3>
+                    <div class="archive-item">Interactive CSS Animations</div>
+                    <div class="archive-item">Responsive Design System</div>
+                    <div class="archive-item">Accessibility Features</div>
+                </div>
+                <div class="memory-section">
+                    <h3>Key Learnings</h3>
+                    <div class="archive-item">CSS-only interactivity is powerful</div>
+                    <div class="archive-item">Astronomical accuracy in design</div>
+                    <div class="archive-item">Creative problem solving</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
