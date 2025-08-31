@@ -1,3 +1,368 @@
+/* --- Mercury Card (Cosmic Messenger) --- */
+.mercury-card-theme {
+    background: radial-gradient(circle at 60% 40%, #e5e7eb 0%, #bfc1c6 60%, #6b7280 100%);
+    border: 2px solid #bfc1c6;
+    box-shadow: 0 0 40px 10px #bfc1c6, 0 0 0 8px #fff2, 0 0 80px 20px #fff1;
+    position: relative;
+    overflow: visible;
+    animation: mercuryHeatPulse 2.5s infinite alternate;
+}
+@keyframes mercuryHeatPulse {
+    0% { box-shadow: 0 0 40px 10px #bfc1c6, 0 0 0 8px #fff2, 0 0 80px 20px #fff1; }
+    100% { box-shadow: 0 0 60px 20px #fff, 0 0 0 16px #bfc1c6cc, 0 0 120px 40px #fff3; }
+}
+.mercury-metaphor {
+    text-align: center;
+    font-style: italic;
+    color: #6b7280;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 1px #fff8, 0 0 1px #bfc1c6;
+}
+.mercury-card-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* Phase Toggle */
+.mercury-phase-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    margin-top: 1.5em;
+}
+.mercury-phase-input { display: none; }
+.mercury-phase-label {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2em;
+    padding: 0.4em 1.2em;
+    box-shadow: 0 0 8px #bfc1c6;
+    margin-bottom: 0.5em;
+    transition: background 0.3s;
+}
+.phase-sun { color: #ffe066; filter: drop-shadow(0 0 6px #ffe066cc); }
+.phase-moon { color: #222; filter: drop-shadow(0 0 6px #2228); }
+.phase-text { font-size: 0.95em; color: #6b7280; }
+.mercury-phase-bg {
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    background: radial-gradient(circle at 60% 40%, #fffbe6 0%, #ffe066 60%, #bfc1c6 100%);
+    margin-top: -2.5em;
+    z-index: -1;
+    transition: background 0.5s;
+}
+.mercury-phase-input:checked ~ .mercury-phase-bg {
+    background: radial-gradient(circle at 60% 40%, #222 0%, #222b 60%, #000 100%);
+}
+.mercury-phase-input:checked ~ .mercury-phase-label .phase-sun { opacity: 0.3; }
+.mercury-phase-input:checked ~ .mercury-phase-label .phase-moon { opacity: 1; color: #fff; }
+.mercury-phase-input:checked ~ .mercury-phase-label .phase-text { color: #fff; }
+.mercury-phase-input:checked ~ .mercury-phase-label { background: #222; color: #fff; }
+/* Orbit Animation Mini-Demo */
+.mercury-orbit-demo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1em auto;
+}
+.mercury-orbit-sun {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 28px; height: 28px;
+    background: radial-gradient(circle, #ffe066 0%, #bfc1c6 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px 6px #ffe06699;
+    z-index: 2;
+}
+.mercury-orbit-path {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 90px; height: 90px;
+    border: 2px dashed #bfc1c6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.mercury-orbit-dot {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 14px; height: 14px;
+    background: linear-gradient(135deg, #bfc1c6 60%, #fff 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff8;
+    transform: translate(-50%, -50%) rotate(0deg) translate(45px, 0);
+    animation: mercuryOrbitSpin 1.5s linear infinite;
+    z-index: 3;
+}
+@keyframes mercuryOrbitSpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translate(45px, 0); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translate(45px, 0); }
+}
+/* Quiz */
+.mercury-quiz {
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #bfc1c6;
+    text-align: center;
+}
+.mercury-quiz-title {
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #6b7280;
+}
+.mercury-quiz-options {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+}
+.mercury-quiz-radio { display: none; }
+.mercury-quiz-tile {
+    background: linear-gradient(135deg, #e5e7eb 60%, #bfc1c6 100%);
+    color: #222;
+    border-radius: 10px;
+    padding: 0.8em 1.5em;
+    font-weight: 500;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 8px #bfc1c6;
+    border: 2px solid #bfc1c6;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.mercury-quiz-tile:hover { background: #fff; }
+.mercury-quiz-radio:checked + .mercury-quiz-tile {
+    background: linear-gradient(135deg, #bfc1c6 60%, #e5e7eb 100%);
+    color: #111;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold, 0 0 20px #bfc1c6;
+    border: 2px solid gold;
+}
+.mercury-quiz-radio:checked + .mercury-quiz-tile:not(.mercury-correct) {
+    background: linear-gradient(135deg, #ffb3b3 60%, #ff4d4d 100%);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ffb3b3;
+    border: 2px solid #ff4d4d;
+}
+.mercury-quiz-radio.correct:checked + .mercury-correct {
+    background: linear-gradient(silver, gray);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold;
+    border: 2px solid gold;
+}
+.mercury-quiz-result {
+    display: none;
+    margin-top: 0.5em;
+    font-weight: 600;
+    font-size: 1em;
+    color: #6b7280;
+}
+#mercury-q2:checked ~ .mercury-correct-result { display: block; color: #bfc1c6; }
+#mercury-q1:checked ~ .mercury-wrong-result,
+#mercury-q3:checked ~ .mercury-wrong-result { display: block; color: #dc2626; }
+/* Dice Randomizer */
+.mercury-dice {
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #bfc1c6;
+    text-align: center;
+}
+.mercury-dice-title { font-weight: bold; margin-bottom: 0.7em; color: #6b7280; }
+.mercury-dice-roller { display: flex; flex-direction: column; align-items: center; gap: 0.7em; }
+.mercury-dice-radio { display: none; }
+.mercury-dice-faces { display: flex; gap: 0.5em; margin-bottom: 0.5em; }
+.mercury-dice-face {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #bfc1c6 60%, #fff 100%);
+    border-radius: 8px;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    box-shadow: 0 0 6px #bfc1c6;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #bfc1c6;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.mercury-dice-face .dice-dot {
+    width: 7px; height: 7px;
+    background: #6b7280;
+    border-radius: 50%;
+    margin: 2px;
+    display: inline-block;
+}
+.mercury-dice-radio:checked + .mercury-dice-face {
+    border: 2px solid gold;
+    box-shadow: 0 0 10px gold;
+}
+.mercury-dice-roll-btns { display: flex; gap: 0.5em; margin-bottom: 0.5em; }
+.mercury-dice-roll {
+    background: linear-gradient(135deg, #bfc1c6 60%, #fff 100%);
+    color: #6b7280;
+    border-radius: 8px;
+    padding: 0.3em 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 6px #bfc1c6;
+    border: 2px solid #bfc1c6;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.mercury-dice-radio:checked ~ .mercury-dice-result { display: none; }
+#dice1:checked ~ .mercury-dice-result-1,
+#dice2:checked ~ .mercury-dice-result-2,
+#dice3:checked ~ .mercury-dice-result-3,
+#dice4:checked ~ .mercury-dice-result-4,
+#dice5:checked ~ .mercury-dice-result-5,
+#dice6:checked ~ .mercury-dice-result-6 { display: block; margin-top: 0.5em; color: #6b7280; font-weight: 600; }
+/* Cipher Mini-Game */
+.mercury-cipher {
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #bfc1c6;
+    text-align: center;
+}
+.mercury-cipher-title { font-weight: bold; margin-bottom: 0.7em; color: #6b7280; }
+.mercury-cipher-puzzle { margin-bottom: 0.5em; }
+.cipher-label { font-weight: 600; color: #bfc1c6; }
+.cipher-plain, .cipher-encoded { font-family: monospace; font-size: 1.1em; color: #ffb300; margin: 0 0.2em; }
+.cipher-encoded { letter-spacing: 0.1em; }
+.cipher-toggle { display: none; }
+.cipher-toggle-label {
+    display: inline-block;
+    margin: 0.7em 0 0.2em 0;
+    padding: 0.3em 1em;
+    background: #bfc1c6;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 6px #bfc1c6;
+    transition: background 0.2s;
+}
+.cipher-decode {
+    display: none;
+    font-family: monospace;
+    font-size: 1.1em;
+    color: #22c55e;
+    margin-left: 0.5em;
+    font-weight: bold;
+}
+.cipher-toggle:checked ~ .cipher-decode { display: inline; }
+/* Flip Card Fact */
+.mercury-flip-card {
+    perspective: 1000px;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+.mercury-flip-input { display: none; }
+.mercury-flip-container {
+    display: block;
+    width: 220px;
+    height: 120px;
+    cursor: pointer;
+}
+.mercury-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.mercury-flip-input:checked + .mercury-flip-container .mercury-flip-inner {
+    transform: rotateY(180deg);
+}
+.mercury-flip-front, .mercury-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px #bfc1c6;
+    background: linear-gradient(135deg, #e5e7eb 60%, #bfc1c6 100%);
+    color: #222;
+}
+.mercury-flip-back {
+    background: linear-gradient(135deg, #222 60%, #6b7280 100%);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+.mercury-flip-content { padding: 1.2em; }
+.mercury-flip-icon { font-size: 2em; margin-bottom: 0.5em; }
+.mercury-flip-title { font-weight: bold; font-size: 1.1em; margin-bottom: 0.5em; }
+.mercury-flip-hint { font-size: 0.9em; opacity: 0.7; font-style: italic; }
+/* Progress Bar Race */
+.mercury-progress-race {
+    margin-top: 1.5em;
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #bfc1c6;
+}
+.mercury-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95em;
+    color: #6b7280;
+    margin-bottom: 0.5em;
+}
+.mercury-progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.mercury-progress {
+    height: 18px;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #bfc1c6 60%, #fff 100%);
+    box-shadow: 0 0 8px #bfc1c6;
+    position: relative;
+    overflow: hidden;
+}
+.mercury-progress-mercury {
+    width: 88%;
+    animation: mercuryProgress 2s linear forwards;
+}
+.mercury-progress-earth {
+    width: 365%;
+    max-width: 100%;
+    background: linear-gradient(90deg, #6b7280 60%, #bfc1c6 100%);
+    animation: earthProgress 2.5s linear forwards;
+}
+@keyframes mercuryProgress {
+    0% { width: 0; }
+    100% { width: 88%; }
+}
+@keyframes earthProgress {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+@media (max-width: 600px) {
+    .mercury-flip-container { width: 100%; height: 90px; }
+    .mercury-flip-content { padding: 0.7em; }
+    .mercury-orbit-demo { width: 90px; height: 90px; }
+}
 /* Solar System Productivity Hub Styles */
 
 :root {

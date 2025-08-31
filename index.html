@@ -598,60 +598,122 @@
     </div>
 
     <!-- Additional Planet Modals -->
-    <!-- Mercury Tools Modal -->
-    <div id="mercury-tools" class="modal">
-        <div class="modal-content mercury-theme">
-            <a href="#" class="close">&times;</a>
-            <h2>☿️ Mercury - The Swift Messenger</h2>
-            <p style="text-align:center; color:#9f5e26; font-style:italic; margin-bottom:1em;">
-                "Mercury speeds: 'Time is precious! Use my lightning-fast tools for instant solutions and rapid calculations.'"
-            </p>
-            
-            <div class="planet-activity">
-                <h3>⚡ Lightning Tools Hub</h3>
-                <div class="mercury-tools-grid">
-                    <div class="tool-card">
-                        <div class="tool-icon">⏱️</div>
-                        <h4>Speed Timer</h4>
-                        <p>Pomodoro & stopwatch</p>
+        <!-- Mercury Card Modal - Cosmic Messenger Pure CSS Activities -->
+        <div id="mercury-tools" class="modal">
+            <div class="modal-content mercury-card-theme">
+                <a href="#" class="close">&times;</a>
+                <h2>☿️ Mercury — The Cosmic Messenger</h2>
+                    <div class="mercury-metaphor">Messenger of the gods, Mercury races on a silver path, carrying secrets between worlds at cosmic speed.</div>
+                    <div class="mercury-phase-toggle">
+                        <input type="checkbox" id="mercury-phase" class="mercury-phase-input">
+                        <label for="mercury-phase" class="mercury-phase-label">
+                            <span class="phase-sun">☀️</span>
+                            <span class="phase-moon">🌑</span>
+                            <span class="phase-text">Toggle Mercury Phase</span>
+                        </label>
+                        <div class="mercury-phase-bg"></div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">🧮</div>
-                        <h4>Quantum Calc</h4>
-                        <p>Advanced calculator</p>
+                    <div class="mercury-card-activities">
+                        <!-- Orbit Animation Mini-Demo -->
+                        <div class="mercury-orbit-demo">
+                        <div class="mercury-orbit-sun"></div>
+                        <div class="mercury-orbit-path"></div>
+                        <div class="mercury-orbit-dot"></div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">🔄</div>
-                        <h4>Unit Converter</h4>
-                        <p>Universal measurements</p>
+                    <!-- Quiz: Mercury Facts -->
+                    <div class="mercury-quiz">
+                        <div class="mercury-quiz-title">Quiz: How long is a Mercury year?</div>
+                        <div class="mercury-quiz-options">
+                            <input type="radio" id="mercury-q1" name="mercury-quiz" class="mercury-quiz-radio">
+                            <label for="mercury-q1" class="mercury-quiz-tile">365 days</label>
+                            <input type="radio" id="mercury-q2" name="mercury-quiz" class="mercury-quiz-radio correct">
+                            <label for="mercury-q2" class="mercury-quiz-tile mercury-correct">88 days</label>
+                            <input type="radio" id="mercury-q3" name="mercury-quiz" class="mercury-quiz-radio">
+                            <label for="mercury-q3" class="mercury-quiz-tile">687 days</label>
+                        </div>
+                        <div class="mercury-quiz-result mercury-correct-result">Correct! Mercury orbits the Sun in just 88 days.</div>
+                        <div class="mercury-quiz-result mercury-wrong-result">Try again! Mercury is the fastest planet.</div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">🎲</div>
-                        <h4>Randomizer</h4>
-                        <p>Dice, numbers, choices</p>
+                    <!-- Randomizer: Mercury Speed Dice -->
+                    <div class="mercury-dice">
+                        <div class="mercury-dice-title">🎲 Mercury Speed Dice</div>
+                        <div class="mercury-dice-roller">
+                            <input type="radio" id="dice1" name="mercury-dice" class="mercury-dice-radio" checked>
+                            <input type="radio" id="dice2" name="mercury-dice" class="mercury-dice-radio">
+                            <input type="radio" id="dice3" name="mercury-dice" class="mercury-dice-radio">
+                            <input type="radio" id="dice4" name="mercury-dice" class="mercury-dice-radio">
+                            <input type="radio" id="dice5" name="mercury-dice" class="mercury-dice-radio">
+                            <input type="radio" id="dice6" name="mercury-dice" class="mercury-dice-radio">
+                            <div class="mercury-dice-faces">
+                                <label for="dice1" class="mercury-dice-face"><span class="dice-dot"></span></label>
+                                <label for="dice2" class="mercury-dice-face"><span class="dice-dot"></span><span class="dice-dot"></span></label>
+                                <label for="dice3" class="mercury-dice-face"><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span></label>
+                                <label for="dice4" class="mercury-dice-face"><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span></label>
+                                <label for="dice5" class="mercury-dice-face"><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span></label>
+                                <label for="dice6" class="mercury-dice-face"><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span><span class="dice-dot"></span></label>
+                            </div>
+                            <div class="mercury-dice-roll-btns">
+                                <label for="dice2" class="mercury-dice-roll">Roll</label>
+                                <label for="dice3" class="mercury-dice-roll">Roll</label>
+                                <label for="dice4" class="mercury-dice-roll">Roll</label>
+                                <label for="dice5" class="mercury-dice-roll">Roll</label>
+                                <label for="dice6" class="mercury-dice-roll">Roll</label>
+                                <label for="dice1" class="mercury-dice-roll">Roll</label>
+                            </div>
+                            <div class="mercury-dice-result mercury-dice-result-1">90 km/s — Mercury's average speed!</div>
+                            <div class="mercury-dice-result mercury-dice-result-2">120 km/s — Blazing fast!</div>
+                            <div class="mercury-dice-result mercury-dice-result-3">47 km/s — Actual orbital speed!</div>
+                            <div class="mercury-dice-result mercury-dice-result-4">60 km/s — Still super quick!</div>
+                            <div class="mercury-dice-result mercury-dice-result-5">35 km/s — Mercury slows a bit.</div>
+                            <div class="mercury-dice-result mercury-dice-result-6">50 km/s — Racing on the edge!</div>
+                        </div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">🔐</div>
-                        <h4>Cipher Tool</h4>
-                        <p>Encode/decode messages</p>
+                    <!-- Cipher Mini-Game: Messenger’s Secret Code -->
+                    <div class="mercury-cipher">
+                        <div class="mercury-cipher-title">🔐 Messenger’s Secret Code</div>
+                        <div class="mercury-cipher-puzzle">
+                            <span class="cipher-label">Encoded:</span> <span class="cipher-encoded">PHVVHQJHU</span>
+                            <input type="checkbox" id="cipher-toggle" class="cipher-toggle">
+                            <label for="cipher-toggle" class="cipher-toggle-label">Click to decode</label>
+                            <span class="cipher-decode">QUICKSILVER</span>
+                        </div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">📝</div>
-                        <h4>Word Tools</h4>
-                        <p>Text analysis & games</p>
+                    <!-- Flip Card Fact -->
+                    <div class="mercury-flip-card">
+                        <input type="checkbox" id="mercury-flip" class="mercury-flip-input">
+                        <label for="mercury-flip" class="mercury-flip-container">
+                            <div class="mercury-flip-inner">
+                                <div class="mercury-flip-front">
+                                    <div class="mercury-flip-content">
+                                        <div class="mercury-flip-icon">🪐</div>
+                                        <div class="mercury-flip-title">Smallest planet</div>
+                                        <div class="mercury-flip-hint">Click to flip</div>
+                                    </div>
+                                </div>
+                                <div class="mercury-flip-back">
+                                    <div class="mercury-flip-content">
+                                        <div class="mercury-flip-icon">🌑</div>
+                                        <div class="mercury-flip-title">Bigger than the Moon, though.</div>
+                                        <div class="mercury-flip-hint">Click to flip back</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
                     </div>
-                </div>
-                
-                <h4>⚡ Utility Belt: Swift tools for daily tasks</h4>
-                <div class="quick-actions">
-                    <button class="action-btn">Quick Note</button>
-                    <button class="action-btn">Set Reminder</button>
-                    <button class="action-btn">Time Check</button>
-                    <button class="action-btn">Weather</button>
+                    <!-- Progress Bar Race: Mercury vs Earth -->
+                    <div class="mercury-progress-race">
+                        <div class="mercury-progress-labels">
+                            <span>Mercury Year</span>
+                            <span>Earth Year</span>
+                        </div>
+                        <div class="mercury-progress-bars">
+                            <div class="mercury-progress mercury-progress-mercury"></div>
+                            <div class="mercury-progress mercury-progress-earth"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Venus Inspiration Modal -->
     <div id="venus-inspiration" class="modal">
