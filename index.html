@@ -17,6 +17,103 @@
         </p>
     </div>
 
+    <!-- Right Side Planet Navigation Menu -->
+    <div class="planet-nav-menu">
+        <div class="nav-menu-header">
+            <h3>🌌 Cosmic Navigation</h3>
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+        </div>
+        <div class="nav-menu-content" id="navMenuContent">
+            <a href="#sun-menu" class="nav-planet-link sun-nav" title="Sun - Control Center">
+                <span class="planet-emoji">☀️</span>
+                <div class="planet-info">
+                    <span class="planet-title">Sun</span>
+                    <span class="planet-subtitle">Control Center</span>
+                </div>
+            </a>
+            
+            <a href="#mercury-tools" class="nav-planet-link mercury-nav" title="Mercury - Quick Tools">
+                <span class="planet-emoji">☿️</span>
+                <div class="planet-info">
+                    <span class="planet-title">Mercury</span>
+                    <span class="planet-subtitle">Swift Tools</span>
+                </div>
+            </a>
+            
+            <a href="#venus-inspiration" class="nav-planet-link venus-nav" title="Venus - Emotions & Beauty">
+                <span class="planet-emoji">♀️</span>
+                <div class="planet-info">
+                    <span class="planet-title">Venus</span>
+                    <span class="planet-subtitle">Emotions</span>
+                </div>
+            </a>
+            
+            <a href="#earth-notes" class="nav-planet-link earth-nav" title="Earth - Balance & Journal">
+                <span class="planet-emoji">🌍</span>
+                <div class="planet-info">
+                    <span class="planet-title">Earth</span>
+                    <span class="planet-subtitle">Balance Hub</span>
+                </div>
+            </a>
+            
+            <a href="#mars-projects" class="nav-planet-link mars-nav" title="Mars - Challenges">
+                <span class="planet-emoji">♂️</span>
+                <div class="planet-info">
+                    <span class="planet-title">Mars</span>
+                    <span class="planet-subtitle">Challenges</span>
+                </div>
+            </a>
+            
+            <a href="#asteroid-tools" class="nav-planet-link asteroid-nav" title="Asteroid Belt - Mini Tools">
+                <span class="planet-emoji">🪨</span>
+                <div class="planet-info">
+                    <span class="planet-title">Asteroids</span>
+                    <span class="planet-subtitle">Mini Tools</span>
+                </div>
+            </a>
+            
+            <a href="#jupiter-knowledge" class="nav-planet-link jupiter-nav" title="Jupiter - Knowledge Base">
+                <span class="planet-emoji">♃</span>
+                <div class="planet-info">
+                    <span class="planet-title">Jupiter</span>
+                    <span class="planet-subtitle">Wisdom</span>
+                </div>
+            </a>
+            
+            <a href="#saturn-calendar" class="nav-planet-link saturn-nav" title="Saturn - Time & Rings">
+                <span class="planet-emoji">🪐</span>
+                <div class="planet-info">
+                    <span class="planet-title">Saturn</span>
+                    <span class="planet-subtitle">Time Master</span>
+                </div>
+            </a>
+            
+            <a href="#uranus-goals" class="nav-planet-link uranus-nav" title="Uranus - Ice Giant Mysteries">
+                <span class="planet-emoji">⛢</span>
+                <div class="planet-info">
+                    <span class="planet-title">Uranus</span>
+                    <span class="planet-subtitle">Mysteries</span>
+                </div>
+            </a>
+            
+            <a href="#neptune-focus" class="nav-planet-link neptune-nav" title="Neptune - Mystic Ocean">
+                <span class="planet-emoji">🌊</span>
+                <div class="planet-info">
+                    <span class="planet-title">Neptune</span>
+                    <span class="planet-subtitle">Dreams</span>
+                </div>
+            </a>
+            
+            <a href="#pluto-archive" class="nav-planet-link pluto-nav" title="Pluto - Distant Secrets">
+                <span class="planet-emoji">♇</span>
+                <div class="planet-info">
+                    <span class="planet-title">Pluto</span>
+                    <span class="planet-subtitle">Secrets</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="solar-syst">
         <!-- Sun - Main Menu -->
         <div class="sun">
@@ -80,30 +177,43 @@
     <div id="sun-menu" class="modal">
         <div class="modal-content sun-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🌞 Main Menu & Settings</h2>
-            <div class="settings-grid">
-                <div class="setting-item">
-                    <label>
-                        <input type="checkbox" class="accessibility-toggle">
-                        <span class="toggle-slider"></span>
-                        Large Font Mode
-                    </label>
+            <h2>☀️ Sun - The Core Control Center</h2>
+            <p style="text-align:center; color:#ffd000; font-style:italic; margin-bottom:1em;">
+                "The Sun whispers: 'I am dim without balance. Help me shine again.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Solar Flare Simulator</h3>
+                <div class="sun-controls">
+                    <label for="energy-slider">Adjust sun's energy level</label>
+                    <input type="range" id="energy-slider" class="energy-slider" min="0" max="100" value="50" 
+                           aria-label="Sun energy level - adjust to restore balance">
+                    <p>Solar Power: <span id="energy-display">50</span>% | Status: <span id="sun-status">Stable</span></p>
+                    <div class="solar-flares" id="solar-flares">
+                        <div class="flare"></div>
+                        <div class="flare"></div>
+                        <div class="flare"></div>
+                    </div>
                 </div>
-                <div class="setting-item">
-                    <label>
-                        <input type="checkbox" class="dark-mode-toggle">
-                        <span class="toggle-slider"></span>
-                        High Contrast
-                    </label>
+                
+                <h4>🎨 Cosmic Color Palette</h4>
+                <div class="theme-controls">
+                    <button class="theme-btn theme-day" aria-label="Day theme" title="☀️ Solar Day"></button>
+                    <button class="theme-btn theme-night" aria-label="Night theme" title="🌙 Cosmic Night"></button>
+                    <button class="theme-btn theme-nebula" aria-label="Nebula theme" title="🌌 Nebula Dreams"></button>
+                    <button class="theme-btn theme-aurora" aria-label="Aurora theme" title="🌈 Aurora Borealis"></button>
+                    <button class="theme-btn theme-eclipse" aria-label="Eclipse theme" title="🌘 Solar Eclipse"></button>
                 </div>
-                <div class="setting-item">
-                    <label>
-                        <input type="checkbox" class="animation-toggle">
-                        <span class="toggle-slider"></span>
-                        Reduce Motion
-                    </label>
+                
+                <h4>⚙️ Global Controls</h4>
+                <div class="control-panel">
+                    <label><input type="checkbox" id="particles-toggle"> ✨ Particle Effects</label>
+                    <label><input type="checkbox" id="sound-effects"> 🔊 Sound Effects</label>
+                    <label><input type="checkbox" id="high-contrast"> 🔍 High Contrast</label>
+                    <label><input type="range" id="animation-speed" min="0.1" max="3" step="0.1" value="1"> 🏃 Animation Speed</label>
                 </div>
             </div>
+            
             <div class="menu-links">
                 <a href="#earth-notes" class="menu-link">📝 Daily Notes</a>
                 <a href="#saturn-calendar" class="menu-link">📅 Calendar</a>
@@ -117,11 +227,51 @@
     <div id="earth-notes" class="modal">
         <div class="modal-content earth-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🌍 Daily Notes Hub</h2>
+            <h2>🌍 Earth - The Home & Balance Journal</h2>
+            <p style="text-align:center; color:#11abe9; font-style:italic; margin-bottom:1em;">
+                "Earth pleads: 'Balance my elements, and I shall be your eternal journal.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Terraform Earth</h3>
+                <div class="earth-balance">
+                    <label>
+                        <input type="checkbox" aria-label="Choose clean air" onchange="updateEarthStatus()">
+                        <div class="balance-option">🌬️ Clean Air</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" aria-label="Choose green forests" onchange="updateEarthStatus()">
+                        <div class="balance-option">🌲 Green Forests</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" aria-label="Choose clean water" onchange="updateEarthStatus()">
+                        <div class="balance-option">💧 Clean Water</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" aria-label="Choose renewable energy" onchange="updateEarthStatus()">
+                        <div class="balance-option">⚡ Renewable Energy</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" aria-label="Wildlife protection" onchange="updateEarthStatus()">
+                        <div class="balance-option">🦋 Wildlife Protection</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" aria-label="Sustainable cities" onchange="updateEarthStatus()">
+                        <div class="balance-option">🏙️ Sustainable Cities</div>
+                    </label>
+                </div>
+                <div class="earth-status" id="earth-status">
+                    <div class="status-bar">
+                        <div class="status-fill" id="earth-health"></div>
+                    </div>
+                    <p>Earth Health: <span id="earth-percentage">0</span>%</p>
+                </div>
+            </div>
+            
             <div class="notes-container">
                 <div class="note-section">
-                    <h3>Today's Thoughts</h3>
-                    <textarea placeholder="What's on your mind today?" rows="6"></textarea>
+                    <h3>📝 Mission Journal</h3>
+                    <textarea placeholder="Document your cosmic journey... Record discoveries, thoughts, and mission progress." rows="6"></textarea>
                 </div>
                 <div class="note-section">
                     <h3>Quick Captures</h3>
@@ -139,8 +289,30 @@
     <div id="saturn-calendar" class="modal">
         <div class="modal-content saturn-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🪐 Task Rings & Calendar</h2>
+            <h2>🪐 Saturn - Time & Rings of Order</h2>
+            <p style="text-align:center; color:#e7c194; font-style:italic; margin-bottom:1em;">
+                "Saturn instructs: 'Align my rings, and I shall organize your mortal time.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Ring Harmonics Puzzle</h3>
+                <div class="saturn-rings">
+                    <div class="saturn-planet"></div>
+                    <div class="saturn-ring ring-1"></div>
+                    <div class="saturn-ring ring-2"></div>
+                    <div class="saturn-ring ring-3"></div>
+                </div>
+                
+                <div class="ring-status">
+                    <div class="ring-indicator">Ring 1: 0°</div>
+                    <div class="ring-indicator">Ring 2: 0°</div>
+                    <div class="ring-indicator">Ring 3: 0°</div>
+                    <div class="harmony-status">Harmony: 0%</div>
+                </div>
+            </div>
+            
             <div class="calendar-container">
+                <h3>⏰ Temporal Organizer</h3>
                 <div class="ring-system">
                     <div class="task-ring urgent">
                         <div class="ring-label">Urgent</div>
@@ -167,6 +339,27 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="time-manager">
+                    <div class="schedule-grid">
+                        <div class="time-slot">
+                            <span class="time">9:00</span>
+                            <input type="text" placeholder="Morning ritual" class="task-input">
+                        </div>
+                        <div class="time-slot">
+                            <span class="time">12:00</span>
+                            <input type="text" placeholder="Midday focus" class="task-input">
+                        </div>
+                        <div class="time-slot">
+                            <span class="time">15:00</span>
+                            <input type="text" placeholder="Afternoon work" class="task-input">
+                        </div>
+                        <div class="time-slot">
+                            <span class="time">18:00</span>
+                            <input type="text" placeholder="Evening reflection" class="task-input">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -175,7 +368,52 @@
     <div id="neptune-focus" class="modal">
         <div class="modal-content neptune-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🌊 Deep Focus Zone</h2>
+            <h2>🌊 Neptune - The Mystic Ocean</h2>
+            <p style="text-align:center; color:#175e9e; font-style:italic; margin-bottom:1em;">
+                "Neptune dreams: 'Dive deep into my icy mysteries, unlock the runes of creativity and inspiration.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Ice Rune Symphony</h3>
+                <div class="rune-composer">
+                    <h4>Mystical Rune Sequence</h4>
+                    <div class="neptune-runes">
+                        <button class="ice-rune" data-rune="frost" title="❄️ Frost - Preservation">❄️</button>
+                        <button class="ice-rune" data-rune="wave" title="🌊 Wave - Flow">🌊</button>
+                        <button class="ice-rune" data-rune="crystal" title="💎 Crystal - Clarity">💎</button>
+                        <button class="ice-rune" data-rune="vision" title="🔮 Vision - Insight">🔮</button>
+                        <button class="ice-rune" data-rune="star" title="⭐ Star - Inspiration">⭐</button>
+                        <button class="ice-rune" data-rune="spiral" title="🌀 Spiral - Transformation">🌀</button>
+                    </div>
+                    <div class="rune-sequence">
+                        <p>Current Sequence: <span>None</span></p>
+                        <p>Harmony Level: <span>0</span>%</p>
+                    </div>
+                </div>
+
+                <h3>🌊 Dream Pool Navigator</h3>
+                <div class="dream-pool">
+                    <div class="ocean-layers">
+                        <div class="layer surface">
+                            <h5>🌅 Surface Dreams</h5>
+                            <p>Gentle inspiration</p>
+                        </div>
+                        <div class="layer shallow">
+                            <h5>🐠 Shallow Waters</h5>
+                            <p>Creative ideas</p>
+                        </div>
+                        <div class="layer deep">
+                            <h5>🐙 Deep Ocean</h5>
+                            <p>Profound insights</p>
+                        </div>
+                        <div class="layer abyss">
+                            <h5>🕳️ The Abyss</h5>
+                            <p>Transformative visions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="focus-container">
                 <div class="timer-display">
                     <div class="focus-timer">25:00</div>
@@ -253,23 +491,82 @@
     </div>
 
     <!-- Additional Planet Modals -->
+    <!-- Mercury Tools Modal -->
     <div id="mercury-tools" class="modal">
         <div class="modal-content mercury-theme">
             <a href="#" class="close">&times;</a>
-            <h2>☿️ Quick Actions</h2>
-            <div class="quick-actions">
-                <button class="action-btn">Quick Note</button>
-                <button class="action-btn">Set Reminder</button>
-                <button class="action-btn">Time Check</button>
-                <button class="action-btn">Weather</button>
+            <h2>☿️ Mercury - The Swift Messenger</h2>
+            <p style="text-align:center; color:#9f5e26; font-style:italic; margin-bottom:1em;">
+                "Mercury speeds: 'Time is precious! Use my lightning-fast tools for instant solutions and rapid calculations.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>⚡ Lightning Tools Hub</h3>
+                <div class="mercury-tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">⏱️</div>
+                        <h4>Speed Timer</h4>
+                        <p>Pomodoro & stopwatch</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Quantum Calc</h4>
+                        <p>Advanced calculator</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔄</div>
+                        <h4>Unit Converter</h4>
+                        <p>Universal measurements</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎲</div>
+                        <h4>Randomizer</h4>
+                        <p>Dice, numbers, choices</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔐</div>
+                        <h4>Cipher Tool</h4>
+                        <p>Encode/decode messages</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📝</div>
+                        <h4>Word Tools</h4>
+                        <p>Text analysis & games</p>
+                    </div>
+                </div>
+                
+                <h4>⚡ Utility Belt: Swift tools for daily tasks</h4>
+                <div class="quick-actions">
+                    <button class="action-btn">Quick Note</button>
+                    <button class="action-btn">Set Reminder</button>
+                    <button class="action-btn">Time Check</button>
+                    <button class="action-btn">Weather</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Venus Inspiration Modal -->
     <div id="venus-inspiration" class="modal">
         <div class="modal-content venus-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♀️ Inspiration Hub</h2>
+            <h2>♀️ Venus - Emotions & Beauty</h2>
+            <p style="text-align:center; color:#BEB768; font-style:italic; margin-bottom:1em;">
+                "Venus glows: 'Choose the color of your heart today, and I shall remember your journey.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Emotional Palette</h3>
+                <div class="venus-emotions">
+                    <button class="emotion-btn emotion-happy" title="😊 Happy"></button>
+                    <button class="emotion-btn emotion-sad" title="😢 Sad"></button>
+                    <button class="emotion-btn emotion-angry" title="😠 Angry"></button>
+                    <button class="emotion-btn emotion-calm" title="😌 Calm"></button>
+                    <button class="emotion-btn emotion-excited" title="🤩 Excited"></button>
+                </div>
+                <p style="text-align:center; margin:1rem 0;"><em>💖 Mood Tracker: Colors form your emotional orbit</em></p>
+            </div>
+            
             <div class="inspiration-grid">
                 <div class="inspiration-card">
                     <h3>Daily Quote</h3>
@@ -292,10 +589,59 @@
         </div>
     </div>
 
+    <!-- Mars Projects Modal -->
     <div id="mars-projects" class="modal">
         <div class="modal-content mars-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♂️ Project Tracker</h2>
+            <h2>♂️ Mars - Challenges & Mission Control</h2>
+            <p style="text-align:center; color:#cf3921; font-style:italic; margin-bottom:1em;">
+                "Mars declares: 'Navigate my maze, and I shall track your earthly goals.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Martian Base Builder</h3>
+                <div class="mars-maze" id="mars-maze">
+                    <div class="maze-cell path start">🚗</div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell crystal">💎</div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell crystal">💎</div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell path"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell base goal">🏭</div>
+                    <div class="maze-cell crystal">💎</div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell wall"></div>
+                    <div class="maze-cell wall"></div>
+                </div>
+                
+                <div class="mars-stats">
+                    <div class="stat">🔋 Energy: <span id="mars-energy">0</span>/3</div>
+                    <div class="stat">📍 Position: <span id="rover-position">Start</span></div>
+                    <div class="stat">🎯 Mission: Collect crystals and reach base</div>
+                </div>
+                
+                <h4>🚀 Mission Control</h4>
+                <div class="mission-controls">
+                    <button class="mission-btn">🔄 Reset Mission</button>
+                    <button class="mission-btn">🤖 Auto-Pilot</button>
+                    <button class="mission-btn">💡 Mission Hint</button>
+                </div>
+            </div>
+            
             <div class="projects-container">
                 <div class="project-status">
                     <h3>Active Projects</h3>
@@ -316,10 +662,38 @@
         </div>
     </div>
 
+    <!-- Jupiter Knowledge Modal -->
     <div id="jupiter-knowledge" class="modal">
         <div class="modal-content jupiter-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♃ Knowledge Base</h2>
+            <h2>♃ Jupiter - The Giant's Workshop</h2>
+            <p style="text-align:center; color:#c76e2a; font-style:italic; margin-bottom:1em;">
+                "Jupiter proclaims: 'My storms rage with power, my moons hold ancient wisdom. Master my domain!'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Storm Observatory</h3>
+                <div class="storm-simulator">
+                    <h4>Great Red Spot Controller</h4>
+                    <div class="great-red-spot">
+                        <div class="storm-eye"></div>
+                    </div>
+                    <div class="storm-stats">
+                        <div class="stat">Winds: 430 km/h</div>
+                        <div class="stat">Duration: 350 Earth years</div>
+                        <div class="stat">Temperature: -145°C</div>
+                    </div>
+                </div>
+
+                <h3>🌙 Jupiter's Major Moons</h3>
+                <div class="jupiter-moons">
+                    <div class="jupiter-moon" title="🌋 Io - Volcanic Activity"></div>
+                    <div class="jupiter-moon" title="🧊 Europa - Ice Drilling"></div>
+                    <div class="jupiter-moon" title="🌍 Ganymede - Magnetosphere"></div>
+                    <div class="jupiter-moon" title="🔬 Callisto - Research Station"></div>
+                </div>
+            </div>
+            
             <div class="knowledge-sections">
                 <div class="knowledge-card">
                     <h3>📚 Learning Paths</h3>
@@ -327,6 +701,8 @@
                         <li>CSS Animations Mastery</li>
                         <li>Productivity Systems</li>
                         <li>Space Science Basics</li>
+                        <li>Jupiter's Moon Systems</li>
+                        <li>Storm Dynamics</li>
                     </ul>
                 </div>
                 <div class="knowledge-card">
@@ -335,52 +711,128 @@
                         <li>CSS-only Interactive Techniques</li>
                         <li>Astronomical Data References</li>
                         <li>Design Inspiration Gallery</li>
+                        <li>Planetary Physics</li>
+                        <li>Gravitational Dynamics</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Uranus Goals Modal -->
     <div id="uranus-goals" class="modal">
         <div class="modal-content uranus-theme">
             <a href="#" class="close">&times;</a>
-            <h2>⛢ Goals & Planning</h2>
+            <h2>⛢ Uranus - Ice Giant Mysteries</h2>
+            <p style="text-align:center; color:#b5e3e3; font-style:italic; margin-bottom:1em;">
+                "Uranus whispers sideways: 'I roll uniquely through space, hiding mysteries in my tilted rings.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Tilted Perspective</h3>
+                <div class="uranus-rings">
+                    <div class="ice-crystal">❄️</div>
+                    <div class="ice-crystal">🔵</div>
+                    <div class="ice-crystal">💎</div>
+                    <div class="ice-crystal">🌀</div>
+                </div>
+                <p style="text-align:center; margin:1rem 0;"><em>🧊 Mystery Keeper: Unique perspective reveals hidden truths</em></p>
+            </div>
+            
             <div class="goals-container">
                 <div class="goal-category">
                     <h3>Short-term Goals</h3>
                     <div class="goal-item">Finish solar system interface</div>
                     <div class="goal-item">Learn advanced CSS techniques</div>
                     <div class="goal-item">Complete project documentation</div>
+                    <div class="goal-item">Master ice crystal patterns</div>
+                    <div class="goal-item">Unlock tilted perspective insights</div>
                 </div>
                 <div class="goal-category">
                     <h3>Long-term Vision</h3>
                     <div class="goal-item">Master creative coding</div>
                     <div class="goal-item">Build stellar portfolio</div>
                     <div class="goal-item">Share knowledge with community</div>
+                    <div class="goal-item">Explore unique perspectives</div>
+                    <div class="goal-item">Discover hidden cosmic truths</div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Pluto Archive Modal -->
     <div id="pluto-archive" class="modal">
         <div class="modal-content pluto-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♇ Archive & Memory</h2>
+            <h2>♇ Pluto - Distant Secret Keeper</h2>
+            <p style="text-align:center; color:#fff; font-style:italic; margin-bottom:1em;">
+                "Pluto calls from afar: 'Though small and distant, I guard the solar system's deepest secrets.'"
+            </p>
+            
+            <div class="planet-activity">
+                <h3>🎮 Distant Wisdom</h3>
+                <div class="pluto-secrets">
+                    <div class="secret-scroll" title="✨ Ancient Wisdom ✨">📜</div>
+                    <div class="secret-scroll" title="✨ Hidden Knowledge ✨">🔍</div>
+                    <div class="secret-scroll" title="✨ Cosmic Keys ✨">🗝️</div>
+                    <div class="secret-scroll" title="✨ Stellar Secrets ✨">💫</div>
+                </div>
+                <p style="text-align:center; margin:1rem 0;"><em>🔭 Distant Guardian: Size doesn't determine importance</em></p>
+            </div>
+            
             <div class="archive-container">
                 <div class="memory-section">
                     <h3>Completed Projects</h3>
                     <div class="archive-item">Interactive CSS Animations</div>
                     <div class="archive-item">Responsive Design System</div>
                     <div class="archive-item">Accessibility Features</div>
+                    <div class="archive-item">Cosmic Interface Design</div>
+                    <div class="archive-item">Solar System Mechanics</div>
                 </div>
                 <div class="memory-section">
                     <h3>Key Learnings</h3>
                     <div class="archive-item">CSS-only interactivity is powerful</div>
                     <div class="archive-item">Astronomical accuracy in design</div>
                     <div class="archive-item">Creative problem solving</div>
+                    <div class="archive-item">Distance doesn't diminish value</div>
+                    <div class="archive-item">Small things hold great secrets</div>
+                </div>
+                <div class="memory-section">
+                    <h3>Distant Memories</h3>
+                    <div class="archive-item">First orbital calculations</div>
+                    <div class="archive-item">Discovery of cosmic patterns</div>
+                    <div class="archive-item">Understanding celestial mechanics</div>
+                    <div class="archive-item">Wisdom from the edge of space</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menuContent = document.getElementById('navMenuContent');
+            menuContent.classList.toggle('active');
+        }
+        
+        // Close menu when clicking on a planet link (mobile)
+        document.querySelectorAll('.nav-planet-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const menuContent = document.getElementById('navMenuContent');
+                if (window.innerWidth <= 768) {
+                    menuContent.classList.remove('active');
+                }
+            });
+        });
+        
+        // Close menu when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            const menu = document.querySelector('.planet-nav-menu');
+            const menuContent = document.getElementById('navMenuContent');
+            
+            if (!menu.contains(e.target) && window.innerWidth <= 768) {
+                menuContent.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
