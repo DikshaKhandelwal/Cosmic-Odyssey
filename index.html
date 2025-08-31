@@ -184,40 +184,132 @@
     <div id="sun-menu" class="modal">
         <div class="modal-content sun-theme">
             <a href="#" class="close">&times;</a>
-            <h2>☀️ Sun - The Core Control Center</h2>
-            <p style="text-align:center; color:#ffd000; font-style:italic; margin-bottom:1em;">
-                "The Sun whispers: 'I am dim without balance. Help me shine again.'"
-            </p>
             
-            <div class="planet-activity">
-                <h3>🎮 Solar Flare Simulator</h3>
-                <div class="sun-controls">
-                    <label for="energy-slider">Adjust sun's energy level</label>
-                    <input type="range" id="energy-slider" class="energy-slider" min="0" max="100" value="50" 
-                           aria-label="Sun energy level - adjust to restore balance">
-                    <p>Solar Power: <span id="energy-display">50</span>% | Status: <span id="sun-status">Stable</span></p>
-                    <div class="solar-flares" id="solar-flares">
-                        <div class="flare"></div>
-                        <div class="flare"></div>
-                        <div class="flare"></div>
+            <!-- Dark/Light Toggle -->
+            <div class="theme-toggle-container">
+                <input type="checkbox" id="dark-light-toggle" class="theme-toggle-input">
+                <label for="dark-light-toggle" class="theme-toggle">
+                    <span class="toggle-slider">
+                        <span class="toggle-icon">🌙</span>
+                        <span class="toggle-icon">☀️</span>
+                    </span>
+                </label>
+            </div>
+            
+            <h2>☀️ Solar Pulse - The Cosmic Forge</h2>
+            
+            <!-- Solar Pulse Activity -->
+            <div class="solar-pulse-container">
+                <!-- Animated Flaring Sun -->
+                <div class="sun-animation-container">
+                    <input type="checkbox" id="solar-glow-toggle" class="sun-input">
+                    <label for="solar-glow-toggle" class="animated-sun">
+                        <div class="sun-core">
+                            <div class="sun-inner"></div>
+                        </div>
+                        <div class="solar-flares">
+                            <div class="flare flare-1"></div>
+                            <div class="flare flare-2"></div>
+                            <div class="flare flare-3"></div>
+                            <div class="flare flare-4"></div>
+                            <div class="flare flare-5"></div>
+                            <div class="flare flare-6"></div>
+                            <div class="flare flare-7"></div>
+                            <div class="flare flare-8"></div>
+                        </div>
+                        <div class="sun-rays">
+                            <div class="ray ray-1"></div>
+                            <div class="ray ray-2"></div>
+                            <div class="ray ray-3"></div>
+                            <div class="ray ray-4"></div>
+                            <div class="ray ray-5"></div>
+                            <div class="ray ray-6"></div>
+                            <div class="ray ray-7"></div>
+                            <div class="ray ray-8"></div>
+                        </div>
+                        <div class="click-hint">Click to ignite! 🌟</div>
+                    </label>
+                </div>
+                
+                <!-- Sun Metaphor -->
+                <div class="sun-metaphor">
+                    <p class="metaphor-text">
+                        "Awaken the stellar heart that burns with the fury of a thousand storms, 
+                        forging elements in its nuclear crucible and breathing life into the cosmic void."
+                    </p>
+                    <div class="metaphor-subtitle">✨ The Eternal Flame of Creation ✨</div>
+                </div>
+                
+                <!-- Fact Display (shows when glow is active) -->
+                <div class="solar-fact">
+                    <div class="fact-content">
+                        <h3>🔥 This glow = 15 million °C core heat!</h3>
+                        <p class="metaphor">The "cosmic forge" — engine of all life.</p>
+                        <div class="solar-facts">
+                            <div class="fact-item">• 99.8% of the Solar System's mass</div>
+                            <div class="fact-item">• Core temperature ~15 million °C</div>
+                            <div class="fact-item">• Light takes 8 minutes to reach Earth</div>
+                        </div>
                     </div>
                 </div>
                 
-                <h4>🎨 Cosmic Color Palette</h4>
-                <div class="theme-controls">
-                    <button class="theme-btn theme-day" aria-label="Day theme" title="☀️ Solar Day"></button>
-                    <button class="theme-btn theme-night" aria-label="Night theme" title="🌙 Cosmic Night"></button>
-                    <button class="theme-btn theme-nebula" aria-label="Nebula theme" title="🌌 Nebula Dreams"></button>
-                    <button class="theme-btn theme-aurora" aria-label="Aurora theme" title="🌈 Aurora Borealis"></button>
-                    <button class="theme-btn theme-eclipse" aria-label="Eclipse theme" title="🌘 Solar Eclipse"></button>
+                <!-- Flip Card -->
+                <div class="flip-card">
+                    <input type="checkbox" id="flip-toggle" class="flip-input">
+                    <label for="flip-toggle" class="flip-card-container">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-content">
+                                    <div class="card-icon">🌱</div>
+                                    <h3>Gives Life</h3>
+                                    <p>The Sun nurtures all living beings, providing the energy that sustains our planet's ecosystems.</p>
+                                    <div class="flip-hint">Click to flip 🔄</div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="card-content">
+                                    <div class="card-icon">💀</div>
+                                    <h3>Can Also Destroy</h3>
+                                    <p>Solar flares and radiation can devastate atmospheres and extinguish life across entire worlds.</p>
+                                    <div class="flip-hint">Click to flip back 🔄</div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
                 </div>
                 
-                <h4>⚙️ Global Controls</h4>
-                <div class="control-panel">
-                    <label><input type="checkbox" id="particles-toggle"> ✨ Particle Effects</label>
-                    <label><input type="checkbox" id="sound-effects"> 🔊 Sound Effects</label>
-                    <label><input type="checkbox" id="high-contrast"> 🔍 High Contrast</label>
-                    <label><input type="range" id="animation-speed" min="0.1" max="3" step="0.1" value="1"> 🏃 Animation Speed</label>
+                <!-- Quiz Section -->
+                <div class="solar-quiz">
+                    <h3>🧠 Solar Knowledge Quiz</h3>
+                    <div class="quiz-question">
+                        <p>How hot is the Sun's core?</p>
+                        <div class="quiz-options">
+                            <input type="radio" id="quiz-option-1" name="solar-quiz" class="quiz-input">
+                            <label for="quiz-option-1" class="quiz-option incorrect-option">5 million °C</label>
+                            
+                            <input type="radio" id="quiz-option-2" name="solar-quiz" class="quiz-input">
+                            <label for="quiz-option-2" class="quiz-option correct-option">15 million °C</label>
+                            
+                            <input type="radio" id="quiz-option-3" name="solar-quiz" class="quiz-input">
+                            <label for="quiz-option-3" class="quiz-option incorrect-option">25 million °C</label>
+                            
+                            <input type="radio" id="quiz-option-4" name="solar-quiz" class="quiz-input">
+                            <label for="quiz-option-4" class="quiz-option incorrect-option">100 million °C</label>
+                        </div>
+                        
+                        <!-- Quiz Results -->
+                        <div class="quiz-result correct-result">
+                            <div class="result-content">
+                                🎉 Correct! The Sun's core reaches approximately 15 million °C, hot enough to fuse hydrogen into helium!
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-result incorrect-result">
+                            <div class="result-content">
+                                ❌ Not quite! The Sun's core temperature is actually around 15 million °C. Try again!
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             

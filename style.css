@@ -736,6 +736,922 @@ hr {
 .sun-theme {
     background: linear-gradient(135deg, rgba(255, 208, 0, 0.2), rgba(249, 183, 0, 0.1));
     border-color: rgba(255, 208, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+/* Dark/Light Theme Toggle - Pure CSS */
+.theme-toggle-container {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    z-index: 10;
+}
+
+.theme-toggle-input {
+    display: none;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    border-radius: 50%;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-input:checked + .theme-toggle .toggle-slider {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.theme-toggle-input:checked + .theme-toggle .toggle-slider::before {
+    transform: translateX(30px);
+    background: linear-gradient(45deg, #ff8c00, #ff6347);
+}
+
+.toggle-icon {
+    font-size: 0.9em;
+    z-index: 1;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-input:checked + .theme-toggle .toggle-icon:first-child {
+    opacity: 0.3;
+}
+
+.theme-toggle-input:checked + .theme-toggle .toggle-icon:last-child {
+    opacity: 1;
+}
+
+/* Dark mode for modal when toggle is checked */
+.theme-toggle-input:checked ~ * .sun-theme {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(40, 40, 40, 0.9));
+    border-color: rgba(255, 208, 0, 0.4);
+    color: #e5e5e5;
+}
+
+/* Solar Pulse Container */
+.solar-pulse-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Animated Flaring Sun - Pure CSS */
+.sun-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    perspective: 1000px;
+}
+
+.sun-input {
+    display: none;
+}
+
+.animated-sun {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.sun-core {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        #ffed4e 0%, 
+        #ffd700 25%, 
+        #ff8c00 60%, 
+        #ff6347 90%, 
+        #dc2626 100%);
+    box-shadow: 
+        0 0 20px rgba(255, 140, 0, 0.6),
+        inset -10px -10px 20px rgba(220, 38, 38, 0.3),
+        inset 10px 10px 20px rgba(255, 237, 78, 0.5);
+    animation: sunPulse 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+.sun-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 25% 25%, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 237, 78, 0.8) 30%, 
+        rgba(255, 140, 0, 0.6) 100%);
+    animation: innerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes sunPulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 
+            0 0 20px rgba(255, 140, 0, 0.6),
+            inset -10px -10px 20px rgba(220, 38, 38, 0.3),
+            inset 10px 10px 20px rgba(255, 237, 78, 0.5);
+    }
+    50% {
+        transform: scale(1.05) rotate(5deg);
+        box-shadow: 
+            0 0 30px rgba(255, 140, 0, 0.8),
+            0 0 50px rgba(255, 99, 71, 0.6),
+            inset -12px -12px 25px rgba(220, 38, 38, 0.4),
+            inset 12px 12px 25px rgba(255, 237, 78, 0.6);
+    }
+}
+
+@keyframes innerGlow {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Solar Flares */
+.solar-flares {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.flare {
+    position: absolute;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(255, 140, 0, 0.8) 40%, 
+        rgba(255, 99, 71, 0.9) 60%, 
+        transparent 100%);
+    border-radius: 50% 0;
+    opacity: 0.7;
+    animation: flareRotate 4s linear infinite;
+    transform-origin: 50% 100%;
+}
+
+.flare-1 { 
+    width: 40px; height: 20px; 
+    top: 10px; left: 50%; 
+    transform: translateX(-50%) rotate(0deg);
+    animation-delay: 0s;
+}
+.flare-2 { 
+    width: 35px; height: 18px; 
+    top: 20px; right: 15px; 
+    transform: rotate(45deg);
+    animation-delay: 0.5s;
+}
+.flare-3 { 
+    width: 30px; height: 15px; 
+    top: 50%; right: 5px; 
+    transform: translateY(-50%) rotate(90deg);
+    animation-delay: 1s;
+}
+.flare-4 { 
+    width: 38px; height: 19px; 
+    bottom: 20px; right: 15px; 
+    transform: rotate(135deg);
+    animation-delay: 1.5s;
+}
+.flare-5 { 
+    width: 42px; height: 21px; 
+    bottom: 10px; left: 50%; 
+    transform: translateX(-50%) rotate(180deg);
+    animation-delay: 2s;
+}
+.flare-6 { 
+    width: 33px; height: 16px; 
+    bottom: 20px; left: 15px; 
+    transform: rotate(225deg);
+    animation-delay: 2.5s;
+}
+.flare-7 { 
+    width: 36px; height: 18px; 
+    top: 50%; left: 5px; 
+    transform: translateY(-50%) rotate(270deg);
+    animation-delay: 3s;
+}
+.flare-8 { 
+    width: 39px; height: 19px; 
+    top: 20px; left: 15px; 
+    transform: rotate(315deg);
+    animation-delay: 3.5s;
+}
+
+@keyframes flareRotate {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+}
+
+/* Sun Rays */
+.sun-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: rayRotate 8s linear infinite;
+}
+
+.ray {
+    position: absolute;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        rgba(255, 215, 0, 0.6) 50%, 
+        transparent 100%);
+    transform-origin: center;
+}
+
+.ray-1, .ray-5 { 
+    width: 60px; height: 3px; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.ray-2, .ray-6 { 
+    width: 55px; height: 2px; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ray-3, .ray-7 { 
+    width: 50px; height: 3px; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.ray-4, .ray-8 { 
+    width: 55px; height: 2px; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.ray-5 { transform: translate(-50%, -50%) rotate(22.5deg); }
+.ray-6 { transform: translate(-50%, -50%) rotate(67.5deg); }
+.ray-7 { transform: translate(-50%, -50%) rotate(112.5deg); }
+.ray-8 { transform: translate(-50%, -50%) rotate(157.5deg); }
+
+@keyframes rayRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Click Hint */
+.click-hint {
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9em;
+    color: #ffd700;
+    font-weight: 500;
+    opacity: 0.8;
+    animation: hintPulse 2s ease-in-out infinite;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    z-index: 15;
+    white-space: nowrap;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+}
+
+/* Active/Clicked State */
+.sun-input:checked + .animated-sun {
+    transform: scale(1.1);
+}
+
+.sun-input:checked + .animated-sun .sun-core {
+    background: radial-gradient(circle at 30% 30%, 
+        #ffffff 0%, 
+        #ffed4e 15%, 
+        #ffd700 35%, 
+        #ff8c00 60%, 
+        #ff6347 85%, 
+        #dc2626 100%);
+    box-shadow: 
+        0 0 40px rgba(255, 237, 78, 0.9),
+        0 0 80px rgba(255, 140, 0, 0.7),
+        0 0 120px rgba(255, 99, 71, 0.5),
+        inset -15px -15px 30px rgba(220, 38, 38, 0.4),
+        inset 15px 15px 30px rgba(255, 255, 255, 0.6);
+    animation: solarFlareActive 1.5s ease-in-out infinite;
+}
+
+.sun-input:checked + .animated-sun .flare {
+    opacity: 1;
+    animation: flareActiveRotate 2s ease-in-out infinite;
+}
+
+.sun-input:checked + .animated-sun .ray {
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        transparent 100%);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.sun-input:checked + .animated-sun .click-hint {
+    opacity: 0;
+}
+
+@keyframes solarFlareActive {
+    0%, 100% {
+        transform: scale(1.05) rotate(0deg);
+        box-shadow: 
+            0 0 40px rgba(255, 237, 78, 0.9),
+            0 0 80px rgba(255, 140, 0, 0.7),
+            0 0 120px rgba(255, 99, 71, 0.5),
+            inset -15px -15px 30px rgba(220, 38, 38, 0.4),
+            inset 15px 15px 30px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 
+            0 0 60px rgba(255, 237, 78, 1),
+            0 0 120px rgba(255, 140, 0, 0.9),
+            0 0 180px rgba(255, 99, 71, 0.7),
+            0 0 240px rgba(255, 215, 0, 0.5),
+            inset -20px -20px 40px rgba(220, 38, 38, 0.5),
+            inset 20px 20px 40px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes flareActiveRotate {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+}
+
+/* Modal pulsing effect when sun is active */
+.sun-input:checked ~ * .modal-content {
+    animation: solarPulse 2s ease-in-out infinite;
+    background: radial-gradient(ellipse at center, 
+        rgba(255, 165, 0, 0.4) 0%, 
+        rgba(255, 140, 0, 0.3) 30%, 
+        rgba(255, 69, 0, 0.2) 60%, 
+        rgba(255, 215, 0, 0.15) 100%);
+}
+
+@keyframes solarPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(255, 140, 0, 0.6),
+            0 0 40px rgba(255, 69, 0, 0.4),
+            0 0 60px rgba(255, 215, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(255, 140, 0, 0.8),
+            0 0 60px rgba(255, 69, 0, 0.6),
+            0 0 90px rgba(255, 215, 0, 0.4),
+            0 0 120px rgba(255, 165, 0, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 0 40px rgba(255, 215, 0, 0.4),
+            0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 60px rgba(255, 215, 0, 0.6),
+            0 4px 20px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Sun Metaphor Section */
+.sun-metaphor {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 215, 0, 0.05));
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sun-metaphor::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: metaphorGlow 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes metaphorGlow {
+    0%, 100% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+.metaphor-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffd700;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+}
+
+.metaphor-subtitle {
+    font-size: 0.9em;
+    color: #ff8c00;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+    position: relative;
+    z-index: 1;
+    animation: subtitlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtitlePulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Enhanced metaphor when sun is active */
+.sun-input:checked ~ .sun-metaphor {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 215, 0, 0.15));
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.3),
+        0 0 40px rgba(255, 140, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.sun-input:checked ~ .sun-metaphor .metaphor-text {
+    color: #ffed4e;
+    text-shadow: 0 0 15px rgba(255, 237, 78, 0.5);
+    animation: textShimmer 2s ease-in-out infinite;
+}
+
+.sun-input:checked ~ .sun-metaphor .metaphor-subtitle {
+    color: #ffd700;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes textShimmer {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 237, 78, 0.5);
+    }
+    50% {
+        text-shadow: 
+            0 0 25px rgba(255, 237, 78, 0.8),
+            0 0 35px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Solar Fact Display - Shows when sun is active */
+.solar-fact {
+    background: rgba(255, 140, 0, 0.1);
+    border: 2px solid rgba(255, 140, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.sun-input:checked ~ .solar-fact {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+    animation: factSlideIn 0.5s ease-out;
+}
+
+@keyframes factSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fact-content h3 {
+    color: #ff6347;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+    text-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+}
+
+.metaphor {
+    font-style: italic;
+    color: #ffd700;
+    font-size: 1.1em;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.solar-facts {
+    display: grid;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.fact-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid #ff8c00;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.fact-item:hover {
+    background: rgba(255, 140, 0, 0.1);
+    transform: translateX(5px);
+}
+
+/* Flip Card - Pure CSS */
+.flip-card {
+    perspective: 1000px;
+    margin: 1rem 0;
+}
+
+.flip-input {
+    display: none;
+}
+
+.flip-card-container {
+    display: block;
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-input:checked + .flip-card-container .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: 2px solid rgba(34, 197, 94, 0.5);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    border: 2px solid rgba(220, 38, 38, 0.5);
+    transform: rotateY(180deg);
+}
+
+.card-content {
+    padding: 1.5rem;
+    color: white;
+}
+
+.card-icon {
+    font-size: 2.5em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-content h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.4em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-content p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    opacity: 0.95;
+    margin-bottom: 0.5rem;
+}
+
+.flip-hint {
+    font-size: 0.8em;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Quiz Section - Pure CSS */
+.solar-quiz {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.solar-quiz h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.quiz-question p {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-input {
+    display: none;
+}
+
+.quiz-option {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+}
+
+.quiz-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Correct answer styling */
+.quiz-input:checked + .correct-option {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    border-color: rgba(255, 215, 0, 0.7);
+    animation: goldGlow 2s ease-in-out infinite;
+    font-weight: 600;
+}
+
+/* Incorrect answer styling */
+.quiz-input:checked + .incorrect-option {
+    background: rgba(220, 38, 38, 0.3);
+    border-color: rgba(220, 38, 38, 0.5);
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes goldGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 15px rgba(255, 215, 0, 0.6),
+            0 0 30px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 0 25px rgba(255, 215, 0, 0.8),
+            0 0 50px rgba(255, 215, 0, 0.6),
+            0 0 75px rgba(255, 215, 0, 0.3);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Quiz Results - Pure CSS */
+.quiz-result {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Show correct result when correct answer is selected */
+#quiz-option-2:checked ~ .correct-result {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 2px solid rgba(34, 197, 94, 0.4);
+}
+
+/* Show incorrect result when any incorrect answer is selected */
+#quiz-option-1:checked ~ .incorrect-result,
+#quiz-option-3:checked ~ .incorrect-result,
+#quiz-option-4:checked ~ .incorrect-result {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+    background: rgba(220, 38, 38, 0.2);
+    color: #dc2626;
+    border: 2px solid rgba(220, 38, 38, 0.4);
+}
+
+/* Responsive Design for Solar Pulse */
+@media (max-width: 768px) {
+    .solar-pulse-container {
+        gap: 1.5rem;
+    }
+    
+    .animated-sun {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .sun-core {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .sun-inner {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .flare-1, .flare-5 { width: 32px; height: 16px; }
+    .flare-2, .flare-4, .flare-6, .flare-8 { width: 28px; height: 14px; }
+    .flare-3, .flare-7 { width: 24px; height: 12px; }
+    
+    .ray-1, .ray-5 { width: 45px; height: 2px; }
+    .ray-2, .ray-4, .ray-6, .ray-8 { width: 40px; height: 1.5px; }
+    .ray-3, .ray-7 { width: 35px; height: 2px; }
+    
+    .click-hint {
+        font-size: 0.8em;
+        bottom: -60px;
+        white-space: nowrap;
+    }
+    
+    .sun-metaphor {
+        padding: 1.2rem;
+        margin: 0.8rem 0;
+    }
+    
+    .metaphor-text {
+        font-size: 1em;
+        line-height: 1.5;
+        letter-spacing: 0.3px;
+    }
+    
+    .metaphor-subtitle {
+        font-size: 0.8em;
+        letter-spacing: 0.8px;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .flip-card-container {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-icon {
+        font-size: 2em;
+    }
+    
+    .theme-toggle-container {
+        right: 50px;
+    }
+    
+    .toggle-slider {
+        width: 50px;
+        height: 25px;
+        padding: 0 3px;
+    }
+    
+    .toggle-slider::before {
+        width: 19px;
+        height: 19px;
+    }
+    
+    .theme-toggle-input:checked + .theme-toggle .toggle-slider::before {
+        transform: translateX(25px);
+    }
 }
 
 .earth-theme {
