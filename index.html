@@ -716,47 +716,68 @@
         </div>
 
     <!-- Venus Inspiration Modal -->
-    <div id="venus-inspiration" class="modal">
-        <div class="modal-content venus-theme">
-            <a href="#" class="close">&times;</a>
-            <h2>♀️ Venus - Emotions & Beauty</h2>
-            <p style="text-align:center; color:#BEB768; font-style:italic; margin-bottom:1em;">
-                "Venus glows: 'Choose the color of your heart today, and I shall remember your journey.'"
-            </p>
-            
-            <div class="planet-activity">
-                <h3>🎮 Emotional Palette</h3>
-                <div class="venus-emotions">
-                    <button class="emotion-btn emotion-happy" title="😊 Happy"></button>
-                    <button class="emotion-btn emotion-sad" title="😢 Sad"></button>
-                    <button class="emotion-btn emotion-angry" title="😠 Angry"></button>
-                    <button class="emotion-btn emotion-calm" title="😌 Calm"></button>
-                    <button class="emotion-btn emotion-excited" title="🤩 Excited"></button>
+        <div id="venus-inspiration" class="modal">
+                        <div class="modal-content venus-card-theme">
+                                <a href="#" class="close">&times;</a>
+                                <div class="venus-content-inner">
+                                    <div class="venus-pearl-edges"></div>
+                                    <div class="venus-card-header venus-shimmer-text">VENUS – The Veiled Goddess</div>
+                                    <div class="venus-metaphor">Beautiful and radiant, but shrouded in thick, toxic clouds.<br>Goddess of love and beauty, but also dangerous allure.</div>
+                <!-- Theme Toggle: Day vs Night Star -->
+                <div class="venus-theme-toggle">
+                    <input type="checkbox" id="venus-theme-toggle" class="venus-theme-input">
+                    <label for="venus-theme-toggle" class="venus-theme-label">
+                        <span class="venus-theme-sun">� Morning Star</span>
+                        <span class="venus-theme-moon">🌆 Evening Star</span>
+                    </label>
                 </div>
-                <p style="text-align:center; margin:1rem 0;"><em>💖 Mood Tracker: Colors form your emotional orbit</em></p>
-            </div>
-            
-            <div class="inspiration-grid">
-                <div class="inspiration-card">
-                    <h3>Daily Quote</h3>
-                    <p>"The cosmos is within us. We are made of star-stuff." - Carl Sagan</p>
+                <!-- Flip Card: Truth Behind the Veil -->
+                <div class="venus-flip-card">
+                    <input type="checkbox" id="venus-flip" class="venus-flip-input">
+                    <label for="venus-flip" class="venus-flip-container">
+                        <div class="venus-flip-inner">
+                            <div class="venus-flip-front">
+                                Venus looks like Earth’s twin…
+                            </div>
+                            <div class="venus-flip-back">
+                                …but under the veil, it’s a 465°C furnace of death.
+                            </div>
+                        </div>
+                    </label>
                 </div>
-                <div class="inspiration-card">
-                    <h3>Creative Prompt</h3>
-                    <p>Imagine a world where gravity works backwards for one day.</p>
-                </div>
-                <div class="inspiration-card">
-                    <h3>Color Palette</h3>
-                    <div class="color-swatch">
-                        <span style="background: #FFD700"></span>
-                        <span style="background: #FF6B6B"></span>
-                        <span style="background: #4ECDC4"></span>
-                        <span style="background: #45B7D1"></span>
+                <!-- Quiz: Goddess of Choices -->
+                <div class="venus-quiz">
+                    <div class="venus-quiz-title">Why is Venus hotter than Mercury, even though it’s farther from the Sun?</div>
+                    <div class="venus-quiz-options">
+                        <input type="radio" id="venus-q1a" name="venus-quiz" class="venus-quiz-radio">
+                        <label for="venus-q1a" class="venus-quiz-label" data-correct="true">A. Strong greenhouse effect</label>
+                        <input type="radio" id="venus-q1b" name="venus-quiz" class="venus-quiz-radio">
+                        <label for="venus-q1b" class="venus-quiz-label" data-correct="false">B. Larger size</label>
+                        <input type="radio" id="venus-q1c" name="venus-quiz" class="venus-quiz-radio">
+                        <label for="venus-q1c" class="venus-quiz-label" data-correct="false">C. Spins too fast</label>
                     </div>
+                </div>
+                <!-- Love or Lava: Randomizer Game -->
+                <div class="venus-randomizer">
+                    <div class="venus-randomizer-title">Love or Lava</div>
+                    <input type="radio" name="venus-fact" id="venus-fact1" class="venus-randomizer-radio" checked>
+                    <span class="venus-randomizer-fact">Venus spins backwards.</span>
+                    <input type="radio" name="venus-fact" id="venus-fact2" class="venus-randomizer-radio">
+                    <span class="venus-randomizer-fact">A day on Venus = 243 Earth days.</span>
+                    <input type="radio" name="venus-fact" id="venus-fact3" class="venus-randomizer-radio">
+                    <span class="venus-randomizer-fact">Venus rains acid.</span>
+                    <div class="venus-randomizer-btns">
+                        <label for="venus-fact1" class="venus-randomizer-btn">Spin the Veil</label>
+                        <label for="venus-fact2" class="venus-randomizer-btn">Spin the Veil</label>
+                        <label for="venus-fact3" class="venus-randomizer-btn">Spin the Veil</label>
+                    </div>
+                </div>
+                <!-- CSS Heart Animation -->
+                <div class="venus-heart">
+                    <div class="venus-heart-shape"></div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Mars Projects Modal -->
     <div id="mars-projects" class="modal">

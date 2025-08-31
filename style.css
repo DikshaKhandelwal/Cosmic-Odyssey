@@ -1,3 +1,318 @@
+/* Venus Card Full-Height Animated Cloud Swirl (Veil) */
+.venus-swirl-full {
+    /* overlay intentionally disabled */
+    display: none !important;
+    position: static; /* keep layout stable */
+    background: none !important;
+    animation: none !important;
+}
+/* Venus Card Animated Cloud Swirl (Veil) */
+.venus-card-theme::before {
+    content: "";
+    /* pseudo-element veil disabled */
+    display: none !important;
+    background: none !important;
+    animation: none !important;
+}
+@keyframes venusSwirl {
+    from { background-position: 0 0, 100% 100%, 0 100%; }
+    to { background-position: 100% 100%, 0 0, 100% 0; }
+}
+/* Venus Atmosphere Swirl (Cloud Effect) */
+.venus-atmosphere-swirl {
+    /* atmosphere swirl removed */
+    display: none !important;
+    width: auto; height: auto; margin: 0; position: static;
+}
+/* atmosphere pseudo-elements removed */
+/* atmosphere pseudo-elements and keyframes removed (veil disabled) */
+/* Venus Card Heading and Metaphor Styling */
+.venus-card-header {
+    text-align: center;
+    font-size: 2.6em;
+    font-family: 'Lato', 'Georgia', serif;
+    font-weight: 900;
+    color: #f7cac9;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #fff8, 0 0 3px #ffd6e0, 0 0 1px #f9c6d1, 0 2px 4px #b85c8e33;
+    margin-bottom: 0.3em;
+    position: relative;
+    z-index: 3;
+    animation: venusHeaderAura 2.5s infinite alternate;
+    line-height: 1.1;
+}
+.venus-shimmer-text {
+    background: linear-gradient(90deg, #ffd6e0, #fff, #f9c6d1, #ffd6e0);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+.venus-metaphor {
+    text-align: center;
+    font-style: italic;
+    color: #b85c8e;
+    font-size: 1.35em;
+    margin-bottom: 1.7em;
+    letter-spacing: 0.7px;
+    text-shadow: 0 0 2px #fff8, 0 0 0px #ffd6e0, 0 1px 3px #f7cac9;
+    background: rgba(255,255,255,0.13);
+    border-radius: 1em;
+    padding: 0.7em 1.2em;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 12px #ffd6e044;
+}
+/* --- Venus Card: The Veiled Goddess --- */
+.venus-card-theme {
+    background: none;
+    border-radius: 22px;
+    box-shadow: 0 0 40px 10px #ffd6e0, 0 0 0 8px #fff2, 0 0 80px 20px #f9c6d1;
+    border: 2px solid #fff6;
+    position: relative;
+    overflow: visible;
+    animation: venusGlowPulse 3s infinite alternate;
+}
+@keyframes venusGlowPulse {
+    0% { box-shadow: 0 0 40px 10px #ffd6e0, 0 0 0 8px #fff2, 0 0 80px 20px #f9c6d1; }
+    100% { box-shadow: 0 0 60px 20px #fff, 0 0 0 16px #ffd6e0cc, 0 0 120px 40px #fff3; }
+}
+.venus-swirl-overlay {
+    /* overlay disabled */
+    display: none !important;
+    background: none !important;
+    animation: none !important;
+}
+
+/* Venus atmosphere swirl: layered pink clouds that drift diagonally */
+.venus-card-theme::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    pointer-events: none;
+    z-index: 1; /* below the diagonal veil (::after is z-index:2) */
+    /* two soft pink radial layers to simulate clouds */
+    background-image:
+        radial-gradient(circle at 30% 30%, rgba(255,210,218,0.28), transparent 55%),
+        radial-gradient(circle at 70% 70%, rgba(255,190,200,0.22), transparent 55%);
+    background-size: 300% 300%, 300% 300%;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen; /* looks good over dark/black */
+    opacity: 0.9;
+    filter: blur(8px);
+    transform: translateZ(0);
+    /* faster, energetic veil */
+    animation: venusClouds 6s linear infinite;
+}
+
+@keyframes venusClouds {
+    0% {
+        background-position: 0% 0%, 100% 100%;
+    }
+    50% {
+        background-position: 40% 30%, 60% 70%;
+    }
+    100% {
+        background-position: 100% 100%, 0% 0%;
+    }
+}
+
+.venus-flip-card {
+    perspective: 1000px;
+    margin: 1.5em auto;
+    width: 320px;
+    height: 140px;
+    position: relative;
+}
+.venus-flip-input { display: none; }
+.venus-flip-container {
+    width: 100%; height: 100%; display: block; cursor: pointer;
+}
+.venus-flip-inner {
+    width: 100%; height: 100%; position: relative;
+    transition: transform 0.8s cubic-bezier(.4,2,.6,1);
+    transform-style: preserve-3d;
+}
+.venus-flip-input:checked + .venus-flip-container .venus-flip-inner {
+    transform: rotateY(180deg);
+}
+.venus-flip-front, .venus-flip-back {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 0 8px #ffd6e0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1em;
+    color: #b85c8e;
+    padding: 1.2em;
+}
+.venus-flip-back {
+    transform: rotateY(180deg);
+    color: #f76c6c;
+    background: rgba(255,255,255,0.28);
+}
+.venus-quiz {
+    background: rgba(255,255,255,0.12);
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #ffd6e0;
+    text-align: center;
+    margin: 1.5em 0;
+}
+.venus-quiz-title { font-weight: bold; margin-bottom: 0.7em; color: #b85c8e; }
+.venus-quiz-options { display: flex; flex-direction: column; gap: 0.7em; }
+.venus-quiz-radio { display: none; }
+.venus-quiz-label {
+    display: block;
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    background: #fff3;
+    color: #b85c8e;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 6px #ffd6e0;
+    border: 2px solid #ffd6e0;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.venus-quiz-radio:checked + .venus-quiz-label {
+    background: #ffd6e0;
+    color: #fff;
+    border: 2px solid #ffd6e0;
+    box-shadow: 0 0 12px #ffd6e0;
+}
+.venus-quiz-radio:checked + .venus-quiz-label[data-correct="true"] {
+    background: linear-gradient(90deg, #ffd700, #ffb300);
+    color: #fff;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 16px #ffd700;
+}
+.venus-quiz-radio:checked + .venus-quiz-label[data-correct="false"] {
+    background: #f76c6c;
+    color: #fff;
+    border: 2px solid #f76c6c;
+    box-shadow: 0 0 12px #f76c6c;
+}
+.venus-theme-toggle {
+    display: flex; align-items: center; justify-content: center;
+    margin: 1.5em 0 1em 0;
+    gap: 1.2em;
+}
+.venus-theme-input { display: none; }
+.venus-theme-label {
+    display: flex; align-items: center; gap: 0.5em;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    background: rgba(255,255,255,0.18);
+    border-radius: 2em;
+    padding: 0.4em 1.2em;
+    box-shadow: 0 0 8px #ffd6e0;
+    margin-bottom: 0.5em;
+    transition: background 0.3s;
+    color: #b85c8e;
+}
+.venus-theme-input:checked + .venus-theme-label {
+    background: #2d2d6e;
+    color: #fff;
+    box-shadow: 0 0 16px #2d2d6e;
+}
+.venus-theme-input:checked ~ .venus-card-theme {
+    background: radial-gradient(ellipse at 60% 40%, #2d2d6e 0%, #4e54c8 40%, #8f94fb 80%, #fff 100%);
+}
+.venus-randomizer {
+    background: transparent;
+    border-radius: 15px;
+    padding: 1.2em;
+    box-shadow: 0 0 10px #ffd6e0;
+    text-align: center;
+    margin: 1.5em 0;
+}
+.venus-randomizer-title { font-weight: bold; margin-bottom: 0.7em; color: #b85c8e; }
+.venus-randomizer-fact { display: none; font-size: 1.1em; color: #b85c8e; margin: 0.7em 0; }
+.venus-randomizer-radio:checked + .venus-randomizer-fact { display: block; }
+.venus-randomizer-btn {
+    display: inline-block;
+    margin: 0.7em 0 0.2em 0;
+    padding: 0.3em 1em;
+    background: #ffd6e0;
+    color: #3a2a2a;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 6px #ffd6e0;
+    border: 2px solid #ffd6e0;
+    transition: background 0.2s;
+}
+.venus-orbit-race {
+    margin: 2em 0 1.5em 0;
+}
+.venus-orbit-labels {
+    display: flex; justify-content: space-between; font-weight: 600; color: #b85c8e; margin-bottom: 0.5em;
+}
+.venus-orbit-bars {
+    display: flex; flex-direction: column; gap: 0.5em;
+}
+.venus-orbit {
+    height: 16px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ffd6e0 0%, #fff 100%);
+    box-shadow: 0 0 8px #ffd6e0;
+    position: relative;
+    overflow: hidden;
+}
+.venus-orbit.mercury {
+    width: 90%;
+    animation: mercuryRace 2.5s linear infinite;
+    background: linear-gradient(90deg, #ffe066 0%, #fff 100%);
+}
+.venus-orbit.venus {
+    width: 60%;
+    animation: venusRace 4.5s linear infinite;
+    background: linear-gradient(90deg, #ffd6e0 0%, #fff 100%);
+}
+@keyframes mercuryRace {
+    0% { width: 0; }
+    100% { width: 90%; }
+}
+@keyframes venusRace {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+.venus-heart {
+    display: flex; align-items: center; justify-content: center;
+    margin: 1.5em 0;
+}
+.venus-heart-shape {
+    width: 48px; height: 44px;
+    background: none;
+    position: relative;
+    display: inline-block;
+    animation: heartPulse 1.2s infinite alternate;
+}
+.venus-heart-shape:before, .venus-heart-shape:after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 0;
+    width: 24px;
+    height: 40px;
+    background: #ffb6b9;
+    border-radius: 24px 24px 0 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 12px #ffd6e0;
+}
+.venus-heart-shape:after {
+    left: 0;
+    transform: rotate(45deg);
+}
+@keyframes heartPulse {
+    0% { transform: scale(1); box-shadow: 0 0 12px #ffd6e0; }
+    100% { transform: scale(1.12); box-shadow: 0 0 24px #ffd6e0; }
+}
 /* --- Mercury Card (Cosmic Messenger) --- */
 .mercury-card-theme {
     background: radial-gradient(circle at 60% 40%, #e5e7eb 0%, #bfc1c6 60%, #6b7280 100%);
