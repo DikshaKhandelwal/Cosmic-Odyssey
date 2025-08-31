@@ -17,11 +17,18 @@
         </p>
     </div>
 
-    <!-- Right Side Planet Navigation Menu -->
-    <div class="planet-nav-menu">
+    <!-- Enter Cosmos Button -->
+    <button class="enter-cosmos-btn" id="enterCosmosBtn" onclick="openCosmicNavigation()">
+        <span class="cosmos-icon">✨</span>
+        <span class="cosmos-text">Enter Cosmos</span>
+        <span class="cosmos-sparkle">🌟</span>
+    </button>
+
+    <!-- Right Side Planet Navigation Menu (Hidden by default) -->
+    <div class="planet-nav-menu" id="planetNavMenu" style="display: none;">
         <div class="nav-menu-header">
             <h3>🌌 Cosmic Navigation</h3>
-            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-close" id="menuClose" onclick="closeCosmicNavigation()">✕</button>
         </div>
         <div class="nav-menu-content" id="navMenuContent">
             <a href="#sun-menu" class="nav-planet-link sun-nav" title="Sun - Control Center">
@@ -809,28 +816,73 @@
     </div>
 
     <script>
+        function openCosmicNavigation() {
+            const navMenu = document.getElementById('planetNavMenu');
+            const enterBtn = document.getElementById('enterCosmosBtn');
+            
+            navMenu.style.display = 'block';
+            enterBtn.style.display = 'none';
+            
+            // Add entrance animation
+            setTimeout(() => {
+                navMenu.classList.add('menu-active');
+            }, 10);
+        }
+        
+        function closeCosmicNavigation() {
+            const navMenu = document.getElementById('planetNavMenu');
+            const enterBtn = document.getElementById('enterCosmosBtn');
+            
+            navMenu.classList.remove('menu-active');
+            
+            // Hide menu after animation
+            setTimeout(() => {
+                navMenu.style.display = 'none';
+                enterBtn.style.display = 'flex';
+            }, 300);
+        }
+        
         function toggleMenu() {
             const menuContent = document.getElementById('navMenuContent');
             menuContent.classList.toggle('active');
         }
         
-        // Close menu when clicking on a planet link (mobile)
+        // Close menu when clicking on a planet link
         document.querySelectorAll('.nav-planet-link').forEach(link => {
             link.addEventListener('click', () => {
+                // On mobile, close the mobile submenu
                 const menuContent = document.getElementById('navMenuContent');
                 if (window.innerWidth <= 768) {
                     menuContent.classList.remove('active');
                 }
+                
+                // Close the entire cosmic navigation after a short delay
+                setTimeout(() => {
+                    closeCosmicNavigation();
+                }, 500);
             });
         });
         
-        // Close menu when clicking outside (mobile)
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const menu = document.querySelector('.planet-nav-menu');
+            const enterBtn = document.getElementById('enterCosmosBtn');
             const menuContent = document.getElementById('navMenuContent');
             
-            if (!menu.contains(e.target) && window.innerWidth <= 768) {
-                menuContent.classList.remove('active');
+            // If clicking outside the menu and enter button
+            if (menu && !menu.contains(e.target) && !enterBtn.contains(e.target)) {
+                if (window.innerWidth <= 768) {
+                    menuContent.classList.remove('active');
+                }
+                // Close cosmic navigation
+                closeCosmicNavigation();
+            }
+        });
+        
+        // Add keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCosmicNavigation();
             }
         });
     </script>

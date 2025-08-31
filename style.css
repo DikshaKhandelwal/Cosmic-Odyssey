@@ -2172,6 +2172,106 @@ input[type="checkbox"]:checked + .balance-option {
     opacity: 1;
 }
 
+/* Enter Cosmos Button */
+.enter-cosmos-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: linear-gradient(135deg, 
+        rgba(30, 58, 138, 0.9) 0%, 
+        rgba(107, 70, 193, 0.9) 25%, 
+        rgba(168, 85, 247, 0.9) 50%, 
+        rgba(30, 58, 138, 0.9) 75%, 
+        rgba(107, 70, 193, 0.9) 100%);
+    background-size: 300% 300%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 
+        0 0 20px rgba(168, 85, 247, 0.4),
+        0 0 40px rgba(107, 70, 193, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    animation: cosmicGlow 3s ease-in-out infinite, gradientShift 4s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes cosmicGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(168, 85, 247, 0.4),
+            0 0 40px rgba(107, 70, 193, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(168, 85, 247, 0.6),
+            0 0 60px rgba(107, 70, 193, 0.4),
+            0 0 90px rgba(30, 58, 138, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.enter-cosmos-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 40px rgba(168, 85, 247, 0.6),
+        0 0 80px rgba(107, 70, 193, 0.4),
+        0 0 120px rgba(30, 58, 138, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.enter-cosmos-btn:active {
+    transform: scale(0.98);
+}
+
+.cosmos-icon, .cosmos-sparkle {
+    font-size: 1.2em;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.cosmos-sparkle {
+    animation-delay: 1s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.cosmos-text {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
 /* Right Side Planet Navigation Menu */
 .planet-nav-menu {
     position: fixed;
@@ -2185,6 +2285,13 @@ input[type="checkbox"]:checked + .balance-option {
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+}
+
+.planet-nav-menu.menu-active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
 
 .nav-menu-header {
@@ -2215,9 +2322,32 @@ input[type="checkbox"]:checked + .balance-option {
     display: none; /* Hidden by default, shown on mobile */
 }
 
-.menu-toggle:hover {
+.menu-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.menu-toggle:hover, .menu-close:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
+}
+
+.menu-close:hover {
+    background: rgba(255, 59, 48, 0.2);
+    color: #ff3b30;
+    box-shadow: 0 0 15px rgba(255, 59, 48, 0.3);
 }
 
 .nav-menu-content {
@@ -2337,6 +2467,18 @@ input[type="checkbox"]:checked + .balance-option {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .enter-cosmos-btn {
+        top: 15px;
+        right: 15px;
+        padding: 10px 16px;
+        font-size: 0.9em;
+        border-radius: 20px;
+    }
+    
+    .cosmos-icon, .cosmos-sparkle {
+        font-size: 1.1em;
+    }
+    
     .planet-nav-menu {
         width: 260px;
         right: 10px;
@@ -2367,6 +2509,18 @@ input[type="checkbox"]:checked + .balance-option {
 }
 
 @media (max-width: 480px) {
+    .enter-cosmos-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 14px;
+        font-size: 0.85em;
+        gap: 6px;
+    }
+    
+    .cosmos-text {
+        display: none; /* Hide text on very small screens, keep only icons */
+    }
+    
     .planet-nav-menu {
         width: 240px;
         right: 5px;
