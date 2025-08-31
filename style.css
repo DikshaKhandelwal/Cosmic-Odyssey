@@ -1579,6 +1579,217 @@ input:checked + .toggle-slider:before {
     cursor: pointer;
 }
 
+/* 3D Earth Animation for Modal */
+.earth-modal-3d-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    perspective: 1000px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(70, 161, 255, 0.2);
+}
+
+.earth-modal-scene {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: earthModalRotate 20s linear infinite;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.earth-modal-globe {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transform-style: preserve-3d;
+    background: 
+        radial-gradient(ellipse 40% 30% at 25% 25%, #4ade80 15%, transparent 35%),
+        radial-gradient(ellipse 35% 25% at 65% 35%, #22c55e 12%, transparent 30%),
+        radial-gradient(ellipse 30% 40% at 35% 75%, #16a34a 18%, transparent 40%),
+        radial-gradient(ellipse 25% 20% at 75% 65%, #15803d 10%, transparent 25%),
+        radial-gradient(ellipse 20% 30% at 15% 55%, #059669 8%, transparent 20%),
+        radial-gradient(ellipse 90% 90% at 50% 50%, #1e40af 0%, #3b82f6 40%, #06b6d4 70%, #0891b2 100%);
+    background-size: 100% 100%;
+    animation: earthModalBackground 15s ease-in-out infinite;
+    overflow: hidden;
+    border: 3px solid rgba(70, 161, 255, 0.4);
+    box-shadow: 
+        0 0 60px rgba(70, 161, 255, 0.6),
+        inset -40px -40px 80px rgba(0, 20, 80, 0.8),
+        inset 30px 30px 60px rgba(135, 206, 250, 0.3),
+        inset 0 0 100px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.earth-modal-globe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        radial-gradient(ellipse 60% 60% at 35% 25%, rgba(255,255,255,0.4) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    animation: earthModalDayNight 20s linear infinite;
+    mix-blend-mode: overlay;
+}
+
+.earth-modal-globe::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        radial-gradient(ellipse 30% 30% at 30% 25%, rgba(255,255,255,0.6) 0%, transparent 40%),
+        radial-gradient(ellipse 120% 120% at 50% 50%, transparent 60%, rgba(0,0,0,0.8) 100%);
+    mix-blend-mode: soft-light;
+    opacity: 0.8;
+    animation: earthModalShadow 20s linear infinite;
+}
+
+.earth-modal-globe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.6) 70%);
+    animation: earthModalDayNight 20s linear infinite;
+}
+
+.earth-modal-globe::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.1), rgba(0,0,0,0.6));
+    mix-blend-mode: overlay;
+    opacity: 0.5;
+    animation: earthModalShadow 20s linear infinite;
+}
+
+.earth-animation-label {
+    color: var(--earth-blue);
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    font-size: 0.9em;
+    text-shadow: 0 0 10px rgba(70, 161, 255, 0.3);
+    animation: labelPulse 3s ease-in-out infinite;
+}
+
+@keyframes earthModalRotate {
+    0% { 
+        transform: rotateY(0deg) rotateX(-5deg); 
+    }
+    25% {
+        transform: rotateY(90deg) rotateX(-5deg);
+    }
+    50% {
+        transform: rotateY(180deg) rotateX(-5deg);
+    }
+    75% {
+        transform: rotateY(270deg) rotateX(-5deg);
+    }
+    100% { 
+        transform: rotateY(360deg) rotateX(-5deg); 
+    }
+}
+
+@keyframes earthModalBackground {
+    0%, 100% { 
+        background-position: 0% 0%, 20% 10%, -10% 30%, 40% 20%, 0% 0%, 0% 0%;
+        filter: brightness(1) contrast(1.1);
+    }
+    25% {
+        background-position: 25% 5%, 45% 15%, 15% 35%, 65% 25%, 25% 0%, 5% 0%;
+        filter: brightness(1.1) contrast(1.2);
+    }
+    50% {
+        background-position: 50% 10%, 70% 20%, 40% 40%, 90% 30%, 50% 0%, 10% 0%;
+        filter: brightness(0.9) contrast(1.3);
+    }
+    75% {
+        background-position: 75% 7%, 95% 18%, 65% 38%, 115% 28%, 75% 0%, 15% 0%;
+        filter: brightness(1.1) contrast(1.2);
+    }
+}
+
+@keyframes earthModalDayNight {
+    0% { 
+        background: 
+            radial-gradient(ellipse 60% 60% at 35% 25%, rgba(255,255,255,0.4) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    }
+    25% {
+        background: 
+            radial-gradient(ellipse 60% 60% at 65% 25%, rgba(255,255,255,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, transparent 25%, rgba(0,0,0,0.7) 100%);
+    }
+    50% {
+        background: 
+            radial-gradient(ellipse 60% 60% at 65% 75%, rgba(255,255,255,0.3) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, transparent 20%, rgba(0,0,0,0.8) 100%);
+    }
+    75% {
+        background: 
+            radial-gradient(ellipse 60% 60% at 35% 75%, rgba(255,255,255,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, transparent 25%, rgba(0,0,0,0.7) 100%);
+    }
+    100% { 
+        background: 
+            radial-gradient(ellipse 60% 60% at 35% 25%, rgba(255,255,255,0.4) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    }
+}
+
+@keyframes earthModalShadow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes labelPulse {
+    0%, 100% { 
+        opacity: 0.8; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive adjustments for 3D Earth in modal */
+@media (max-width: 768px) {
+    .earth-modal-scene {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .earth-modal-scene {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .earth-animation-label {
+        font-size: 0.8em;
+    }
+}
+
 /* Earth Balance Activity */
 .earth-balance {
     display: grid;
