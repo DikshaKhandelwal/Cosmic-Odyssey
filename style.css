@@ -6144,8 +6144,674 @@ hr {
 }
 
 .pluto-theme {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(25, 25, 112, 0.8) 0%,      /* Deep navy */
+        rgba(72, 61, 139, 0.7) 25%,     /* Dark slate blue */
+        rgba(123, 104, 238, 0.6) 50%,   /* Medium slate blue */
+        rgba(200, 230, 255, 0.5) 75%,   /* Icy blue */
+        rgba(221, 160, 221, 0.4) 100%   /* Faint lavender */
+    );
+    border: 2px solid rgba(200, 230, 255, 0.6);
+    border-radius: 20px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 90vh;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 20px 60px rgba(200, 230, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Frosty edges effect */
+    border-image: linear-gradient(45deg, 
+        rgba(200, 230, 255, 0.8), 
+        rgba(255, 255, 255, 0.4), 
+        rgba(200, 230, 255, 0.8)) 1;
+}
+
+/* Shimmering glow animation */
+.pluto-theme::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(200, 230, 255, 0.3), 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    border-radius: 20px;
+    animation: cosmic-shimmer 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes cosmic-shimmer {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+.pluto-theme h2 {
+    color: #c8e6ff;
+    text-shadow: 0 0 20px rgba(200, 230, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    font-family: serif;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Constellation Background */
+.constellation-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    animation: constellation-fade 3s ease-in-out 2s forwards;
+}
+
+@keyframes constellation-fade {
+    to { opacity: 0.4; }
+}
+
+.constellation-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(200, 230, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(200, 230, 255, 0.6);
+    animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.constellation-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(200, 230, 255, 0.4), 
+        transparent);
+    animation: line-glow 3s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes line-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* Pluto Center Animation */
+.pluto-center {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pluto-planet {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    animation: pluto-peek 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.pluto-planet:hover {
+    transform: scale(1.1);
+}
+
+.pluto-planet:active {
+    animation: pluto-pulse 0.6s ease-out;
+}
+
+@keyframes pluto-peek {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    25% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.05); }
+    75% { opacity: 0.6; transform: scale(0.95); }
+}
+
+@keyframes pluto-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.pluto-surface {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(200, 230, 255, 0.8), 
+        rgba(123, 104, 238, 0.6), 
+        rgba(25, 25, 112, 0.9));
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(200, 230, 255, 0.5),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Kuiper Belt Sparkles */
+.kuiper-belt {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(200, 230, 255, 0.9);
+    border-radius: 50%;
+    animation: sparkle-orbit 8s linear infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 0;
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 50%;
+    right: 0;
+    animation-delay: 2s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.sparkle:nth-child(4) {
+    top: 50%;
+    left: 0;
+    animation-delay: 6s;
+}
+
+@keyframes sparkle-orbit {
+    0% { 
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% { 
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+.charon-moon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, 
+        rgba(169, 169, 169, 0.9), 
+        rgba(105, 105, 105, 0.7));
+    border-radius: 50%;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 0 10px rgba(200, 230, 255, 0.4);
+    animation: charon-orbit 12s linear infinite;
+}
+
+@keyframes charon-orbit {
+    0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+/* Frozen Fortune Teller */
+.fortune-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.ice-crystal {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.ice-crystal:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.crystal-core {
+    font-size: 4em;
+    animation: crystal-shimmer 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(200, 230, 255, 0.8));
+}
+
+.crystal-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, 
+        rgba(200, 230, 255, 0.3), 
+        transparent);
+    border-radius: 50%;
+    animation: glow-pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes crystal-shimmer {
+    0%, 100% { 
+        text-shadow: 0 0 20px rgba(200, 230, 255, 0.8);
+        transform: rotate(0deg);
+    }
+    50% { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.fortune-text {
+    background: linear-gradient(145deg, 
+        rgba(25, 25, 112, 0.8), 
+        rgba(72, 61, 139, 0.6));
+    border: 2px solid rgba(200, 230, 255, 0.4);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: #c8e6ff;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+    transition: all 0.5s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ice Maze */
+.ice-maze {
+    background: linear-gradient(145deg, 
+        rgba(25, 25, 112, 0.6), 
+        rgba(123, 104, 238, 0.4));
+    border: 2px solid rgba(200, 230, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.maze-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin: 2rem auto;
+    max-width: 300px;
+}
+
+.maze-cell {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.maze-cell.path {
+    background: linear-gradient(145deg, 
+        rgba(200, 230, 255, 0.2), 
+        rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(200, 230, 255, 0.3);
+}
+
+.maze-cell.wall {
+    background: linear-gradient(145deg, 
+        rgba(25, 25, 112, 0.8), 
+        rgba(72, 61, 139, 0.6));
+    border: 1px solid rgba(123, 104, 238, 0.5);
+}
+
+.maze-cell.start, .maze-cell.goal {
+    background: linear-gradient(145deg, 
+        rgba(255, 215, 0, 0.3), 
+        rgba(200, 230, 255, 0.2));
+    border: 2px solid rgba(200, 230, 255, 0.6);
+    animation: goal-glow 2s ease-in-out infinite;
+}
+
+.maze-cell.current {
+    background: linear-gradient(145deg, 
+        rgba(0, 255, 127, 0.4), 
+        rgba(200, 230, 255, 0.3));
+    border: 2px solid rgba(0, 255, 127, 0.8);
+    transform: scale(1.1);
+}
+
+@keyframes goal-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(200, 230, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+.maze-controls {
+    margin: 2rem 0;
+}
+
+.maze-controls-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.maze-btn {
+    background: linear-gradient(145deg, 
+        rgba(200, 230, 255, 0.3), 
+        rgba(123, 104, 238, 0.2));
+    border: 2px solid rgba(200, 230, 255, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #c8e6ff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.8);
+}
+
+.maze-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, 
+        rgba(200, 230, 255, 0.5), 
+        rgba(123, 104, 238, 0.4));
+}
+
+.maze-status {
+    color: #c8e6ff;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+    margin-top: 1rem;
+}
+
+/* Secret Identity Quiz */
+.identity-quiz {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.quiz-question {
+    font-size: 1.5em;
+    color: #c8e6ff;
+    text-shadow: 0 0 15px rgba(200, 230, 255, 0.8);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.quiz-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.quiz-option {
+    background: linear-gradient(145deg, 
+        rgba(25, 25, 112, 0.6), 
+        rgba(123, 104, 238, 0.4));
+    border: 2px solid rgba(200, 230, 255, 0.4);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.quiz-option:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(200, 230, 255, 0.8);
+    box-shadow: 0 10px 20px rgba(200, 230, 255, 0.3);
+}
+
+.option-icon {
+    font-size: 2em;
+    animation: icon-float 2s ease-in-out infinite;
+}
+
+.option-text {
+    color: #c8e6ff;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.quiz-response {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(200, 230, 255, 0.8);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.quiz-response.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Orbit Dance */
+.orbit-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.solar-system-mini {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    border: 2px dashed rgba(200, 230, 255, 0.3);
+    border-radius: 50%;
+}
+
+.mini-sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    animation: sun-glow 3s ease-in-out infinite;
+}
+
+@keyframes sun-glow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 1));
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.pluto-orbit {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    border: 1px solid rgba(200, 230, 255, 0.4);
+    border-radius: 50%;
+    transform: rotate(17deg); /* Pluto's tilted orbit */
+}
+
+.orbiting-pluto {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    animation: pluto-orbit-static 1s ease-in-out infinite;
+}
+
+.orbiting-pluto.dancing {
+    animation: pluto-orbit-dance 15s linear infinite;
+}
+
+@keyframes pluto-orbit-static {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes pluto-orbit-dance {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+}
+
+.orbit-btn {
+    background: linear-gradient(145deg, 
+        rgba(200, 230, 255, 0.3), 
+        rgba(123, 104, 238, 0.2));
+    border: 2px solid rgba(200, 230, 255, 0.6);
+    border-radius: 25px;
+    padding: 12px 24px;
+    color: #c8e6ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+    margin: 2rem 0;
+}
+
+.orbit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(200, 230, 255, 0.3);
+    background: linear-gradient(145deg, 
+        rgba(200, 230, 255, 0.5), 
+        rgba(123, 104, 238, 0.4));
+}
+
+.orbit-info {
+    color: rgba(200, 230, 255, 0.8);
+    font-style: italic;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.3);
+}
+
+/* Planet activity styling for Pluto */
+.pluto-theme .planet-activity {
+    background: linear-gradient(145deg, 
+        rgba(25, 25, 112, 0.4), 
+        rgba(72, 61, 139, 0.3), 
+        rgba(123, 104, 238, 0.2));
+    border: 2px solid rgba(200, 230, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.pluto-theme .planet-activity h3 {
+    color: #c8e6ff;
+    text-shadow: 0 0 15px rgba(200, 230, 255, 0.8);
+    font-family: serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pluto-theme .planet-activity p {
+    color: rgba(200, 230, 255, 0.9);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Mobile adaptations */
+@media (max-width: 768px) {
+    .pluto-center {
+        height: 150px;
+    }
+    
+    .pluto-planet {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .charon-moon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .maze-grid {
+        max-width: 250px;
+    }
+    
+    .maze-cell {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+    
+    .quiz-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .solar-system-mini {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .crystal-core {
+        font-size: 3em;
+    }
 }
 
 /* Settings Grid */
