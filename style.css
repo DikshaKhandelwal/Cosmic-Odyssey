@@ -3215,21 +3215,34 @@ hr {
     margin-top: 1rem;
 }
 
+/* For bottom row mining asteroids, show card above instead of below */
+.mining-field .mining-asteroid:nth-child(n+3) .mining-fact {
+    top: auto;
+    bottom: 100%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
 .asteroid-check:checked + .asteroid-label + .mining-fact {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(10px);
 }
 
+.mining-field .mining-asteroid:nth-child(n+3) .asteroid-check:checked + .asteroid-label + .mining-fact {
+    transform: translateX(-50%) translateY(-10px);
+}
+
 .mining-fact h5 {
-    color: #a0a0a0;
-    text-shadow: 0 0 10px rgba(160, 160, 160, 0.8);
+    color: #e0e0e0;
+    text-shadow: 0 0 10px rgba(224, 224, 224, 0.8);
     margin: 0 0 0.5rem 0;
     font-size: 1.1em;
 }
 
 .mining-fact p {
-    color: rgba(160, 160, 160, 0.9);
+    color: #d0d0d0;
     margin: 0;
     font-size: 0.9em;
     line-height: 1.4;
@@ -3596,11 +3609,316 @@ hr {
     margin-bottom: 1.5rem;
 }
 
+/* Asteroid Fact Hunt */
+.fact-hunt-field {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.fact-asteroid {
+    position: relative;
+    text-align: center;
+}
+
+.asteroid-fact-toggle {
+    display: none;
+}
+
+.asteroid-hunter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(160, 160, 160, 0.2), rgba(96, 96, 96, 0.1));
+    border: 2px solid rgba(160, 160, 160, 0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.asteroid-hunter:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(96, 96, 96, 0.2));
+    border-color: rgba(160, 160, 160, 0.5);
+    box-shadow: 0 10px 20px rgba(160, 160, 160, 0.3);
+}
+
+.asteroid-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: fact-float 3s ease-in-out infinite;
+}
+
+.asteroid-name {
+    color: #a0a0a0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(160, 160, 160, 0.5);
+}
+
+@keyframes fact-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.asteroid-fact-card {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(160, 160, 160, 0.9), rgba(96, 96, 96, 0.8));
+    border: 2px solid rgba(160, 160, 160, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    color: #fff;
+    text-align: left;
+    min-height: 120px;
+    max-height: 200px;
+}
+
+/* For bottom row asteroids, show card above instead of below */
+.fact-hunt-field .fact-asteroid:nth-child(n+3) .asteroid-fact-card {
+    top: auto;
+    bottom: 100%;
+    transform: translateX(-50%);
+}
+
+.fact-hunt-field .fact-asteroid:nth-child(n+3) .asteroid-fact-toggle:checked + .asteroid-hunter + .asteroid-fact-card {
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.asteroid-fact-card h4 {
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(240, 240, 240, 0.5);
+}
+
+.asteroid-fact-card p {
+    color: #e0e0e0;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.asteroid-fact-toggle:checked + .asteroid-hunter + .asteroid-fact-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.asteroid-fact-toggle:checked + .asteroid-hunter {
+    background: linear-gradient(145deg, rgba(160, 160, 160, 0.4), rgba(96, 96, 96, 0.3));
+    border-color: rgba(160, 160, 160, 0.7);
+    transform: translateY(-5px);
+}
+
+/* Fortune Wheel Hardcoded Result */
+.fortune-message-default,
+.fortune-message-result {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.fortune-message-default {
+    color: rgba(160, 160, 160, 0.8);
+    font-style: italic;
+}
+
+.fortune-message-result {
+    display: none;
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(160, 160, 160, 0.2));
+    border: 2px solid rgba(0, 255, 127, 0.5);
+    color: #00ff7f;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
+    animation: treasure-found 2s ease-in-out infinite;
+}
+
+@keyframes treasure-found {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(0, 255, 127, 0.4);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(0, 255, 127, 0.6);
+        transform: scale(1.02);
+    }
+}
+
+.wheel-spin-toggle:checked ~ .fortune-result .fortune-message-default {
+    display: none;
+}
+
+.wheel-spin-toggle:checked ~ .fortune-result .fortune-message-result {
+    display: block;
+}
+
+/* Name Your Asteroid */
+.asteroid-naming-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.floating-asteroid-display {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-asteroid {
+    font-size: 4rem;
+    animation: user-asteroid-spin 4s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(160, 160, 160, 0.8));
+}
+
+@keyframes user-asteroid-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.orbiting-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: name-orbit 6s linear infinite;
+}
+
+.asteroid-user-name {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00ff7f;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
+    white-space: nowrap;
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 127, 0.5);
+}
+
+@keyframes name-orbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.name-input-section {
+    text-align: center;
+}
+
+.asteroid-name-input {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border: 2px solid rgba(160, 160, 160, 0.5);
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.asteroid-name-input:focus {
+    outline: none;
+    border-color: #00ff7f;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5);
+}
+
+.asteroid-name-input::placeholder {
+    color: rgba(160, 160, 160, 0.7);
+}
+
+.discovery-message {
+    min-height: 60px;
+}
+
+.discovery-default {
+    color: rgba(160, 160, 160, 0.8);
+    font-style: italic;
+}
+
+.discovery-success {
+    display: none;
+    color: #00ff7f;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
+    animation: discovery-celebration 2s ease-in-out infinite;
+}
+
+@keyframes discovery-celebration {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Show success message when input has text */
+.asteroid-name-input:not(:placeholder-shown) ~ .discovery-message .discovery-default {
+    display: none;
+}
+
+.asteroid-name-input:not(:placeholder-shown) ~ .discovery-message .discovery-success {
+    display: block;
+}
+
 /* Mobile adaptations */
 @media (max-width: 768px) {
     .mining-field {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+    
+    .fact-hunt-field {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .asteroid-fact-card {
+        width: 280px;
+        padding: 1.2rem;
+        min-height: 100px;
+        max-height: 180px;
+        font-size: 0.9rem;
+    }
+    
+    .floating-asteroid-display {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .user-asteroid {
+        font-size: 3rem;
+    }
+    
+    .orbiting-name {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .asteroid-name-input {
+        width: 250px;
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
     }
     
     .game-lanes {
@@ -3610,16 +3928,6 @@ hr {
     .asteroid-wheel {
         width: 200px;
         height: 200px;
-    }
-    
-    .naming-station {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .name-input-container {
-        min-width: auto;
-        width: 100%;
     }
     
     .floating-asteroid {
@@ -7173,6 +7481,7 @@ hr {
 .quiz-options {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin: 2rem 0;
     flex-wrap: wrap;
@@ -7184,14 +7493,16 @@ hr {
         rgba(123, 104, 238, 0.4));
     border: 2px solid rgba(200, 230, 255, 0.4);
     border-radius: 20px;
-    padding: 1.5rem 2rem;
+    padding: 1.8rem 2.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    min-width: 120px;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 150px;
+    text-align: center;
 }
 
 .quiz-option:hover {
@@ -7209,6 +7520,8 @@ hr {
     color: #c8e6ff;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 @keyframes icon-float {
@@ -8928,9 +9241,9 @@ input[type="checkbox"]:checked + .balance-option {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     backdrop-filter: blur(15px);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Show navigation when toggle is checked */
@@ -9004,6 +9317,36 @@ input[type="checkbox"]:checked + .balance-option {
     transform: scale(0.8);
     opacity: 0.7;
     animation: bubble-pop 0.5s ease-out;
+}
+
+/* Correct answer special glow */
+.quiz-input:checked + .quiz-bubble.correct {
+    background: radial-gradient(circle, rgba(0, 255, 127, 0.8), rgba(0, 212, 255, 0.4));
+    border: 3px solid #00ff7f;
+    color: #00ff7f;
+    transform: scale(1.1);
+    opacity: 1;
+    animation: correct-bubble-glow 2s ease-in-out infinite;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 127, 0.6),
+        0 0 40px rgba(0, 255, 127, 0.4),
+        inset 0 0 20px rgba(0, 255, 127, 0.2);
+    text-shadow: 0 0 15px rgba(0, 255, 127, 0.9);
+}
+
+@keyframes correct-bubble-glow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(0, 255, 127, 0.6),
+            0 0 40px rgba(0, 255, 127, 0.4),
+            inset 0 0 20px rgba(0, 255, 127, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 0 30px rgba(0, 255, 127, 0.8),
+            0 0 60px rgba(0, 255, 127, 0.6),
+            inset 0 0 30px rgba(0, 255, 127, 0.3);
+    }
 }
 
 @keyframes bubble-pop {
@@ -9088,6 +9431,34 @@ input[type="checkbox"]:checked + .balance-option {
     color: #ffd700;
 }
 
+/* Individual yes answers - hide all by default */
+.yes-answer {
+    display: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.4), rgba(0, 212, 255, 0.2));
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    animation: oracle-glow 2s ease-in-out infinite;
+}
+
+@keyframes oracle-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+/* Show the first yes answer by default when compass is spun */
+.compass-spin-toggle:checked ~ .decision-result .yes-result .yes-1 {
+    display: block;
+}
+
 .no-result {
     background: linear-gradient(145deg, rgba(0, 150, 255, 0.3), rgba(200, 230, 255, 0.2));
     color: #0096ff;
@@ -9150,13 +9521,15 @@ input[type="checkbox"]:checked + .balance-option {
     background: linear-gradient(145deg, rgba(173, 216, 230, 0.1), rgba(200, 230, 255, 0.05));
     border-radius: 15px;
     border: 1px solid rgba(173, 216, 230, 0.3);
+    text-align: center;
 }
 
 .quiz-container .quiz-question {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #b8d4f0;
-    margin-bottom: 15px;
+    color: #c8e6ff;
+    text-shadow: 0 0 10px rgba(200, 230, 255, 0.6);
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -9290,57 +9663,12 @@ input[type="checkbox"]:checked + .balance-option {
 /* Hover hint text */
 .hover-hint {
     display: block;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    color: rgba(200, 230, 255, 0.7);
     font-style: italic;
-    margin-top: 5px;
-}
-
-/* Tooltip on hover */
-.quiz-option::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(30, 30, 50, 0.95));
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    pointer-events: none;
-}
-
-.quiz-option::before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    border: 8px solid transparent;
-    border-top-color: rgba(0, 0, 0, 0.9);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.quiz-option:hover::after,
-.quiz-option:hover::before {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-10px);
-}
-
-.quiz-option:hover::before {
-    transform: translateX(-50%) translateY(-2px);
+    margin-top: 8px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(200, 230, 255, 0.3);
 }
 
 /* Hide hover hint when showing tooltip */
@@ -9725,23 +10053,11 @@ input[type="checkbox"]:checked + .balance-option {
 
 .nav-menu-content {
     padding: 10px 0;
-    max-height: 70vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-}
-
-.nav-menu-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.nav-menu-content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.nav-menu-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
+    flex: 1;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .nav-planet-link {
@@ -9864,7 +10180,8 @@ input[type="checkbox"]:checked + .balance-option {
     
     .nav-menu-content {
         display: none;
-        max-height: 60vh;
+        flex: 1;
+        overflow: visible;
     }
     
     .nav-menu-content.active {

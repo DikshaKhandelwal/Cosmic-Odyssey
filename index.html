@@ -637,25 +637,53 @@
             <!-- Bubble Pop Quiz -->
             <div class="planet-activity">
                 <h3>🫧 Bubble Pop Quiz</h3>
-                <div class="quiz-question">
-                    <p>Which moon of Neptune is the largest?</p>
+                
+                <!-- Question 1 -->
+                <div class="quiz-question-container">
+                    <div class="quiz-question">
+                        <p>Which moon of Neptune is the largest?</p>
+                    </div>
+                    <div class="bubble-quiz">
+                        <input type="radio" id="quiz-nereid" name="neptune-quiz-1" class="quiz-input">
+                        <label for="quiz-nereid" class="quiz-bubble wrong" data-answer="Nereid">Nereid</label>
+                        
+                        <input type="radio" id="quiz-triton" name="neptune-quiz-1" class="quiz-input">
+                        <label for="quiz-triton" class="quiz-bubble correct" data-answer="Triton">Triton</label>
+                        
+                        <input type="radio" id="quiz-proteus" name="neptune-quiz-1" class="quiz-input">
+                        <label for="quiz-proteus" class="quiz-bubble wrong" data-answer="Proteus">Proteus</label>
+                        
+                        <input type="radio" id="quiz-larissa" name="neptune-quiz-1" class="quiz-input">
+                        <label for="quiz-larissa" class="quiz-bubble wrong" data-answer="Larissa">Larissa</label>
+                    </div>
+                    <div class="quiz-result">
+                        <div class="quiz-correct-result">🎉 Correct! Triton is Neptune's largest moon!</div>
+                        <div class="quiz-wrong-result">💙 Try again! Think of the largest moon...</div>
+                    </div>
                 </div>
-                <div class="bubble-quiz">
-                    <input type="radio" id="quiz-nereid" name="neptune-quiz" class="quiz-input">
-                    <label for="quiz-nereid" class="quiz-bubble wrong" data-answer="Nereid">Nereid</label>
-                    
-                    <input type="radio" id="quiz-triton" name="neptune-quiz" class="quiz-input">
-                    <label for="quiz-triton" class="quiz-bubble correct" data-answer="Triton">Triton</label>
-                    
-                    <input type="radio" id="quiz-proteus" name="neptune-quiz" class="quiz-input">
-                    <label for="quiz-proteus" class="quiz-bubble wrong" data-answer="Proteus">Proteus</label>
-                    
-                    <input type="radio" id="quiz-larissa" name="neptune-quiz" class="quiz-input">
-                    <label for="quiz-larissa" class="quiz-bubble wrong" data-answer="Larissa">Larissa</label>
-                </div>
-                <div class="quiz-result">
-                    <div class="quiz-correct-result">🎉 Correct! Triton is Neptune's largest moon!</div>
-                    <div class="quiz-wrong-result">💙 Try again! Think of the largest moon...</div>
+                
+                <!-- Question 2 -->
+                <div class="quiz-question-container">
+                    <div class="quiz-question">
+                        <p>What makes Neptune appear blue?</p>
+                    </div>
+                    <div class="bubble-quiz">
+                        <input type="radio" id="quiz-water" name="neptune-quiz-2" class="quiz-input">
+                        <label for="quiz-water" class="quiz-bubble wrong" data-answer="Water">Water oceans</label>
+                        
+                        <input type="radio" id="quiz-methane" name="neptune-quiz-2" class="quiz-input">
+                        <label for="quiz-methane" class="quiz-bubble correct" data-answer="Methane">Methane gas</label>
+                        
+                        <input type="radio" id="quiz-ice" name="neptune-quiz-2" class="quiz-input">
+                        <label for="quiz-ice" class="quiz-bubble wrong" data-answer="Ice">Ice crystals</label>
+                        
+                        <input type="radio" id="quiz-sunlight" name="neptune-quiz-2" class="quiz-input">
+                        <label for="quiz-sunlight" class="quiz-bubble wrong" data-answer="Sunlight">Sunlight reflection</label>
+                    </div>
+                    <div class="quiz-result">
+                        <div class="quiz-correct-result">🎉 Excellent! Methane in Neptune's atmosphere absorbs red light, making it appear blue!</div>
+                        <div class="quiz-wrong-result">💙 Not quite! Think about atmospheric gases...</div>
+                    </div>
                 </div>
             </div>
 
@@ -715,8 +743,14 @@
                         <label for="compass-spin" class="spin-button">🌊 Ask Neptune</label>
                     </div>
                     <div class="decision-result">
-                        <div class="yes-result">✨ Neptune says: YES ✨</div>
-                        <div class="no-result">🌊 Neptune says: NO 🌊</div>
+                        <div class="yes-result">
+                            <div class="yes-answer yes-1">✨ Neptune whispers: The depths reveal great success ahead ✨</div>
+                            <div class="yes-answer yes-2">🌊 Neptune flows: Your intuition guides you to the right path 🌊</div>
+                            <div class="yes-answer yes-3">💎 Neptune sparkles: Hidden treasures await your discovery 💎</div>
+                            <div class="yes-answer yes-4">🔮 Neptune dreams: Your vision will manifest like rising tides 🔮</div>
+                            <div class="yes-answer yes-5">⚡ Neptune storms: Bold action will bring unexpected rewards ⚡</div>
+                        </div>
+                        <div class="no-result">🌊 Neptune says: The tides suggest patience - wait for clearer waters 🌊</div>
                     </div>
                 </div>
             </div>
@@ -822,35 +856,61 @@
                 </div>
             </div>
 
-            <!-- Dodge the Asteroid Game -->
+            <!-- Asteroid Fact Hunt -->
             <div class="planet-activity">
-                <h3>🚀 Dodge the Asteroid</h3>
-                <p>Navigate your spaceship through the asteroid field!</p>
-                <div class="dodge-game">
-                    <div class="game-lanes">
-                        <div class="lane lane-1">
-                            <div class="falling-asteroid" id="asteroid1">🪨</div>
-                        </div>
-                        <div class="lane lane-2">
-                            <div class="falling-asteroid" id="asteroid2">☄️</div>
-                        </div>
-                        <div class="lane lane-3">
-                            <div class="falling-asteroid" id="asteroid3">🌑</div>
+                <h3>🧩 Asteroid Fact Hunt</h3>
+                <p>Click on each famous asteroid to discover fascinating facts!</p>
+                <div class="fact-hunt-field">
+                    <!-- Ceres -->
+                    <div class="fact-asteroid">
+                        <input type="checkbox" id="ceres-fact" class="asteroid-fact-toggle">
+                        <label for="ceres-fact" class="asteroid-hunter">
+                            <div class="asteroid-icon">🪐</div>
+                            <div class="asteroid-name">Ceres</div>
+                        </label>
+                        <div class="asteroid-fact-card">
+                            <h4>🪐 Ceres - The Dwarf Planet Asteroid</h4>
+                            <p>The largest object in the asteroid belt! Ceres is classified as a dwarf planet and contains water ice beneath its surface. It makes up about 1/3 of the asteroid belt's total mass!</p>
                         </div>
                     </div>
-                    <div class="spaceship-controls">
-                        <input type="radio" name="ship-lane" id="lane1" class="lane-radio">
-                        <label for="lane1" class="ship-position lane-1-ship">🚀</label>
-                        
-                        <input type="radio" name="ship-lane" id="lane2" class="lane-radio" checked>
-                        <label for="lane2" class="ship-position lane-2-ship">🚀</label>
-                        
-                        <input type="radio" name="ship-lane" id="lane3" class="lane-radio">
-                        <label for="lane3" class="ship-position lane-3-ship">🚀</label>
+                    
+                    <!-- Vesta -->
+                    <div class="fact-asteroid">
+                        <input type="checkbox" id="vesta-fact" class="asteroid-fact-toggle">
+                        <label for="vesta-fact" class="asteroid-hunter">
+                            <div class="asteroid-icon">✨</div>
+                            <div class="asteroid-name">Vesta</div>
+                        </label>
+                        <div class="asteroid-fact-card">
+                            <h4>✨ Vesta - The Bright Beacon</h4>
+                            <p>The brightest asteroid visible from Earth! Vesta has a huge crater from an ancient collision and is so reflective you can sometimes see it with the naked eye. It's like a cosmic lighthouse!</p>
+                        </div>
                     </div>
-                    <div class="game-status">
-                        <p>🎮 Choose your lane to avoid asteroids!</p>
-                        <p>Use the ship controls above to navigate safely through the asteroid field</p>
+                    
+                    <!-- Pallas -->
+                    <div class="fact-asteroid">
+                        <input type="checkbox" id="pallas-fact" class="asteroid-fact-toggle">
+                        <label for="pallas-fact" class="asteroid-hunter">
+                            <div class="asteroid-icon">🌀</div>
+                            <div class="asteroid-name">Pallas</div>
+                        </label>
+                        <div class="asteroid-fact-card">
+                            <h4>🌀 Pallas - The Tilted Giant</h4>
+                            <p>A massive asteroid with a wild, tilted orbit! Pallas is about 500km across and spins around the Sun at a crazy 35° angle - like a cosmic spinning top that's off-balance!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hygiea -->
+                    <div class="fact-asteroid">
+                        <input type="checkbox" id="hygiea-fact" class="asteroid-fact-toggle">
+                        <label for="hygiea-fact" class="asteroid-hunter">
+                            <div class="asteroid-icon">⚪</div>
+                            <div class="asteroid-name">Hygiea</div>
+                        </label>
+                        <div class="asteroid-fact-card">
+                            <h4>⚪ Hygiea - The Round Rock</h4>
+                            <p>The 4th largest asteroid and almost perfectly spherical! Hygiea is so round it almost qualifies as a dwarf planet. It's named after the Greek goddess of health and cleanliness!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -872,30 +932,31 @@
                     </div>
                     <label for="wheel-spin" class="spin-wheel">🌪️ Spin the Belt</label>
                     <div class="fortune-result">
-                        <div class="fortune-message">Click the wheel to discover cosmic treasures!</div>
+                        <div class="fortune-message-default">Click the wheel to discover cosmic treasures!</div>
+                        <div class="fortune-message-result">💎 Amazing! You discovered a rare cosmic crystal worth millions of space credits! This crystalline formation only occurs in the deepest parts of ancient asteroids! 💎</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Asteroid Naming Tool -->
+            <!-- Name Your Asteroid -->
             <div class="planet-activity">
-                <h3>🏷️ Asteroid Naming Station</h3>
-                <p>Give your discovered asteroid a cosmic name!</p>
+                <h3>� Name Your Asteroid</h3>
+                <p>Type a name below and watch it orbit with your personal asteroid!</p>
                 <div class="naming-station">
-                    <div class="name-input-container">
-                        <div class="orbiting-name-asteroids">
-                            <div class="name-orbit-dot"></div>
-                            <div class="name-orbit-dot"></div>
-                            <div class="name-orbit-dot"></div>
-                            <div class="name-orbit-dot"></div>
+                    <div class="asteroid-naming-container">
+                        <div class="floating-asteroid-display">
+                            <div class="user-asteroid">🪨</div>
+                            <div class="orbiting-name">
+                                <span class="asteroid-user-name">Raptors</span>
+                            </div>
                         </div>
-                        <input type="text" id="asteroidNameInput" class="asteroid-name-input" placeholder="Enter asteroid name..." maxlength="20">
-                        <label for="asteroidNameInput" class="register-name">🌟 Name Your Asteroid</label>
-                    </div>
-                    <div class="named-asteroid">
-                        <div class="asteroid-tag">🪨</div>
-                        <div class="asteroid-label-text">Your Named Asteroid</div>
-                        <p class="naming-tip">💡 Type in the box above to see your asteroid name appear!</p>
+                        <div class="name-input-section">
+                            <input type="text" id="asteroidNameInput" class="asteroid-name-input" placeholder="Type your asteroid name here..." maxlength="25">
+                            <div class="discovery-message">
+                                <div class="discovery-default">🚀 Enter a name above to name your asteroid!</div>
+                                <div class="discovery-success">🎉 Congratulations! You discovered an asteroid! 🎉</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1706,7 +1767,7 @@
                         <label for="pluto-q1-1925" class="quiz-option wrong-answer">1925</label>
                         
                         <input type="radio" id="pluto-q1-1930" name="pluto-discovery" class="quiz-input">
-                        <label for="pluto-q1-1930" class="quiz-option correct-answer">1930 ✨</label>
+                        <label for="pluto-q1-1930" class="quiz-option correct-answer">1930</label>
                         
                         <input type="radio" id="pluto-q1-1935" name="pluto-discovery" class="quiz-input">
                         <label for="pluto-q1-1935" class="quiz-option wrong-answer">1935</label>
@@ -1728,7 +1789,7 @@
                         <label for="pluto-q2-europa" class="quiz-option wrong-answer">Europa</label>
                         
                         <input type="radio" id="pluto-q2-charon" name="pluto-moon" class="quiz-input">
-                        <label for="pluto-q2-charon" class="quiz-option correct-answer">Charon 🌕</label>
+                        <label for="pluto-q2-charon" class="quiz-option correct-answer">Charon</label>
                         
                         <input type="radio" id="pluto-q2-titan" name="pluto-moon" class="quiz-input">
                         <label for="pluto-q2-titan" class="quiz-option wrong-answer">Titan</label>
@@ -1753,7 +1814,7 @@
                         <label for="pluto-q3-150" class="quiz-option wrong-answer">150 years</label>
                         
                         <input type="radio" id="pluto-q3-248" name="pluto-orbit" class="quiz-input">
-                        <label for="pluto-q3-248" class="quiz-option correct-answer">248 years 🌌</label>
+                        <label for="pluto-q3-248" class="quiz-option correct-answer">248 years</label>
                         
                         <input type="radio" id="pluto-q3-300" name="pluto-orbit" class="quiz-input">
                         <label for="pluto-q3-300" class="quiz-option wrong-answer">300 years</label>
@@ -1776,14 +1837,12 @@
                         <label for="pluto-planet" class="quiz-option planet-btn wrong-identity" data-tooltip="Pluto was reclassified as a dwarf planet in 2006">
                             <span class="option-icon">🪐</span>
                             <span class="option-text">Planet</span>
-                            <span class="hover-hint">Hover to see the answer!</span>
                         </label>
                         
                         <input type="radio" id="pluto-dwarf" name="pluto-identity" class="identity-input">
                         <label for="pluto-dwarf" class="quiz-option dwarf-btn correct-identity" data-tooltip="Correct! Pluto is officially classified as a dwarf planet since 2006">
                             <span class="option-icon">🌑</span>
                             <span class="option-text">Dwarf Planet</span>
-                            <span class="hover-hint">Hover to see the answer!</span>
                         </label>
                     </div>
                     <div class="quiz-response">
