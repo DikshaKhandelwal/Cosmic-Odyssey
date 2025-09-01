@@ -985,58 +985,203 @@
         </div>
     </div>
 
-    <!-- Jupiter Knowledge Modal -->
+    <!-- Jupiter Knowledge Modal - The Titan of Storms -->
     <div id="jupiter-knowledge" class="modal">
-        <div class="modal-content jupiter-theme">
+        <div class="modal-content jupiter-card-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♃ Jupiter - The Giant's Workshop</h2>
-            <p style="text-align:center; color:#c76e2a; font-style:italic; margin-bottom:1em;">
-                "Jupiter proclaims: 'My storms rage with power, my moons hold ancient wisdom. Master my domain!'"
-            </p>
             
-            <div class="planet-activity">
-                <h3>🎮 Storm Observatory</h3>
-                <div class="storm-simulator">
-                    <h4>Great Red Spot Controller</h4>
-                    <div class="great-red-spot">
-                        <div class="storm-eye"></div>
-                    </div>
-                    <div class="storm-stats">
-                        <div class="stat">Winds: 430 km/h</div>
-                        <div class="stat">Duration: 350 Earth years</div>
-                        <div class="stat">Temperature: -145°C</div>
-                    </div>
-                </div>
-
-                <h3>🌙 Jupiter's Major Moons</h3>
-                <div class="jupiter-moons">
-                    <div class="jupiter-moon" title="🌋 Io - Volcanic Activity"></div>
-                    <div class="jupiter-moon" title="🧊 Europa - Ice Drilling"></div>
-                    <div class="jupiter-moon" title="🌍 Ganymede - Magnetosphere"></div>
-                    <div class="jupiter-moon" title="🔬 Callisto - Research Station"></div>
+            <!-- Jupiter Card Header -->
+            <div class="jupiter-card-header">
+                <h2>♃ Jupiter — The Titan of Storms</h2>
+                <div class="jupiter-metaphor">
+                    The cosmic weather god, eternally churning massive storms across its banded surface, 
+                    wielding the power of centuries-old tempests.
                 </div>
             </div>
             
-            <div class="knowledge-sections">
-                <div class="knowledge-card">
-                    <h3>📚 Learning Paths</h3>
-                    <ul>
-                        <li>CSS Animations Mastery</li>
-                        <li>Productivity Systems</li>
-                        <li>Space Science Basics</li>
-                        <li>Jupiter's Moon Systems</li>
-                        <li>Storm Dynamics</li>
-                    </ul>
+            <!-- Great Red Spot Storm Observatory -->
+            <div class="jupiter-storm-observatory">
+                <h3>🌪️ Storm Observatory</h3>
+                <div class="observatory-description">Control the legendary Great Red Spot - a storm larger than Earth!</div>
+                
+                <!-- Storm Controller -->
+                <div class="storm-controller">
+                    <div class="controller-title">Storm Intensity Controller</div>
+                    <div class="storm-modes">
+                        <input type="radio" id="jupiter-calm" name="storm-mode" class="storm-radio" checked>
+                        <label for="jupiter-calm" class="storm-mode-label">
+                            <span class="mode-icon">🌊</span>
+                            <span class="mode-text">Calm Mode</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-wild" name="storm-mode" class="storm-radio">
+                        <label for="jupiter-wild" class="storm-mode-label">
+                            <span class="mode-icon">⚡</span>
+                            <span class="mode-text">Wild Mode</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="knowledge-card">
-                    <h3>🔖 Saved Resources</h3>
-                    <ul>
-                        <li>CSS-only Interactive Techniques</li>
-                        <li>Astronomical Data References</li>
-                        <li>Design Inspiration Gallery</li>
-                        <li>Planetary Physics</li>
-                        <li>Gravitational Dynamics</li>
-                    </ul>
+                
+                <!-- Storm Simulator -->
+                <div class="storm-simulator">
+                    <h4>🌪️ Great Red Spot Simulator</h4>
+                    <div class="great-red-spot">
+                        <div class="storm-eye"></div>
+                    </div>
+                </div>
+                
+                <!-- Great Red Spot Surface -->
+                <div class="great-red-spot-surface">
+                    <div class="red-spot-visual"></div>
+                    <div class="red-spot-info">
+                        <h4>Storm Statistics</h4>
+                        <div class="storm-stat">
+                            <span class="stat-label">Wind Speed:</span>
+                            <span class="stat-value">
+                                <div class="wind-speed-meter">
+                                    <div class="wind-speed-fill"></div>
+                                </div>
+                                430 km/h
+                            </span>
+                        </div>
+                        <div class="storm-stat">
+                            <span class="stat-label">Temperature:</span>
+                            <span class="stat-value">
+                                <span class="temperature-glow">-145°C</span>
+                            </span>
+                        </div>
+                        <div class="storm-stat">
+                            <span class="stat-label">Size:</span>
+                            <span class="stat-value">1.3× Earth's diameter</span>
+                        </div>
+                        <div class="storm-stat">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">350+ years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jupiter Timeline Flip Card -->
+            <div class="jupiter-timeline-flip">
+                <input type="checkbox" id="jupiter-timeline-flip" class="timeline-flip-input">
+                <label for="jupiter-timeline-flip" class="timeline-flip-container">
+                    <div class="timeline-flip-inner">
+                        <div class="timeline-flip-front">
+                            <div class="flip-icon">⏰</div>
+                            <div class="flip-title">Storm Duration</div>
+                            <div class="flip-hint">Tap to reveal timeline →</div>
+                        </div>
+                        <div class="timeline-flip-back">
+                            <div class="flip-icon">🌟</div>
+                            <div class="flip-title">350 Earth Years</div>
+                            <div class="flip-detail">This storm has raged longer than any nation has existed!</div>
+                            <div class="flip-hint">← Tap to flip back</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            
+            <!-- Jupiter Storm Quiz -->
+            <div class="jupiter-quiz">
+                <h3>🧠 Storm Master Quiz</h3>
+                <div class="quiz-description">Test your knowledge of the gas giant!</div>
+                
+                <div class="quiz-question-container">
+                    <div class="quiz-question">How big is Jupiter's Great Red Spot compared to Earth?</div>
+                    
+                    <div class="quiz-options">
+                        <input type="radio" id="jupiter-q1a" name="jupiter-quiz" class="jupiter-quiz-radio">
+                        <label for="jupiter-q1a" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">Same size as Earth</span>
+                            <span class="option-icon">🌍</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q1b" name="jupiter-quiz" class="jupiter-quiz-radio">
+                        <label for="jupiter-q1b" class="jupiter-quiz-option" data-correct="true">
+                            <span class="option-text">2-3 times larger than Earth</span>
+                            <span class="option-icon">🎯</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q1c" name="jupiter-quiz" class="jupiter-quiz-radio">
+                        <label for="jupiter-q1c" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">Half the size of Earth</span>
+                            <span class="option-icon">🔍</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q1d" name="jupiter-quiz" class="jupiter-quiz-radio">
+                        <label for="jupiter-q1d" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">10 times larger than Earth</span>
+                            <span class="option-icon">🌌</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Second Quiz Question -->
+                <div class="quiz-question-container">
+                    <div class="quiz-question">What causes Jupiter's colorful bands?</div>
+                    
+                    <div class="quiz-options">
+                        <input type="radio" id="jupiter-q2a" name="jupiter-quiz-2" class="jupiter-quiz-radio">
+                        <label for="jupiter-q2a" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">Different rock layers</span>
+                            <span class="option-icon">🪨</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q2b" name="jupiter-quiz-2" class="jupiter-quiz-radio">
+                        <label for="jupiter-q2b" class="jupiter-quiz-option" data-correct="true">
+                            <span class="option-text">Atmospheric winds and chemicals</span>
+                            <span class="option-icon">🌪️</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q2c" name="jupiter-quiz-2" class="jupiter-quiz-radio">
+                        <label for="jupiter-q2c" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">Reflected sunlight</span>
+                            <span class="option-icon">☀️</span>
+                        </label>
+                        
+                        <input type="radio" id="jupiter-q2d" name="jupiter-quiz-2" class="jupiter-quiz-radio">
+                        <label for="jupiter-q2d" class="jupiter-quiz-option" data-correct="false">
+                            <span class="option-text">Moon shadows</span>
+                            <span class="option-icon">🌙</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galilean Moons Orbital Animation -->
+            <div class="jupiter-orbital-animation">
+                <h3>🌌 Galilean Moons in Motion</h3>
+                <div class="orbital-description">Watch the four largest moons orbit Jupiter in real-time simulation</div>
+                <div class="galilean">
+                    <div class="jupiter-mini"></div>
+                    <div class="moon io-moon" title="Io - Volcanic World"></div>
+                    <div class="moon europa-moon" title="Europa - Ice Ocean"></div>
+                    <div class="moon ganymede-moon" title="Ganymede - Largest Moon"></div>
+                    <div class="moon callisto-moon" title="Callisto - Ancient Surface"></div>
+                </div>
+            </div>
+            
+            <!-- Jupiter's Major Moons -->
+            <div class="jupiter-moons-section">
+                <h3>🌙 Galilean Moons</h3>
+                <div class="jupiter-moons">
+                    <div class="jupiter-moon io" title="🌋 Io - Volcanic World">
+                        <div class="moon-icon">🌋</div>
+                        <div class="moon-name">Io</div>
+                    </div>
+                    <div class="jupiter-moon europa" title="🧊 Europa - Ice Ocean">
+                        <div class="moon-icon">🧊</div>
+                        <div class="moon-name">Europa</div>
+                    </div>
+                    <div class="jupiter-moon ganymede" title="🌍 Ganymede - Largest Moon">
+                        <div class="moon-icon">🌍</div>
+                        <div class="moon-name">Ganymede</div>
+                    </div>
+                    <div class="jupiter-moon callisto" title="🔬 Callisto - Ancient Surface">
+                        <div class="moon-icon">🔬</div>
+                        <div class="moon-name">Callisto</div>
+                    </div>
                 </div>
             </div>
         </div>

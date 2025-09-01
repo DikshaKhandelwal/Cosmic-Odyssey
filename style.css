@@ -3191,6 +3191,813 @@ hr {
     border-color: rgba(199, 110, 42, 0.3);
 }
 
+/* ===== JUPITER CARD THEME - THE TITAN OF STORMS ===== */
+.jupiter-card-theme {
+    background: linear-gradient(90deg, 
+        #d2b48c 20%, 
+        #deb887 40%, 
+        #a0522d 60%, 
+        #deb887 80%, 
+        #d2b48c 100%
+    );
+    background-size: 400% 100%;
+    animation: jupiter-drift 30s linear infinite;
+    border: 2px solid rgba(160, 82, 45, 0.4);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(160, 82, 45, 0.3),
+        inset 0 1px 0 rgba(222, 184, 135, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@keyframes jupiter-drift {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+/* Jupiter Card Header */
+.jupiter-card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.jupiter-card-header h2 {
+    color: #8b4513;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(139, 69, 19, 0.5);
+}
+
+.jupiter-metaphor {
+    color: #a0522d;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #8b4513;
+}
+
+/* Storm Observatory */
+.jupiter-storm-observatory {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.jupiter-storm-observatory h3 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.observatory-description {
+    text-align: center;
+    color: #a0522d;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Storm Controller */
+.storm-controller {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.controller-title {
+    color: #8b4513;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.storm-modes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.storm-radio {
+    display: none;
+}
+
+.storm-mode-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(160, 82, 45, 0.1);
+    border: 2px solid rgba(160, 82, 45, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #a0522d;
+    min-width: 100px;
+}
+
+.storm-mode-label:hover {
+    background: rgba(160, 82, 45, 0.2);
+    border-color: rgba(160, 82, 45, 0.5);
+    transform: translateY(-2px);
+}
+
+.storm-radio:checked + .storm-mode-label {
+    background: rgba(160, 82, 45, 0.3);
+    border-color: #a0522d;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(160, 82, 45, 0.3);
+}
+
+.mode-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mode-text {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Great Red Spot Surface Layout */
+.great-red-spot-surface {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+/* Red Spot Visual - The main disk */
+.red-spot-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    background: conic-gradient(from 0deg, #ff4500, #ff6347, #a52a2a, #dc143c, #ff8c00, #ff4500);
+    border-radius: 50%;
+    border: 3px solid rgba(139, 69, 19, 0.4);
+    animation: storm-spin 12s linear infinite;
+    box-shadow: 
+        0 0 20px rgba(255, 69, 0, 0.4),
+        inset 0 0 15px rgba(165, 42, 42, 0.3);
+}
+
+/* Inner storm swirl overlay */
+.red-spot-visual::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background: conic-gradient(from 90deg, transparent, rgba(255, 69, 0, 0.6), transparent, rgba(220, 20, 60, 0.4), transparent);
+    border-radius: 50%;
+    animation: storm-swirl 8s linear infinite reverse;
+}
+
+/* Central eye of the storm */
+.red-spot-visual::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    background: radial-gradient(circle, rgba(139, 69, 19, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+/* Red Spot Information Panel */
+.red-spot-info {
+    padding: 1rem;
+}
+
+.red-spot-info h4 {
+    color: #8b4513;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.storm-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background: rgba(160, 82, 45, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #a0522d;
+}
+
+.stat-label {
+    color: #a0522d;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: #8b4513;
+    font-weight: bold;
+}
+
+/* Wind Speed Meter styling in stats */
+.stat-value .wind-speed-meter {
+    width: 120px;
+    height: 10px;
+    background: rgba(139, 69, 19, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.stat-value .wind-speed-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff4500);
+    border-radius: 5px;
+    animation: wind-speed-fill 3s ease-out 0.5s both;
+    position: relative;
+}
+
+@keyframes wind-speed-fill {
+    from { width: 0%; }
+    to { width: 85%; }
+}
+
+/* Temperature value styling */
+.stat-value .temperature-glow {
+    color: #87ceeb;
+    text-shadow: 
+        0 0 5px #87ceeb,
+        0 0 10px #87ceeb,
+        0 0 15px #87ceeb;
+    animation: temperature-shimmer 2s ease-in-out infinite alternate;
+}
+
+/* Storm Simulator */
+.storm-simulator {
+    background: rgba(234, 88, 12, 0.2);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    border: 1px solid rgba(234, 88, 12, 0.3);
+    position: relative;
+    z-index: 5;
+}
+
+.storm-simulator h4 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.great-red-spot {
+    width: 150px;
+    height: 100px;
+    background: radial-gradient(ellipse, #dc2626, #991b1b, #7f1d1d);
+    border-radius: 50%;
+    margin: 3.5rem auto 1rem auto;
+    position: relative;
+    animation: stormRotation 4s linear infinite;
+    box-shadow: 
+        0 0 20px rgba(220, 38, 38, 0.4),
+        inset 0 0 10px rgba(127, 29, 29, 0.6);
+}
+
+.storm-eye {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(ellipse, #fca5a5, #dc2626);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: eyeRotation 2s ease-in-out infinite alternate;
+}
+
+@keyframes stormRotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes eyeRotation {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Storm Mode Controls for Storm Simulator */
+#jupiter-calm:checked ~ .jupiter-storm-observatory .storm-simulator .great-red-spot {
+    animation-duration: 8s;
+}
+
+#jupiter-calm:checked ~ .jupiter-storm-observatory .storm-simulator .storm-eye {
+    animation-duration: 4s;
+}
+
+#jupiter-wild:checked ~ .jupiter-storm-observatory .storm-simulator .great-red-spot {
+    animation-duration: 2s;
+    box-shadow: 
+        0 0 30px rgba(220, 38, 38, 0.6),
+        inset 0 0 15px rgba(127, 29, 29, 0.8);
+}
+
+#jupiter-wild:checked ~ .jupiter-storm-observatory .storm-simulator .storm-eye {
+    animation-duration: 1s;
+}
+
+/* Storm Mode Controls for new Red Spot Visual */
+#jupiter-calm:checked ~ .jupiter-storm-observatory .red-spot-visual {
+    transform: scale(0.9);
+    animation-duration: 20s;
+}
+
+#jupiter-calm:checked ~ .jupiter-storm-observatory .red-spot-visual::before {
+    animation-duration: 15s;
+}
+
+#jupiter-wild:checked ~ .jupiter-storm-observatory .red-spot-visual {
+    transform: scale(1.1);
+    animation-duration: 6s;
+    box-shadow: 
+        0 0 30px rgba(255, 69, 0, 0.6),
+        inset 0 0 20px rgba(165, 42, 42, 0.5);
+}
+
+#jupiter-wild:checked ~ .jupiter-storm-observatory .red-spot-visual::before {
+    animation-duration: 4s;
+}
+
+/* Wind speed changes based on storm mode */
+#jupiter-calm:checked ~ .jupiter-storm-observatory .wind-speed-fill {
+    animation: wind-speed-fill-calm 3s ease-out 0.5s both;
+}
+
+#jupiter-wild:checked ~ .jupiter-storm-observatory .wind-speed-fill {
+    animation: wind-speed-fill-wild 3s ease-out 0.5s both;
+}
+
+@keyframes wind-speed-fill-calm {
+    from { width: 0%; }
+    to { width: 65%; }
+}
+
+@keyframes wind-speed-fill-wild {
+    from { width: 0%; }
+    to { width: 95%; }
+}
+
+/* Wind Speed Meter */
+.wind-speed-meter {
+    position: relative;
+    width: 100px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.wind-speed-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff4500);
+    border-radius: 4px;
+    animation: wind-speed-fill 3s ease-out 1s both;
+}
+
+@keyframes wind-speed-fill {
+    from { width: 0%; }
+    to { width: 85%; }
+}
+
+.wind-speed-text {
+    position: absolute;
+    right: -35px;
+    top: -2px;
+    font-size: 0.7rem;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Temperature Glow Effect */
+.temperature-glow {
+    color: #87ceeb;
+    text-shadow: 
+        0 0 5px #87ceeb,
+        0 0 10px #87ceeb,
+        0 0 15px #87ceeb;
+    animation: temperature-shimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes temperature-shimmer {
+    from { text-shadow: 0 0 5px #87ceeb, 0 0 10px #87ceeb, 0 0 15px #87ceeb; }
+    to { text-shadow: 0 0 8px #87ceeb, 0 0 15px #87ceeb, 0 0 25px #87ceeb; }
+}
+
+/* Jupiter Timeline Flip Card */
+.jupiter-timeline-flip {
+    margin: 2rem auto;
+    width: 300px;
+    height: 180px;
+    perspective: 1000px;
+}
+
+.timeline-flip-input {
+    display: none;
+}
+
+.timeline-flip-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.timeline-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.timeline-flip-input:checked + .timeline-flip-container .timeline-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.timeline-flip-front,
+.timeline-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.timeline-flip-front {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.2));
+    border: 2px solid rgba(139, 69, 19, 0.4);
+    color: #fff;
+}
+
+.timeline-flip-back {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 140, 0, 0.2));
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    color: #fff;
+    transform: rotateY(180deg);
+    animation: timeline-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes timeline-glow {
+    from { box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
+    to { box-shadow: 0 0 25px rgba(255, 215, 0, 0.8); }
+}
+
+.flip-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.flip-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+}
+
+.flip-detail {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #fff8dc;
+}
+
+.flip-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    color: #fff8dc;
+}
+
+/* Jupiter Quiz */
+.jupiter-quiz {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.jupiter-quiz h3 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.jupiter-quiz .quiz-description {
+    text-align: center;
+    color: #a0522d;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.jupiter-quiz .quiz-question-container {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(160, 82, 45, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #8b4513;
+}
+
+.jupiter-quiz .quiz-question {
+    color: #a0522d;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.jupiter-quiz .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.jupiter-quiz-radio {
+    display: none;
+}
+
+.jupiter-quiz-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(139, 69, 19, 0.1);
+    border: 2px solid rgba(139, 69, 19, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #deb887;
+}
+
+.jupiter-quiz-option:hover {
+    background: rgba(139, 69, 19, 0.2);
+    border-color: rgba(160, 82, 45, 0.5);
+    transform: translateX(5px);
+}
+
+.jupiter-quiz-radio:checked + .jupiter-quiz-option {
+    background: rgba(160, 82, 45, 0.3);
+    border-color: #a0522d;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+/* Correct answers glow gold */
+.jupiter-quiz-radio:checked + .jupiter-quiz-option[data-correct="true"] {
+    background: rgba(255, 215, 0, 0.3);
+    border-color: #ffd700;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 4px 12px rgba(255, 215, 0, 0.4);
+    animation: jupiter-correct-glow 2s ease-in-out infinite alternate;
+}
+
+/* Incorrect answers remain brown */
+.jupiter-quiz-radio:checked + .jupiter-quiz-option[data-correct="false"] {
+    background: rgba(160, 82, 45, 0.3);
+    border-color: #a0522d;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(160, 82, 45, 0.3);
+}
+
+@keyframes jupiter-correct-glow {
+    from {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 4px 16px rgba(255, 215, 0, 0.5);
+    }
+}
+
+.jupiter-quiz .option-text {
+    flex: 1;
+    font-weight: bold;
+}
+
+.jupiter-quiz .option-icon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+/* Galilean Moons Orbital Animation */
+.jupiter-orbital-animation {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    text-align: center;
+}
+
+.jupiter-orbital-animation h3 {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.orbital-description {
+    color: #a0522d;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.galilean {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    border: 2px dashed rgba(139, 69, 19, 0.3);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 69, 19, 0.05) 0%, transparent 70%);
+}
+
+.jupiter-mini {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #a0522d, #8b4513);
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    box-shadow: 
+        0 0 15px rgba(160, 82, 45, 0.4),
+        inset 0 0 8px rgba(139, 69, 19, 0.3);
+    border: 2px solid rgba(139, 69, 19, 0.4);
+}
+
+.moon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 92px;
+    left: 92px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Individual Moon Styles with Signature Colors */
+.io-moon {
+    background: radial-gradient(circle, #ff8c00, #ff4500);
+    animation: orbit-io 8s linear infinite;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.6);
+}
+
+.europa-moon {
+    background: radial-gradient(circle, #e6f3ff, #87ceeb);
+    animation: orbit-europa 12s linear infinite;
+    box-shadow: 0 0 12px rgba(135, 206, 235, 0.6);
+}
+
+.ganymede-moon {
+    background: radial-gradient(circle, #c0c0c0, #708090);
+    animation: orbit-ganymede 16s linear infinite;
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.6);
+}
+
+.callisto-moon {
+    background: radial-gradient(circle, #d2b48c, #8b7355);
+    animation: orbit-callisto 24s linear infinite;
+    box-shadow: 0 0 12px rgba(210, 180, 140, 0.6);
+}
+
+/* Orbital Animations with Different Speeds (matching real orbital periods) */
+@keyframes orbit-io {
+    from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes orbit-europa {
+    from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+}
+
+@keyframes orbit-ganymede {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes orbit-callisto {
+    from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+}
+
+/* Jupiter Moons Section */
+.jupiter-moons-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.jupiter-moons-section h3 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.jupiter-moons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.jupiter-moon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(160, 82, 45, 0.1);
+    border: 2px solid rgba(160, 82, 45, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.jupiter-moon:hover {
+    background: rgba(160, 82, 45, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.3);
+}
+
+.moon-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.moon-name {
+    color: #a0522d;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Specific moon hover effects */
+.jupiter-moon.io:hover {
+    border-color: #ff4500;
+    box-shadow: 0 8px 16px rgba(255, 69, 0, 0.3);
+}
+
+.jupiter-moon.europa:hover {
+    border-color: #87ceeb;
+    box-shadow: 0 8px 16px rgba(135, 206, 235, 0.3);
+}
+
+.jupiter-moon.ganymede:hover {
+    border-color: #8fbc8f;
+    box-shadow: 0 8px 16px rgba(143, 188, 143, 0.3);
+}
+
+.jupiter-moon.callisto:hover {
+    border-color: #696969;
+    box-shadow: 0 8px 16px rgba(105, 105, 105, 0.3);
+}
+
 .uranus-theme {
     background: linear-gradient(135deg, rgba(181, 227, 227, 0.2), rgba(181, 227, 227, 0.1));
     border-color: rgba(181, 227, 227, 0.3);
@@ -5246,5 +6053,398 @@ input[type="checkbox"]:checked + .balance-option {
     
     .result-content strong {
         font-size: 1rem;
+    }
+}
+
+/* ===== JUPITER CARD RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    /* Jupiter Storm Controller Mobile */
+    .storm-controller {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .storm-mode {
+        width: 100%;
+        margin: 0.3rem 0;
+    }
+
+    .storm-mode-label {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Great Red Spot Mobile */
+    .great-red-spot-surface {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .red-spot-visual {
+        width: 120px;
+        height: 120px;
+    }
+
+    .red-spot-info h4 {
+        font-size: 1rem;
+    }
+
+    .red-spot-info .storm-stat {
+        font-size: 0.8rem;
+        margin: 0.3rem 0;
+    }
+
+    /* Wind Speed Meter Mobile */
+    .wind-speed-meter {
+        width: 100px;
+        height: 100px;
+    }
+
+    .speed-value {
+        font-size: 0.8rem;
+    }
+
+    .speed-unit {
+        font-size: 0.6rem;
+    }
+
+    /* Jupiter Timeline Flip Card Mobile */
+    .jupiter-timeline-flip {
+        width: 250px;
+        height: 150px;
+    }
+
+    .timeline-flip-front,
+    .timeline-flip-back {
+        padding: 0.8rem;
+    }
+
+    .flip-icon {
+        font-size: 2rem;
+    }
+
+    .flip-title {
+        font-size: 1rem;
+    }
+
+    .flip-detail {
+        font-size: 0.9rem;
+    }
+
+    .flip-hint {
+        font-size: 0.7rem;
+    }
+
+    /* Jupiter Quiz Mobile */
+    .jupiter-quiz {
+        padding: 1rem;
+    }
+
+    .jupiter-quiz h3 {
+        font-size: 1.1rem;
+    }
+
+    .jupiter-quiz .quiz-question {
+        font-size: 1rem;
+    }
+
+    .jupiter-quiz .quiz-options {
+        gap: 0.5rem;
+    }
+
+    .jupiter-quiz-option {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .jupiter-quiz .option-icon {
+        font-size: 1rem;
+    }
+
+    /* Jupiter Storm Simulator Mobile */
+    .storm-simulator {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .storm-simulator h4 {
+        font-size: 1rem;
+    }
+
+    .storm-simulator .great-red-spot {
+        width: 120px;
+        height: 80px;
+    }
+
+    .storm-simulator .storm-eye {
+        width: 24px;
+        height: 16px;
+    }
+
+    /* Jupiter Orbital Animation Mobile */
+    .jupiter-orbital-animation {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .jupiter-orbital-animation h3 {
+        font-size: 1.1rem;
+    }
+
+    .orbital-description {
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .galilean {
+        width: 160px;
+        height: 160px;
+        margin: 1.5rem auto;
+    }
+
+    .jupiter-mini {
+        width: 48px;
+        height: 48px;
+        top: 56px;
+        left: 56px;
+    }
+
+    .moon {
+        width: 12px;
+        height: 12px;
+        top: 74px;
+        left: 74px;
+    }
+
+    /* Adjust orbital distances for mobile */
+    @keyframes orbit-io {
+        from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-europa {
+        from { transform: rotate(0deg) translateX(68px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(68px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-ganymede {
+        from { transform: rotate(0deg) translateX(76px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(76px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-callisto {
+        from { transform: rotate(0deg) translateX(84px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(84px) rotate(-360deg); }
+    }
+
+    /* Jupiter Moons Mobile */
+    .jupiter-moons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .jupiter-moon {
+        padding: 0.8rem;
+    }
+
+    .moon-icon {
+        font-size: 1.5rem;
+    }
+
+    .moon-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Jupiter Small Mobile */
+    .jupiter-card-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .jupiter-metaphor {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .storm-controller {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .storm-mode-label {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .red-spot-visual {
+        width: 100px;
+        height: 100px;
+    }
+
+    .wind-speed-meter {
+        width: 80px;
+        height: 80px;
+    }
+
+    .speed-value {
+        font-size: 0.7rem;
+    }
+
+    .speed-unit {
+        font-size: 0.5rem;
+    }
+
+    .jupiter-timeline-flip {
+        width: 220px;
+        height: 130px;
+    }
+
+    .timeline-flip-front,
+    .timeline-flip-back {
+        padding: 0.6rem;
+    }
+
+    .flip-icon {
+        font-size: 1.8rem;
+    }
+
+    .flip-title {
+        font-size: 0.9rem;
+    }
+
+    .flip-detail {
+        font-size: 0.8rem;
+    }
+
+    .flip-hint {
+        font-size: 0.65rem;
+    }
+
+    .jupiter-quiz {
+        padding: 0.8rem;
+    }
+
+    .jupiter-quiz h3 {
+        font-size: 1rem;
+    }
+
+    .jupiter-quiz .quiz-question {
+        font-size: 0.9rem;
+    }
+
+    .jupiter-quiz-option {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+    }
+
+    .jupiter-quiz .option-text {
+        font-size: 0.8rem;
+    }
+
+    .jupiter-quiz .option-icon {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+
+    .storm-simulator {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    .storm-simulator h4 {
+        font-size: 0.9rem;
+    }
+
+    .storm-simulator .great-red-spot {
+        width: 100px;
+        height: 65px;
+    }
+
+    .storm-simulator .storm-eye {
+        width: 20px;
+        height: 13px;
+    }
+
+    /* Jupiter Orbital Animation Small Mobile */
+    .jupiter-orbital-animation {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    .jupiter-orbital-animation h3 {
+        font-size: 1rem;
+    }
+
+    .orbital-description {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .galilean {
+        width: 140px;
+        height: 140px;
+        margin: 1rem auto;
+    }
+
+    .jupiter-mini {
+        width: 40px;
+        height: 40px;
+        top: 50px;
+        left: 50px;
+    }
+
+    .moon {
+        width: 10px;
+        height: 10px;
+        top: 65px;
+        left: 65px;
+    }
+
+    /* Adjust orbital distances for small mobile */
+    @keyframes orbit-io {
+        from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-europa {
+        from { transform: rotate(0deg) translateX(56px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(56px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-ganymede {
+        from { transform: rotate(0deg) translateX(62px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(62px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-callisto {
+        from { transform: rotate(0deg) translateX(68px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(68px) rotate(-360deg); }
+    }
+
+    .jupiter-moons {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .jupiter-moon {
+        padding: 0.6rem;
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .moon-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .moon-name {
+        font-size: 0.75rem;
     }
 }
