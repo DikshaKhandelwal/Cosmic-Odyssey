@@ -906,6 +906,24 @@ a:hover {
     pointer-events: none;
 }
 
+.description h1 {
+    font-size: 2.2em;
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #ffd700, #ff6b9d, #74b9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description h2 {
+    font-size: 1.3em;
+    margin: 0 0 20px 0;
+    color: #74b9ff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 .description p {
     font-size: .9em;
     margin-top: 20px;
@@ -8350,6 +8368,16 @@ input:checked + .toggle-slider:before {
         backdrop-filter: blur(10px);
     }
     
+    .description h1 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    
+    .description h2 {
+        font-size: 1.1em;
+        text-align: center;
+    }
+    
     .solar-syst {
         transform: scale(0.6);
         margin-top: -20vh;
@@ -9970,6 +9998,205 @@ input[type="checkbox"]:checked + .balance-option {
     letter-spacing: 0.5px;
 }
 
+/* ===== GRANDMA MODE STYLES ===== */
+
+/* Hide toggle inputs */
+.grandma-mode-toggle {
+    display: none;
+}
+
+/* Grandma Mode Button */
+.grandma-mode-btn {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff6b9d, #ffeaa7, #74b9ff);
+    color: #2d3436;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 15px rgba(255, 107, 157, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    user-select: none;
+}
+
+.grandma-mode-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(255, 107, 157, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.grandma-mode-btn:active {
+    transform: scale(0.98);
+}
+
+.grandma-icon, .grandma-heart {
+    font-size: 1.2em;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.grandma-heart {
+    animation-delay: 1s;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.grandma-text {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Hide grandma button when nav is open */
+.cosmic-nav-toggle:checked ~ .grandma-mode-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100px);
+}
+
+/* Grandma Mode Card */
+.grandma-mode-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0, #e17055);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Show grandma card when toggle is checked */
+.grandma-mode-toggle:checked ~ .grandma-mode-card {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.grandma-card-header {
+    background: linear-gradient(135deg, #ff6b9d, #ffeaa7);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grandma-card-header h2 {
+    color: #2d3436;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.grandma-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2d3436;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.grandma-close:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.grandma-card-content {
+    flex: 1;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grandma-planet-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.grandma-planet {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.grandma-planet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: #ff6b9d;
+}
+
+.grandma-planet-emoji {
+    font-size: 3em;
+    min-width: 80px;
+    text-align: center;
+}
+
+.grandma-planet-text {
+    flex: 1;
+}
+
+.grandma-planet-text h3 {
+    color: #2d3436;
+    font-size: 1.8em;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.grandma-planet-text p {
+    color: #636e72;
+    font-size: 1.3em;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+}
+
 /* Right Side Planet Navigation Menu - Updated for CSS-only */
 .planet-nav-menu {
     position: fixed;
@@ -10168,6 +10395,28 @@ input[type="checkbox"]:checked + .balance-option {
         font-size: 1.1em;
     }
     
+    /* Grandma Mode Tablet Styles */
+    .grandma-mode-btn {
+        top: 15px;
+        right: 155px;
+        padding: 10px 16px;
+        font-size: 0.9em;
+        border-radius: 20px;
+    }
+    
+    .grandma-card-header h2 {
+        font-size: 2.2em;
+    }
+    
+    .grandma-card-content {
+        padding: 20px;
+    }
+    
+    .grandma-planet-info {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
     .planet-nav-menu {
         width: 260px;
         right: 10px;
@@ -10209,6 +10458,50 @@ input[type="checkbox"]:checked + .balance-option {
     
     .cosmos-text {
         display: none; /* Hide text on very small screens, keep only icons */
+    }
+    
+    /* Grandma Mode Mobile Styles */
+    .grandma-mode-btn {
+        top: 10px;
+        right: 120px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+        gap: 4px;
+    }
+    
+    .grandma-text {
+        display: none;
+    }
+    
+    .grandma-card-header h2 {
+        font-size: 1.8em;
+    }
+    
+    .grandma-card-content {
+        padding: 15px;
+    }
+    
+    .grandma-planet-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .grandma-planet {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .grandma-planet-emoji {
+        font-size: 2.5em;
+        min-width: 60px;
+    }
+    
+    .grandma-planet-text h3 {
+        font-size: 1.4em;
+    }
+    
+    .grandma-planet-text p {
+        font-size: 1.1em;
     }
     
     .planet-nav-menu {

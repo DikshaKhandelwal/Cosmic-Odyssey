@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar System Productivity Hub</title>
+    <title>Cosmic Odyssey - Learning Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="description">
-        <h1>Solar System Productivity Hub</h1>
-        <p>Click on any planet to access its tools and features. Each celestial body offers unique productivity capabilities.</p>
+        <h1>Cosmic Odyssey</h1>
+        <h2>Interactive Learning Hub</h2>
+        <p>Embark on an educational journey through our solar system! Click on any planet to discover fascinating facts, engage with interactive features, and explore the wonders of space. Each celestial body offers unique learning experiences and cosmic knowledge.</p>
         <hr>
         <p class="author">
             Created with <span class="fa-heart">♥</span> using pure CSS astronomy
@@ -20,11 +21,21 @@
     <!-- Navigation Toggle -->
     <input type="checkbox" id="cosmicNavToggle" class="cosmic-nav-toggle">
     
+    <!-- Grandma Mode Toggle -->
+    <input type="checkbox" id="grandmaModeToggle" class="grandma-mode-toggle">
+    
     <!-- Enter Cosmos Button -->
     <label for="cosmicNavToggle" class="enter-cosmos-btn">
         <span class="cosmos-icon">✨</span>
         <span class="cosmos-text">Enter Cosmos</span>
         <span class="cosmos-sparkle">🌟</span>
+    </label>
+    
+    <!-- Grandma Mode Button -->
+    <label for="grandmaModeToggle" class="grandma-mode-btn">
+        <span class="grandma-icon">👵</span>
+        <span class="grandma-text">Grandma Mode</span>
+        <span class="grandma-heart">💖</span>
     </label>
 
     <!-- Right Side Planet Navigation Menu -->
@@ -38,93 +49,192 @@
         <label for="mobileMenuToggle" class="nav-mobile-toggle">☰</label>
         
         <div class="nav-menu-content" id="navMenuContent">
-            <a href="#sun-menu" class="nav-planet-link sun-nav" title="Sun - Control Center">
+            <a href="#sun-menu" class="nav-planet-link sun-nav" title="Sun - Solar Facts">
                 <span class="planet-emoji">☀️</span>
                 <div class="planet-info">
                     <span class="planet-title">Sun</span>
-                    <span class="planet-subtitle">Control Center</span>
+                    <span class="planet-subtitle">Solar Facts</span>
                 </div>
             </a>
             
-            <a href="#mercury-tools" class="nav-planet-link mercury-nav" title="Mercury - Quick Tools">
+            <a href="#mercury-tools" class="nav-planet-link mercury-nav" title="Mercury - Speed Learning">
                 <span class="planet-emoji">☿️</span>
                 <div class="planet-info">
                     <span class="planet-title">Mercury</span>
-                    <span class="planet-subtitle">Swift Tools</span>
+                    <span class="planet-subtitle">Speed Learning</span>
                 </div>
             </a>
             
-            <a href="#venus-inspiration" class="nav-planet-link venus-nav" title="Venus - Emotions & Beauty">
+            <a href="#venus-inspiration" class="nav-planet-link venus-nav" title="Venus - Beauty & Science">
                 <span class="planet-emoji">♀️</span>
                 <div class="planet-info">
                     <span class="planet-title">Venus</span>
-                    <span class="planet-subtitle">Emotions</span>
+                    <span class="planet-subtitle">Beauty & Science</span>
                 </div>
             </a>
             
-            <a href="#earth-notes" class="nav-planet-link earth-nav" title="Earth - Balance & Journal">
+            <a href="#earth-notes" class="nav-planet-link earth-nav" title="Earth - Life Sciences">
                 <span class="planet-emoji">🌍</span>
                 <div class="planet-info">
                     <span class="planet-title">Earth</span>
-                    <span class="planet-subtitle">Balance Hub</span>
+                    <span class="planet-subtitle">Life Sciences</span>
                 </div>
             </a>
             
-            <a href="#mars-projects" class="nav-planet-link mars-nav" title="Mars - Challenges">
+            <a href="#mars-projects" class="nav-planet-link mars-nav" title="Mars - Exploration">
                 <span class="planet-emoji">♂️</span>
                 <div class="planet-info">
                     <span class="planet-title">Mars</span>
-                    <span class="planet-subtitle">Challenges</span>
+                    <span class="planet-subtitle">Exploration</span>
                 </div>
             </a>
             
-            <a href="#asteroid-tools" class="nav-planet-link asteroid-nav" title="Asteroid Belt - Mini Tools">
+            <a href="#asteroid-tools" class="nav-planet-link asteroid-nav" title="Asteroid Belt - Space Rocks">
                 <span class="planet-emoji">🪨</span>
                 <div class="planet-info">
                     <span class="planet-title">Asteroids</span>
-                    <span class="planet-subtitle">Mini Tools</span>
+                    <span class="planet-subtitle">Space Rocks</span>
                 </div>
             </a>
             
-            <a href="#jupiter-knowledge" class="nav-planet-link jupiter-nav" title="Jupiter - Knowledge Base">
+            <a href="#jupiter-knowledge" class="nav-planet-link jupiter-nav" title="Jupiter - Giant Planet">
                 <span class="planet-emoji">♃</span>
                 <div class="planet-info">
                     <span class="planet-title">Jupiter</span>
-                    <span class="planet-subtitle">Wisdom</span>
+                    <span class="planet-subtitle">Giant Planet</span>
                 </div>
             </a>
             
-            <a href="#saturn-calendar" class="nav-planet-link saturn-nav" title="Saturn - Time & Rings">
+            <a href="#saturn-calendar" class="nav-planet-link saturn-nav" title="Saturn - Ring System">
                 <span class="planet-emoji">🪐</span>
                 <div class="planet-info">
                     <span class="planet-title">Saturn</span>
-                    <span class="planet-subtitle">Time Master</span>
+                    <span class="planet-subtitle">Ring System</span>
                 </div>
             </a>
             
-            <a href="#uranus-goals" class="nav-planet-link uranus-nav" title="Uranus - Ice Giant Mysteries">
+            <a href="#uranus-goals" class="nav-planet-link uranus-nav" title="Uranus - Ice Giant">
                 <span class="planet-emoji">⛢</span>
                 <div class="planet-info">
                     <span class="planet-title">Uranus</span>
-                    <span class="planet-subtitle">Mysteries</span>
+                    <span class="planet-subtitle">Ice Giant</span>
                 </div>
             </a>
             
-            <a href="#neptune-focus" class="nav-planet-link neptune-nav" title="Neptune - Mystic Ocean">
+            <a href="#neptune-focus" class="nav-planet-link neptune-nav" title="Neptune - Windy World">
                 <span class="planet-emoji">🌊</span>
                 <div class="planet-info">
                     <span class="planet-title">Neptune</span>
-                    <span class="planet-subtitle">Dreams</span>
+                    <span class="planet-subtitle">Windy World</span>
                 </div>
             </a>
             
-            <a href="#pluto-archive" class="nav-planet-link pluto-nav" title="Pluto - Distant Secrets">
+            <a href="#pluto-archive" class="nav-planet-link pluto-nav" title="Pluto - Dwarf Planet">
                 <span class="planet-emoji">♇</span>
                 <div class="planet-info">
                     <span class="planet-title">Pluto</span>
-                    <span class="planet-subtitle">Secrets</span>
+                    <span class="planet-subtitle">Dwarf Planet</span>
                 </div>
             </a>
+        </div>
+    </div>
+
+    <!-- Grandma Mode Card -->
+    <div class="grandma-mode-card">
+        <div class="grandma-card-header">
+            <h2>🌟 Cosmic Odyssey Learning Guide 🌟</h2>
+            <label for="grandmaModeToggle" class="grandma-close">✕</label>
+        </div>
+        <div class="grandma-card-content">
+            <div class="grandma-planet-info">
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">☀️</span>
+                    <div class="grandma-planet-text">
+                        <h3>Sun</h3>
+                        <p>Our bright star that gives us light and warmth every day.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">☿️</span>
+                    <div class="grandma-planet-text">
+                        <h3>Mercury</h3>
+                        <p>The fastest planet, closest to the Sun. Very hot!</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">♀️</span>
+                    <div class="grandma-planet-text">
+                        <h3>Venus</h3>
+                        <p>The hottest planet, covered in thick clouds.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">🌍</span>
+                    <div class="grandma-planet-text">
+                        <h3>Earth</h3>
+                        <p>Our beautiful home with water, air, and all life.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">♂️</span>
+                    <div class="grandma-planet-text">
+                        <h3>Mars</h3>
+                        <p>The red planet where robots explore for us.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">🪨</span>
+                    <div class="grandma-planet-text">
+                        <h3>Asteroids</h3>
+                        <p>Space rocks floating between Mars and Jupiter.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">♃</span>
+                    <div class="grandma-planet-text">
+                        <h3>Jupiter</h3>
+                        <p>The giant planet with many moons and a big red spot.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">🪐</span>
+                    <div class="grandma-planet-text">
+                        <h3>Saturn</h3>
+                        <p>The beautiful planet with amazing rings around it.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">⛢</span>
+                    <div class="grandma-planet-text">
+                        <h3>Uranus</h3>
+                        <p>The tilted ice planet that spins on its side.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">🌊</span>
+                    <div class="grandma-planet-text">
+                        <h3>Neptune</h3>
+                        <p>The windy blue planet farthest from the Sun.</p>
+                    </div>
+                </div>
+                
+                <div class="grandma-planet">
+                    <span class="grandma-planet-emoji">♇</span>
+                    <div class="grandma-planet-text">
+                        <h3>Pluto</h3>
+                        <p>A small dwarf planet, very cold and far away.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
