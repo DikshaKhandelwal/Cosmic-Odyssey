@@ -3998,6 +3998,742 @@ hr {
     box-shadow: 0 8px 16px rgba(105, 105, 105, 0.3);
 }
 
+/* ===== SATURN CARD THEME - THE RINGMASTER ===== */
+.saturn-card-theme {
+    background: linear-gradient(135deg, 
+        rgba(231, 193, 148, 0.15),  /* Golden */
+        rgba(255, 215, 0, 0.10),    /* Gold */
+        rgba(255, 248, 220, 0.05)   /* Cornsilk */
+    );
+    border: 2px solid rgba(231, 193, 148, 0.4);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(231, 193, 148, 0.3),
+        inset 0 1px 0 rgba(255, 215, 0, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Saturn Card Header */
+.saturn-card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.saturn-card-header h2 {
+    color: #b8860b;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(184, 134, 11, 0.5);
+}
+
+.saturn-metaphor {
+    color: #daa520;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #b8860b;
+}
+
+/* Dynamic Ring System */
+.saturn-ring-system {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.saturn-ring-system h3 {
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.ring-description {
+    text-align: center;
+    color: #daa520;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Saturn Container with Rings */
+.saturn-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    perspective: 1000px;
+}
+
+.saturn-planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #daa520, #b8860b);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.4),
+        inset 0 0 15px rgba(184, 134, 11, 0.3);
+    z-index: 5;
+    animation: saturn-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes saturn-glow {
+    from { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), inset 0 0 10px rgba(184, 134, 11, 0.2); }
+    to { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(184, 134, 11, 0.4); }
+}
+
+/* Saturn Rings */
+.saturn-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%) rotateX(75deg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.saturn-ring.ring-1 {
+    width: 120px;
+    height: 120px;
+    border-color: rgba(255, 215, 0, 0.7);
+    animation: ring-spin-1 30s linear infinite;
+    z-index: 4;
+}
+
+.saturn-ring.ring-2 {
+    width: 160px;
+    height: 160px;
+    border-color: rgba(255, 255, 255, 0.6);
+    animation: ring-spin-2 25s linear infinite;
+    z-index: 3;
+}
+
+.saturn-ring.ring-3 {
+    width: 200px;
+    height: 200px;
+    border-color: rgba(255, 248, 220, 0.5);
+    animation: ring-spin-3 20s linear infinite;
+    z-index: 2;
+}
+
+.saturn-ring.ring-4 {
+    width: 240px;
+    height: 240px;
+    border-color: rgba(255, 215, 0, 0.4);
+    animation: ring-spin-4 15s linear infinite;
+    z-index: 1;
+}
+
+/* Ring Animations */
+@keyframes ring-spin-1 {
+    from { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(0deg); }
+    to { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(360deg); }
+}
+
+@keyframes ring-spin-2 {
+    from { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(0deg); }
+    to { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(360deg); }
+}
+
+@keyframes ring-spin-3 {
+    from { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(0deg); }
+    to { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(360deg); }
+}
+
+@keyframes ring-spin-4 {
+    from { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(0deg); }
+    to { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(360deg); }
+}
+
+/* Clickable Ring Effects */
+.clickable-ring:hover {
+    border-width: 5px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.clickable-ring:active {
+    animation-duration: 2s !important;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1), inset 0 0 15px rgba(255, 215, 0, 0.5);
+    border-width: 6px;
+}
+
+/* Ripple Effect for Ring Clicks */
+.clickable-ring::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 215, 0, 0);
+    animation: none;
+}
+
+.clickable-ring.ripple::before {
+    animation: ring-ripple 1s ease-out;
+}
+
+@keyframes ring-ripple {
+    0% {
+        border-color: rgba(255, 215, 0, 0.8);
+        transform: scale(1);
+    }
+    100% {
+        border-color: rgba(255, 215, 0, 0);
+        transform: scale(1.3);
+    }
+}
+
+/* Titan Orbit */
+.titan-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: titan-orbit 40s linear infinite;
+}
+
+.titan-moon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff8c00, #ffa500, #ff6347);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.6);
+    transition: all 0.3s ease;
+    z-index: 6;
+}
+
+.titan-moon:hover {
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+}
+
+@keyframes titan-orbit {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Orbital Speed Controls */
+.orbit-speed-controls {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.speed-title {
+    color: #b8860b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.speed-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.speed-radio {
+    display: none;
+}
+
+.speed-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(218, 165, 32, 0.1);
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #daa520;
+    min-width: 100px;
+    font-size: 0.9rem;
+}
+
+.speed-label:hover {
+    background: rgba(218, 165, 32, 0.2);
+    border-color: rgba(218, 165, 32, 0.5);
+    transform: translateY(-2px);
+}
+
+.speed-radio:checked + .speed-label {
+    background: rgba(218, 165, 32, 0.3);
+    border-color: #daa520;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+}
+
+/* Speed Control Effects */
+#slow-orbit:checked ~ .saturn-container .saturn-ring.ring-1 { animation-duration: 60s; }
+#slow-orbit:checked ~ .saturn-container .saturn-ring.ring-2 { animation-duration: 50s; }
+#slow-orbit:checked ~ .saturn-container .saturn-ring.ring-3 { animation-duration: 40s; }
+#slow-orbit:checked ~ .saturn-container .saturn-ring.ring-4 { animation-duration: 30s; }
+#slow-orbit:checked ~ .saturn-container .titan-orbit { animation-duration: 80s; }
+
+#real-orbit:checked ~ .saturn-container .saturn-ring.ring-1 { animation-duration: 30s; }
+#real-orbit:checked ~ .saturn-container .saturn-ring.ring-2 { animation-duration: 25s; }
+#real-orbit:checked ~ .saturn-container .saturn-ring.ring-3 { animation-duration: 20s; }
+#real-orbit:checked ~ .saturn-container .saturn-ring.ring-4 { animation-duration: 15s; }
+#real-orbit:checked ~ .saturn-container .titan-orbit { animation-duration: 40s; }
+
+#warp-orbit:checked ~ .saturn-container .saturn-ring.ring-1 { animation-duration: 5s; }
+#warp-orbit:checked ~ .saturn-container .saturn-ring.ring-2 { animation-duration: 4s; }
+#warp-orbit:checked ~ .saturn-container .saturn-ring.ring-3 { animation-duration: 3s; }
+#warp-orbit:checked ~ .saturn-container .saturn-ring.ring-4 { animation-duration: 2s; }
+#warp-orbit:checked ~ .saturn-container .titan-orbit { animation-duration: 8s; }
+
+/* Titan Explorer */
+.titan-explorer {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.titan-explorer h3 {
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.titan-description {
+    text-align: center;
+    color: #daa520;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Titan Flip Card */
+.titan-flip-card {
+    margin: 2rem auto;
+    width: 300px;
+    height: 180px;
+    perspective: 1000px;
+}
+
+.titan-flip-input {
+    display: none;
+}
+
+.titan-flip-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.titan-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.titan-flip-input:checked + .titan-flip-container .titan-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.titan-flip-front,
+.titan-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.titan-flip-front {
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.3), rgba(218, 165, 32, 0.2));
+    border: 2px solid rgba(184, 134, 11, 0.4);
+    color: #fff;
+}
+
+.titan-flip-back {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.2));
+    border: 2px solid rgba(255, 140, 0, 0.4);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.titan-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.titan-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+}
+
+.titan-fact {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #fff8dc;
+}
+
+.titan-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    color: #fff8dc;
+}
+
+/* Landing Animation */
+.titan-landing {
+    position: relative;
+    height: 100px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.landing-module {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: none;
+}
+
+.titan-flip-input:checked ~ .titan-landing .landing-module {
+    animation: landing-descent 3s ease-in;
+}
+
+.landing-trail {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+    transform: translateX(-50%);
+    animation: none;
+}
+
+.titan-flip-input:checked ~ .titan-landing .landing-trail {
+    animation: trail-extend 3s ease-in;
+}
+
+@keyframes landing-descent {
+    0% { top: -20px; opacity: 1; }
+    100% { top: 80px; opacity: 0.5; }
+}
+
+@keyframes trail-extend {
+    0% { height: 0; }
+    50% { height: 60px; }
+    100% { height: 100px; opacity: 0; }
+}
+
+/* Gravity Lens Effect */
+.gravity-lens-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.gravity-lens-section h3 {
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.lens-description {
+    text-align: center;
+    color: #daa520;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.gravity-lens-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    perspective: 1000px;
+}
+
+.saturn-lens-planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffd700, #daa520);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+
+.saturn-lens-planet:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+.saturn-lens-planet:hover .hidden-fact {
+    opacity: 1;
+    transform: translateY(-100px) scale(1);
+}
+
+.saturn-lens-planet:hover ~ .lens-rings .lens-ring {
+    transform: translate(-50%, -50%) rotateX(75deg) scale(1.2) skew(-5deg, 5deg);
+}
+
+.hidden-fact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(0) scale(0);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffd700;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.lens-rings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lens-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    transform: translate(-50%, -50%) rotateX(75deg);
+    transition: all 0.5s ease;
+}
+
+.lens-ring.ring-a {
+    width: 120px;
+    height: 120px;
+}
+
+.lens-ring.ring-b {
+    width: 150px;
+    height: 150px;
+}
+
+.lens-ring.ring-c {
+    width: 180px;
+    height: 180px;
+}
+
+/* Saturn Quiz */
+.saturn-quiz {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.saturn-quiz h3 {
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.saturn-quiz .quiz-description {
+    text-align: center;
+    color: #daa520;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.saturn-quiz .quiz-question-container {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(218, 165, 32, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #b8860b;
+}
+
+.saturn-quiz .quiz-question {
+    color: #daa520;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.saturn-quiz .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.saturn-quiz-radio {
+    display: none;
+}
+
+.saturn-quiz-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(184, 134, 11, 0.1);
+    border: 2px solid rgba(184, 134, 11, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #daa520;
+}
+
+.saturn-quiz-option:hover {
+    background: rgba(184, 134, 11, 0.2);
+    border-color: rgba(218, 165, 32, 0.5);
+    transform: translateX(5px);
+}
+
+.saturn-quiz-radio:checked + .saturn-quiz-option {
+    background: rgba(218, 165, 32, 0.3);
+    border-color: #daa520;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
+/* Correct answers glow gold */
+.saturn-quiz-radio:checked + .saturn-quiz-option[data-correct="true"] {
+    background: rgba(255, 215, 0, 0.3);
+    border-color: #ffd700;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 4px 12px rgba(255, 215, 0, 0.4);
+    animation: saturn-correct-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes saturn-correct-glow {
+    from {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 4px 16px rgba(255, 215, 0, 0.5);
+    }
+}
+
+.saturn-quiz .option-text {
+    flex: 1;
+    font-weight: bold;
+}
+
+.saturn-quiz .option-icon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+/* Saturn Facts Section */
+.saturn-facts-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.saturn-facts-section h3 {
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.saturn-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.saturn-fact-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(218, 165, 32, 0.1);
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.saturn-fact-card:hover {
+    background: rgba(218, 165, 32, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
+.fact-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.fact-text {
+    color: #daa520;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
 .uranus-theme {
     background: linear-gradient(135deg, rgba(181, 227, 227, 0.2), rgba(181, 227, 227, 0.1));
     border-color: rgba(181, 227, 227, 0.3);
@@ -6256,6 +6992,86 @@ input[type="checkbox"]:checked + .balance-option {
     .moon-name {
         font-size: 0.8rem;
     }
+
+    /* Saturn Card Mobile */
+    .saturn-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .saturn-planet {
+        width: 60px;
+        height: 60px;
+    }
+
+    .saturn-ring.ring-1 { width: 100px; height: 100px; }
+    .saturn-ring.ring-2 { width: 130px; height: 130px; }
+    .saturn-ring.ring-3 { width: 160px; height: 160px; }
+    .saturn-ring.ring-4 { width: 190px; height: 190px; }
+
+    .titan-orbit {
+        width: 220px;
+        height: 220px;
+    }
+
+    .titan-moon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .speed-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .speed-label {
+        min-width: 80px;
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .titan-flip-card {
+        width: 250px;
+        height: 150px;
+    }
+
+    .gravity-lens-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .saturn-lens-planet {
+        width: 60px;
+        height: 60px;
+    }
+
+    .lens-ring.ring-a { width: 100px; height: 100px; }
+    .lens-ring.ring-b { width: 120px; height: 120px; }
+    .lens-ring.ring-c { width: 140px; height: 140px; }
+
+    .saturn-quiz .quiz-options {
+        gap: 0.5rem;
+    }
+
+    .saturn-quiz-option {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .saturn-facts {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .saturn-fact-card {
+        padding: 0.8rem;
+    }
+
+    .fact-icon {
+        font-size: 1.5rem;
+        margin-right: 0.8rem;
+        min-width: 40px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -6446,5 +7262,127 @@ input[type="checkbox"]:checked + .balance-option {
 
     .moon-name {
         font-size: 0.75rem;
+    }
+
+    /* Saturn Card Small Mobile */
+    .saturn-card-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .saturn-metaphor {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .saturn-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .saturn-planet {
+        width: 50px;
+        height: 50px;
+    }
+
+    .saturn-ring.ring-1 { width: 80px; height: 80px; }
+    .saturn-ring.ring-2 { width: 105px; height: 105px; }
+    .saturn-ring.ring-3 { width: 130px; height: 130px; }
+    .saturn-ring.ring-4 { width: 155px; height: 155px; }
+
+    .titan-orbit {
+        width: 180px;
+        height: 180px;
+    }
+
+    .titan-moon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .speed-label {
+        padding: 0.6rem;
+        font-size: 0.75rem;
+        min-width: 70px;
+    }
+
+    .titan-flip-card {
+        width: 220px;
+        height: 130px;
+    }
+
+    .titan-icon {
+        font-size: 2rem;
+    }
+
+    .titan-title {
+        font-size: 1rem;
+    }
+
+    .titan-fact {
+        font-size: 0.8rem;
+    }
+
+    .gravity-lens-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .saturn-lens-planet {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lens-ring.ring-a { width: 80px; height: 80px; }
+    .lens-ring.ring-b { width: 100px; height: 100px; }
+    .lens-ring.ring-c { width: 120px; height: 120px; }
+
+    .saturn-quiz {
+        padding: 0.8rem;
+    }
+
+    .saturn-quiz h3 {
+        font-size: 1rem;
+    }
+
+    .saturn-quiz .quiz-question {
+        font-size: 0.9rem;
+    }
+
+    .saturn-quiz-option {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+    }
+
+    .saturn-quiz .option-text {
+        font-size: 0.8rem;
+    }
+
+    .saturn-quiz .option-icon {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+
+    .saturn-facts {
+        gap: 0.6rem;
+    }
+
+    .saturn-fact-card {
+        padding: 0.6rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .fact-icon {
+        font-size: 1.8rem;
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    .fact-text {
+        font-size: 0.8rem;
     }
 }

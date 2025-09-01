@@ -392,79 +392,184 @@
         </div>
     </div>
 
-    <!-- Saturn Calendar Modal -->
+    <!-- Saturn Ringmaster Modal -->
     <div id="saturn-calendar" class="modal">
-        <div class="modal-content saturn-theme">
+        <div class="modal-content saturn-card-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🪐 Saturn - Time & Rings of Order</h2>
-            <p style="text-align:center; color:#e7c194; font-style:italic; margin-bottom:1em;">
-                "Saturn instructs: 'Align my rings, and I shall organize your mortal time.'"
-            </p>
             
-            <div class="planet-activity">
-                <h3>🎮 Ring Harmonics Puzzle</h3>
-                <div class="saturn-rings">
-                    <div class="saturn-planet"></div>
-                    <div class="saturn-ring ring-1"></div>
-                    <div class="saturn-ring ring-2"></div>
-                    <div class="saturn-ring ring-3"></div>
-                </div>
-                
-                <div class="ring-status">
-                    <div class="ring-indicator">Ring 1: 0°</div>
-                    <div class="ring-indicator">Ring 2: 0°</div>
-                    <div class="ring-indicator">Ring 3: 0°</div>
-                    <div class="harmony-status">Harmony: 0%</div>
+            <!-- Saturn Card Header -->
+            <div class="saturn-card-header">
+                <h2>🪐 Saturn - The Ringmaster</h2>
+                <div class="saturn-metaphor">
+                    The Cosmic Jewel Box — Saturn isn't just a planet; it's a celestial orchestra of rings and moons where users play with rings and Titan like instruments.
                 </div>
             </div>
             
-            <div class="calendar-container">
-                <h3>⏰ Temporal Organizer</h3>
-                <div class="ring-system">
-                    <div class="task-ring urgent">
-                        <div class="ring-label">Urgent</div>
-                        <div class="task-items">
-                            <div class="task-item">Complete project proposal</div>
-                            <div class="task-item">Review quarterly reports</div>
-                            <div class="task-item">Client meeting preparation</div>
-                        </div>
-                    </div>
-                    <div class="task-ring important">
-                        <div class="ring-label">Important</div>
-                        <div class="task-items">
-                            <div class="task-item">Update portfolio website</div>
-                            <div class="task-item">Plan next week's schedule</div>
-                            <div class="task-item">Research new tools</div>
-                        </div>
-                    </div>
-                    <div class="task-ring routine">
-                        <div class="ring-label">Routine</div>
-                        <div class="task-items">
-                            <div class="task-item">Daily standup meeting</div>
-                            <div class="task-item">Check emails</div>
-                            <div class="task-item">Exercise routine</div>
-                        </div>
+            <!-- Dynamic Ring System -->
+            <div class="saturn-ring-system">
+                <h3>🎼 Cosmic Orchestra</h3>
+                <div class="ring-description">Click the rings to play Saturn's cosmic harp and watch them glow!</div>
+                
+                <div class="saturn-container">
+                    <div class="saturn-planet"></div>
+                    <div class="saturn-ring ring-1 clickable-ring" data-ring="1"></div>
+                    <div class="saturn-ring ring-2 clickable-ring" data-ring="2"></div>
+                    <div class="saturn-ring ring-3 clickable-ring" data-ring="3"></div>
+                    <div class="saturn-ring ring-4 clickable-ring" data-ring="4"></div>
+                    
+                    <!-- Titan Orbiting Saturn -->
+                    <div class="titan-orbit">
+                        <div class="titan-moon" title="Click to explore Titan!"></div>
                     </div>
                 </div>
                 
-                <div class="time-manager">
-                    <div class="schedule-grid">
-                        <div class="time-slot">
-                            <span class="time">9:00</span>
-                            <input type="text" placeholder="Morning ritual" class="task-input">
+                <!-- Orbital Speed Controls -->
+                <div class="orbit-speed-controls">
+                    <div class="speed-title">Ring Orbit Speed</div>
+                    <div class="speed-buttons">
+                        <input type="radio" id="slow-orbit" name="orbit-speed" class="speed-radio" checked>
+                        <label for="slow-orbit" class="speed-label">🐌 Slow Orbit</label>
+                        
+                        <input type="radio" id="real-orbit" name="orbit-speed" class="speed-radio">
+                        <label for="real-orbit" class="speed-label">🌍 Real Orbit</label>
+                        
+                        <input type="radio" id="warp-orbit" name="orbit-speed" class="speed-radio">
+                        <label for="warp-orbit" class="speed-label">⚡ Warp Speed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Titan Explorer -->
+            <div class="titan-explorer">
+                <h3>🌑 Titan Mission Control</h3>
+                <div class="titan-description">Explore Saturn's largest moon with methane lakes and golden haze</div>
+                
+                <!-- Titan Flip Card -->
+                <div class="titan-flip-card">
+                    <input type="checkbox" id="titan-flip" class="titan-flip-input">
+                    <label for="titan-flip" class="titan-flip-container">
+                        <div class="titan-flip-inner">
+                            <div class="titan-flip-front">
+                                <div class="titan-icon">🛰️</div>
+                                <div class="titan-title">Launch Mission</div>
+                                <div class="titan-hint">Click to land on Titan</div>
+                            </div>
+                            <div class="titan-flip-back">
+                                <div class="titan-icon">🌑</div>
+                                <div class="titan-title">Titan Surface</div>
+                                <div class="titan-fact">Lakes of methane, thicker atmosphere than Earth, golden haze atmosphere</div>
+                            </div>
                         </div>
-                        <div class="time-slot">
-                            <span class="time">12:00</span>
-                            <input type="text" placeholder="Midday focus" class="task-input">
-                        </div>
-                        <div class="time-slot">
-                            <span class="time">15:00</span>
-                            <input type="text" placeholder="Afternoon work" class="task-input">
-                        </div>
-                        <div class="time-slot">
-                            <span class="time">18:00</span>
-                            <input type="text" placeholder="Evening reflection" class="task-input">
-                        </div>
+                    </label>
+                </div>
+                
+                <!-- Landing Animation -->
+                <div class="titan-landing">
+                    <div class="landing-module"></div>
+                    <div class="landing-trail"></div>
+                </div>
+            </div>
+            
+            <!-- Gravity Lens Effect -->
+            <div class="gravity-lens-section">
+                <h3>🔮 Saturn's Gravity Lens</h3>
+                <div class="lens-description">Hover over Saturn to bend space-time and reveal hidden secrets!</div>
+                
+                <div class="gravity-lens-container">
+                    <div class="saturn-lens-planet">
+                        <div class="hidden-fact">💡 Saturn could float in water!</div>
+                    </div>
+                    <div class="lens-rings">
+                        <div class="lens-ring ring-a"></div>
+                        <div class="lens-ring ring-b"></div>
+                        <div class="lens-ring ring-c"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Saturn Quiz -->
+            <div class="saturn-quiz">
+                <h3>🧠 Ringmaster Knowledge Test</h3>
+                <div class="quiz-description">Test your knowledge about Saturn, the cosmic jewel box!</div>
+                
+                <div class="quiz-question-container">
+                    <div class="quiz-question">How many main ring groups does Saturn have?</div>
+                    <div class="quiz-options">
+                        <input type="radio" id="saturn-q1a" name="saturn-quiz" class="saturn-quiz-radio">
+                        <label for="saturn-q1a" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">3 ring groups</span>
+                            <span class="option-icon">🔢</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q1b" name="saturn-quiz" class="saturn-quiz-radio">
+                        <label for="saturn-q1b" class="saturn-quiz-option" data-correct="true">
+                            <span class="option-text">7 main ring groups (A, B, C, D, E, F, G)</span>
+                            <span class="option-icon">💍</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q1c" name="saturn-quiz" class="saturn-quiz-radio">
+                        <label for="saturn-q1c" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">12 ring groups</span>
+                            <span class="option-icon">🌟</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q1d" name="saturn-quiz" class="saturn-quiz-radio">
+                        <label for="saturn-q1d" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">Countless rings</span>
+                            <span class="option-icon">♾️</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question-container">
+                    <div class="quiz-question">What is special about Titan, Saturn's largest moon?</div>
+                    <div class="quiz-options">
+                        <input type="radio" id="saturn-q2a" name="saturn-quiz-2" class="saturn-quiz-radio">
+                        <label for="saturn-q2a" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">It has active volcanoes</span>
+                            <span class="option-icon">🌋</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q2b" name="saturn-quiz-2" class="saturn-quiz-radio">
+                        <label for="saturn-q2b" class="saturn-quiz-option" data-correct="true">
+                            <span class="option-text">It has lakes of methane and thick atmosphere</span>
+                            <span class="option-icon">🌊</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q2c" name="saturn-quiz-2" class="saturn-quiz-radio">
+                        <label for="saturn-q2c" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">It's made entirely of ice</span>
+                            <span class="option-icon">🧊</span>
+                        </label>
+                        
+                        <input type="radio" id="saturn-q2d" name="saturn-quiz-2" class="saturn-quiz-radio">
+                        <label for="saturn-q2d" class="saturn-quiz-option" data-correct="false">
+                            <span class="option-text">It glows in the dark</span>
+                            <span class="option-icon">✨</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Saturn Fun Facts -->
+            <div class="saturn-facts-section">
+                <h3>🎭 Ringmaster's Secrets</h3>
+                <div class="saturn-facts">
+                    <div class="saturn-fact-card">
+                        <div class="fact-icon">⏰</div>
+                        <div class="fact-text">One day on Saturn = 10.7 hours</div>
+                    </div>
+                    <div class="saturn-fact-card">
+                        <div class="fact-icon">🏊</div>
+                        <div class="fact-text">Saturn could float in water (density: 0.69 g/cm³)</div>
+                    </div>
+                    <div class="saturn-fact-card">
+                        <div class="fact-icon">🌪️</div>
+                        <div class="fact-text">Hexagonal storm at north pole</div>
+                    </div>
+                    <div class="saturn-fact-card">
+                        <div class="fact-icon">🌙</div>
+                        <div class="fact-text">Has 146 confirmed moons</div>
                     </div>
                 </div>
             </div>
