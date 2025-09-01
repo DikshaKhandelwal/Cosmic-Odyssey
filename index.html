@@ -580,53 +580,106 @@
     <div id="neptune-focus" class="modal">
         <div class="modal-content neptune-theme">
             <a href="#" class="close">&times;</a>
-            <h2>🌊 Neptune - The Mystic Ocean</h2>
-            <p style="text-align:center; color:#175e9e; font-style:italic; margin-bottom:1em;">
-                "Neptune dreams: 'Dive deep into my icy mysteries, unlock the runes of creativity and inspiration.'"
+            <h2>🪐 Neptune - The Dream Weaver</h2>
+            <p style="text-align:center; color:#00d4ff; font-style:italic; margin-bottom:1em; text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);">
+                "Dive beneath my endless azure storms, where light bends and secrets await in the depths of imagination"
             </p>
-            
-            <div class="planet-activity">
-                <h3>🎮 Ice Rune Symphony</h3>
-                <div class="rune-composer">
-                    <h4>Mystical Rune Sequence</h4>
-                    <div class="neptune-runes">
-                        <button class="ice-rune" data-rune="frost" title="❄️ Frost - Preservation">❄️</button>
-                        <button class="ice-rune" data-rune="wave" title="🌊 Wave - Flow">🌊</button>
-                        <button class="ice-rune" data-rune="crystal" title="💎 Crystal - Clarity">💎</button>
-                        <button class="ice-rune" data-rune="vision" title="🔮 Vision - Insight">🔮</button>
-                        <button class="ice-rune" data-rune="star" title="⭐ Star - Inspiration">⭐</button>
-                        <button class="ice-rune" data-rune="spiral" title="🌀 Spiral - Transformation">🌀</button>
-                    </div>
-                    <div class="rune-sequence">
-                        <p>Current Sequence: <span>None</span></p>
-                        <p>Harmony Level: <span>0</span>%</p>
-                    </div>
-                </div>
 
-                <h3>🌊 Dream Pool Navigator</h3>
-                <div class="dream-pool">
-                    <div class="ocean-layers">
-                        <div class="layer surface">
-                            <h5>🌅 Surface Dreams</h5>
-                            <p>Gentle inspiration</p>
+            <!-- Floating Bubbles Background -->
+            <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            
+            <!-- Fortune Ripple Activity -->
+            <div class="planet-activity">
+                <h3>🔮 Fortune Ripple</h3>
+                <p>Click on a glowing pearl to reveal your ocean fortune</p>
+                <div class="fortune-pearls">
+                    <div class="pearl-card" data-fortune="You will discover hidden strengths beneath calm waters">
+                        <div class="pearl-front">🫧</div>
+                        <div class="pearl-back">
+                            <p>You will discover hidden strengths beneath calm waters</p>
                         </div>
-                        <div class="layer shallow">
-                            <h5>🐠 Shallow Waters</h5>
-                            <p>Creative ideas</p>
+                    </div>
+                    <div class="pearl-card" data-fortune="Like the sea, your mind holds infinite depths">
+                        <div class="pearl-front">🔮</div>
+                        <div class="pearl-back">
+                            <p>Like the sea, your mind holds infinite depths</p>
                         </div>
-                        <div class="layer deep">
-                            <h5>🐙 Deep Ocean</h5>
-                            <p>Profound insights</p>
+                    </div>
+                    <div class="pearl-card" data-fortune="Mysteries unfold for those who dive beyond the surface">
+                        <div class="pearl-front">�</div>
+                        <div class="pearl-back">
+                            <p>Mysteries unfold for those who dive beyond the surface</p>
                         </div>
-                        <div class="layer abyss">
-                            <h5>🕳️ The Abyss</h5>
-                            <p>Transformative visions</p>
+                    </div>
+                    <div class="pearl-card" data-fortune="Your imagination flows like endless ocean currents">
+                        <div class="pearl-front">🌊</div>
+                        <div class="pearl-back">
+                            <p>Your imagination flows like endless ocean currents</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="focus-container">
+
+            <!-- Bubble Pop Quiz -->
+            <div class="planet-activity">
+                <h3>🫧 Bubble Pop Quiz</h3>
+                <div class="quiz-question">
+                    <p>Which moon of Neptune is the largest?</p>
+                </div>
+                <div class="bubble-quiz">
+                    <div class="quiz-bubble wrong" data-answer="Nereid">Nereid</div>
+                    <div class="quiz-bubble correct" data-answer="Triton">Triton</div>
+                    <div class="quiz-bubble wrong" data-answer="Proteus">Proteus</div>
+                    <div class="quiz-bubble wrong" data-answer="Larissa">Larissa</div>
+                </div>
+                <div class="quiz-result"></div>
+            </div>
+
+            <!-- Echo Chamber -->
+            <div class="planet-activity">
+                <h3>🌊 Echo Chamber</h3>
+                <p>Click the seashell to reveal mystical word illusions</p>
+                <div class="echo-container">
+                    <div class="seashell" data-illusion="LEVEL">🐚</div>
+                    <div class="illusion-text">
+                        <p class="illusion-word">LEVEL</p>
+                        <p class="illusion-description">This word reads the same forwards and backwards - like ocean waves that flow and return</p>
+                    </div>
+                </div>
+                <div class="more-illusions">
+                    <div class="illusion-card" data-word="RADAR" data-desc="Like sonar through the depths">RADAR</div>
+                    <div class="illusion-card" data-word="CIVIC" data-desc="Community flows in perfect symmetry">CIVIC</div>
+                    <div class="illusion-card" data-word="KAYAK" data-desc="Navigate the waters of language">KAYAK</div>
+                </div>
+            </div>
+
+            <!-- Poseidon's Choice Spinner -->
+            <div class="planet-activity">
+                <h3>🧜 Poseidon's Choice</h3>
+                <p>Let the sea god's compass guide your decisions</p>
+                <div class="decision-spinner">
+                    <div class="compass-container">
+                        <div class="compass-dial">
+                            <div class="compass-needle"></div>
+                            <div class="compass-labels">
+                                <span class="compass-yes">YES</span>
+                                <span class="compass-no">NO</span>
+                            </div>
+                        </div>
+                        <button class="spin-button">🌊 Ask Neptune</button>
+                    </div>
+                    <div class="decision-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
                 <div class="timer-display">
                     <div class="focus-timer">25:00</div>
                     <div class="timer-label">Pomodoro Session</div>
@@ -1553,6 +1606,86 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeCosmicNavigation();
+            }
+        });
+
+        // ===== NEPTUNE INTERACTIVE FEATURES =====
+        
+        // Bubble Pop Quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizBubbles = document.querySelectorAll('.quiz-bubble');
+            const quizResult = document.querySelector('.quiz-result');
+            
+            quizBubbles.forEach(bubble => {
+                bubble.addEventListener('click', function() {
+                    if (this.classList.contains('popped')) return;
+                    
+                    this.classList.add('popped');
+                    
+                    if (this.classList.contains('correct')) {
+                        quizResult.textContent = '🎉 Correct! Triton is Neptune\'s largest moon!';
+                        quizResult.style.color = '#00ff7f';
+                    } else {
+                        quizResult.textContent = '💙 Try again! Think of the largest moon...';
+                        quizResult.style.color = '#00d4ff';
+                    }
+                    
+                    // Reset quiz after 3 seconds
+                    setTimeout(() => {
+                        quizBubbles.forEach(b => b.classList.remove('popped'));
+                        quizResult.textContent = '';
+                    }, 3000);
+                });
+            });
+            
+            // Echo Chamber functionality
+            const seashell = document.querySelector('.seashell');
+            const illusionText = document.querySelector('.illusion-text');
+            const illusionCards = document.querySelectorAll('.illusion-card');
+            
+            if (seashell) {
+                seashell.addEventListener('click', function() {
+                    illusionText.classList.toggle('revealed');
+                });
+            }
+            
+            illusionCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const word = this.dataset.word;
+                    const desc = this.dataset.desc;
+                    
+                    document.querySelector('.illusion-word').textContent = word;
+                    document.querySelector('.illusion-description').textContent = desc;
+                    illusionText.classList.add('revealed');
+                });
+            });
+            
+            // Poseidon's Choice Spinner
+            const spinButton = document.querySelector('.spin-button');
+            const compassNeedle = document.querySelector('.compass-needle');
+            const decisionResult = document.querySelector('.decision-result');
+            
+            if (spinButton) {
+                spinButton.addEventListener('click', function() {
+                    // Random rotation between 720-1440 degrees (2-4 full spins)
+                    const randomRotation = Math.random() * 720 + 720;
+                    const finalAngle = randomRotation % 360;
+                    
+                    // Apply rotation
+                    compassNeedle.style.transform = `translate(-50%, -100%) rotate(${randomRotation}deg)`;
+                    
+                    // Determine result based on final angle
+                    setTimeout(() => {
+                        const result = finalAngle < 180 ? 'YES' : 'NO';
+                        const emoji = result === 'YES' ? '✨' : '🌊';
+                        decisionResult.textContent = `${emoji} Neptune says: ${result} ${emoji}`;
+                        
+                        // Clear result after 4 seconds
+                        setTimeout(() => {
+                            decisionResult.textContent = '';
+                        }, 4000);
+                    }, 2000);
+                });
             }
         });
     </script>
