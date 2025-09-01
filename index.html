@@ -714,41 +714,142 @@
     <div id="asteroid-tools" class="modal">
         <div class="modal-content asteroid-theme">
             <a href="#" class="close">&times;</a>
-            <h2>☄️ Mini Tool Belt</h2>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h3>🧮 Calculator</h3>
-                    <div class="calculator">
-                        <input type="text" class="calc-display" readonly>
-                        <div class="calc-buttons">
-                            <button>7</button><button>8</button><button>9</button><button>/</button>
-                            <button>4</button><button>5</button><button>6</button><button>*</button>
-                            <button>1</button><button>2</button><button>3</button><button>-</button>
-                            <button>0</button><button>.</button><button>=</button><button>+</button>
+            <h2>🪨 Asteroid Belt - Cosmic Scrapyard</h2>
+            <p style="text-align:center; color:#a0a0a0; font-style:italic; margin-bottom:1em; text-shadow: 0 0 15px rgba(160, 160, 160, 0.8);">
+                "Scattered fragments of cosmic history, each rock holding secrets from the birth of our solar system"
+            </p>
+
+            <!-- Floating Asteroids Background -->
+            <div class="asteroid-field">
+                <div class="floating-asteroid" style="top: 10%; left: 5%; animation-delay: 0s;">🪨</div>
+                <div class="floating-asteroid" style="top: 20%; right: 10%; animation-delay: 1s;">☄️</div>
+                <div class="floating-asteroid" style="top: 60%; left: 15%; animation-delay: 2s;">🌑</div>
+                <div class="floating-asteroid" style="bottom: 20%; right: 20%; animation-delay: 3s;">🗿</div>
+                <div class="floating-asteroid" style="bottom: 10%; left: 25%; animation-delay: 4s;">🪨</div>
+            </div>
+
+            <!-- Orbiting Border Asteroids -->
+            <div class="orbital-belt">
+                <div class="orbit-asteroid" style="--rotation: 0deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 45deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 90deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 135deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 180deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 225deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 270deg;">•</div>
+                <div class="orbit-asteroid" style="--rotation: 315deg;">•</div>
+            </div>
+            
+            <!-- Asteroid Mining Quiz -->
+            <div class="planet-activity">
+                <h3>⛏️ Asteroid Mining Quiz</h3>
+                <p>Click on asteroids to discover what valuable resources they contain!</p>
+                <div class="mining-field">
+                    <div class="mining-asteroid" data-resource="iron">
+                        <input type="checkbox" id="iron-check" class="asteroid-check">
+                        <label for="iron-check" class="asteroid-label">🪨</label>
+                        <div class="mining-fact">
+                            <h5>🔗 Iron Asteroid</h5>
+                            <p>Rich in metallic iron - perfect for building space stations and tools!</p>
+                        </div>
+                    </div>
+                    <div class="mining-asteroid" data-resource="water">
+                        <input type="checkbox" id="water-check" class="asteroid-check">
+                        <label for="water-check" class="asteroid-label">💧</label>
+                        <div class="mining-fact">
+                            <h5>💧 Water Ice Asteroid</h5>
+                            <p>Contains frozen water - can provide fuel and life support for space colonies!</p>
+                        </div>
+                    </div>
+                    <div class="mining-asteroid" data-resource="gold">
+                        <input type="checkbox" id="gold-check" class="asteroid-check">
+                        <label for="gold-check" class="asteroid-label">✨</label>
+                        <div class="mining-fact">
+                            <h5>✨ Gold Asteroid</h5>
+                            <p>Precious metals worth billions - electronics and jewelry from space!</p>
+                        </div>
+                    </div>
+                    <div class="mining-asteroid" data-resource="carbon">
+                        <input type="checkbox" id="carbon-check" class="asteroid-check">
+                        <label for="carbon-check" class="asteroid-label">🖤</label>
+                        <div class="mining-fact">
+                            <h5>🖤 Carbon Asteroid</h5>
+                            <p>Organic compounds and diamonds - building blocks of life and luxury!</p>
                         </div>
                     </div>
                 </div>
-                <div class="tool-item">
-                    <h3>📏 Unit Converter</h3>
-                    <div class="converter">
-                        <input type="number" placeholder="Enter value">
-                        <select>
-                            <option>Kilometers → Miles</option>
-                            <option>Celsius → Fahrenheit</option>
-                            <option>Pounds → Kilograms</option>
-                        </select>
-                        <div class="conversion-result">Result appears here</div>
+            </div>
+
+            <!-- Dodge the Asteroid Game -->
+            <div class="planet-activity">
+                <h3>🚀 Dodge the Asteroid</h3>
+                <p>Navigate your spaceship through the asteroid field!</p>
+                <div class="dodge-game">
+                    <div class="game-lanes">
+                        <div class="lane lane-1">
+                            <div class="falling-asteroid" id="asteroid1">🪨</div>
+                        </div>
+                        <div class="lane lane-2">
+                            <div class="falling-asteroid" id="asteroid2">☄️</div>
+                        </div>
+                        <div class="lane lane-3">
+                            <div class="falling-asteroid" id="asteroid3">🌑</div>
+                        </div>
+                    </div>
+                    <div class="spaceship-controls">
+                        <input type="radio" name="ship-lane" id="lane1" class="lane-radio">
+                        <label for="lane1" class="ship-position">🚀</label>
+                        
+                        <input type="radio" name="ship-lane" id="lane2" class="lane-radio" checked>
+                        <label for="lane2" class="ship-position">🚀</label>
+                        
+                        <input type="radio" name="ship-lane" id="lane3" class="lane-radio">
+                        <label for="lane3" class="ship-position">🚀</label>
+                    </div>
+                    <div class="game-status">
+                        <button class="start-game">🎮 Start Mission</button>
+                        <div class="score">Safe Passages: 0</div>
                     </div>
                 </div>
-                <div class="tool-item">
-                    <h3>🎲 Random Generator</h3>
-                    <div class="randomizer">
-                        <div class="random-options">
-                            <label><input type="radio" name="random-type" checked> Number (1-100)</label>
-                            <label><input type="radio" name="random-type"> Color Palette</label>
-                            <label><input type="radio" name="random-type"> Yes/No Decision</label>
+            </div>
+
+            <!-- Asteroid Fortune Wheel -->
+            <div class="planet-activity">
+                <h3>🎯 Asteroid Fortune Wheel</h3>
+                <p>Spin the cosmic wheel to discover what treasures await!</p>
+                <div class="fortune-wheel-container">
+                    <div class="asteroid-wheel" id="fortuneWheel">
+                        <div class="wheel-section" data-fortune="You discovered Stardust! ✨">✨</div>
+                        <div class="wheel-section" data-fortune="Ancient Relic found! 🏛️">🏛️</div>
+                        <div class="wheel-section" data-fortune="Rare Metal detected! 🥇">🥇</div>
+                        <div class="wheel-section" data-fortune="Oops, just space dust... 💨">💨</div>
+                        <div class="wheel-section" data-fortune="Cosmic Crystal discovered! 💎">💎</div>
+                        <div class="wheel-section" data-fortune="Alien Artifact located! 👽">👽</div>
+                        <div class="wheel-pointer">📍</div>
+                    </div>
+                    <button class="spin-wheel" id="spinButton">🌪️ Spin the Belt</button>
+                    <div class="fortune-result" id="fortuneResult"></div>
+                </div>
+            </div>
+
+            <!-- Asteroid Naming Tool -->
+            <div class="planet-activity">
+                <h3>🏷️ Asteroid Naming Station</h3>
+                <p>Give your discovered asteroid a cosmic name!</p>
+                <div class="naming-station">
+                    <div class="name-input-container">
+                        <div class="orbiting-name-asteroids">
+                            <div class="name-orbit-dot"></div>
+                            <div class="name-orbit-dot"></div>
+                            <div class="name-orbit-dot"></div>
+                            <div class="name-orbit-dot"></div>
                         </div>
-                        <div class="random-result">Click to generate</div>
+                        <input type="text" id="asteroidName" class="asteroid-name-input" placeholder="Enter asteroid name..." maxlength="20">
+                        <button class="register-name" id="registerButton">🌟 Register Name</button>
+                    </div>
+                    <div class="named-asteroid" id="namedAsteroid">
+                        <div class="asteroid-tag">🪨</div>
+                        <div class="asteroid-label-text">Unnamed Rock</div>
                     </div>
                 </div>
             </div>
@@ -1915,6 +2016,149 @@
                     }
                 });
             }
+
+            // ===== ASTEROID BELT INTERACTIVE FEATURES =====
+            
+            // Dodge the Asteroid Game
+            const startGameBtn = document.querySelector('.start-game');
+            const fallingAsteroids = document.querySelectorAll('.falling-asteroid');
+            const scoreElement = document.querySelector('.score');
+            let gameActive = false;
+            let score = 0;
+            let gameInterval;
+            
+            if (startGameBtn) {
+                startGameBtn.addEventListener('click', function() {
+                    if (!gameActive) {
+                        startAsteroidGame();
+                    } else {
+                        stopAsteroidGame();
+                    }
+                });
+            }
+            
+            function startAsteroidGame() {
+                gameActive = true;
+                score = 0;
+                startGameBtn.textContent = '⏹️ Stop Mission';
+                startGameBtn.style.background = 'linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(64, 64, 64, 0.2))';
+                
+                gameInterval = setInterval(() => {
+                    // Randomly activate asteroid fall animation
+                    const randomAsteroid = fallingAsteroids[Math.floor(Math.random() * fallingAsteroids.length)];
+                    randomAsteroid.style.animation = 'asteroid-fall 2s linear';
+                    
+                    // Check for collision after animation
+                    setTimeout(() => {
+                        score++;
+                        scoreElement.textContent = `Safe Passages: ${score}`;
+                        randomAsteroid.style.animation = 'asteroid-fall 3s linear infinite';
+                    }, 2000);
+                }, 3000);
+            }
+            
+            function stopAsteroidGame() {
+                gameActive = false;
+                clearInterval(gameInterval);
+                startGameBtn.textContent = '🎮 Start Mission';
+                startGameBtn.style.background = 'linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(64, 64, 64, 0.2))';
+            }
+            
+            // Asteroid Fortune Wheel
+            const asteroidFortuneWheel = document.getElementById('fortuneWheel');
+            const asteroidSpinButton = document.getElementById('spinButton');
+            const asteroidFortuneResult = document.getElementById('fortuneResult');
+            
+            if (asteroidSpinButton && asteroidFortuneWheel) {
+                asteroidSpinButton.addEventListener('click', function() {
+                    // Random rotation between 1080-2160 degrees (3-6 full spins)
+                    const randomRotation = Math.random() * 1080 + 1080;
+                    const finalAngle = randomRotation % 360;
+                    
+                    // Apply rotation
+                    asteroidFortuneWheel.style.transform = `rotate(${randomRotation}deg)`;
+                    
+                    // Determine which section we landed on (6 sections, 60 degrees each)
+                    const sectionIndex = Math.floor((360 - finalAngle) / 60);
+                    const sections = document.querySelectorAll('.wheel-section');
+                    
+                    setTimeout(() => {
+                        const selectedSection = sections[sectionIndex];
+                        const fortune = selectedSection.dataset.fortune;
+                        asteroidFortuneResult.textContent = fortune;
+                        
+                        // Add sparkle effect to the result
+                        asteroidFortuneResult.style.animation = 'cosmic-glow 2s ease-in-out';
+                        setTimeout(() => {
+                            asteroidFortuneResult.style.animation = '';
+                        }, 2000);
+                        
+                        // Clear result after 5 seconds
+                        setTimeout(() => {
+                            asteroidFortuneResult.textContent = '';
+                        }, 5000);
+                    }, 3000);
+                });
+            }
+            
+            // Asteroid Naming Station
+            const asteroidNameInput = document.getElementById('asteroidName');
+            const registerButton = document.getElementById('registerButton');
+            const namedAsteroid = document.getElementById('namedAsteroid');
+            const asteroidLabelText = document.querySelector('.asteroid-label-text');
+            
+            if (registerButton && asteroidNameInput) {
+                registerButton.addEventListener('click', function() {
+                    const name = asteroidNameInput.value.trim();
+                    
+                    if (name) {
+                        asteroidLabelText.textContent = name;
+                        namedAsteroid.classList.add('glowing');
+                        
+                        // Success animation
+                        registerButton.textContent = '✨ Registered!';
+                        registerButton.style.background = 'linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(64, 64, 64, 0.2))';
+                        
+                        // Reset after 3 seconds
+                        setTimeout(() => {
+                            registerButton.textContent = '🌟 Register Name';
+                            registerButton.style.background = 'linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(64, 64, 64, 0.2))';
+                            asteroidNameInput.value = '';
+                            namedAsteroid.classList.remove('glowing');
+                            asteroidLabelText.textContent = 'Unnamed Rock';
+                        }, 3000);
+                    } else {
+                        // Error animation
+                        asteroidNameInput.style.animation = 'shake 0.5s ease-in-out';
+                        asteroidNameInput.placeholder = 'Please enter a name!';
+                        setTimeout(() => {
+                            asteroidNameInput.style.animation = '';
+                            asteroidNameInput.placeholder = 'Enter asteroid name...';
+                        }, 500);
+                    }
+                });
+                
+                // Allow Enter key to register name
+                asteroidNameInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        registerButton.click();
+                    }
+                });
+            }
+            
+            // Floating asteroids collision effect
+            const floatingAsteroids = document.querySelectorAll('.floating-asteroid');
+            floatingAsteroids.forEach(asteroid => {
+                asteroid.addEventListener('click', function() {
+                    this.style.animation = 'asteroid-shake 0.5s ease-in-out';
+                    this.style.pointerEvents = 'auto';
+                    
+                    setTimeout(() => {
+                        this.style.animation = 'asteroid-float 6s ease-in-out infinite';
+                        this.style.animationDelay = Math.random() * 3 + 's';
+                    }, 500);
+                });
+            });
         });
     </script>
 </body>
