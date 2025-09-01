@@ -19,10 +19,10 @@ An educational journey through our solar system built with pure CSS magic! Explo
 
 ![Grandma Mode](screenshots/grandma-mode.png)
 
-### Planet-Specific Glowing Effects
+### Planet Cards
 *[Screenshot showing the glowing effects when planets are selected in Grandma Mode]*
 
-![Glowing Effects](screenshots/planet-glow-effects.png)
+![Glowing Effects](screenshots/planet-card.png)
 
 ## 🎯 Optimization Tracks Implemented
 
@@ -105,22 +105,24 @@ This project demonstrates mastery of three specific optimization tracks, each pu
 ## 🚀 Features
 
 ### 🌟 Core Learning Experience
-- **Interactive Solar System**: Click any planet to explore its unique features
+- **Interactive Solar System**: Click any planet in cosmic navigation menu to explore its unique features
 - **Educational Content**: Fascinating facts about each celestial body
 - **Visual Learning**: Color-coded planets with authentic representations
 - **Progressive Discovery**: Layered information for different learning levels
 
 ### 🎮 Interactive Elements
-- **Asteroid Fact Hunt**: Discover 4 educational asteroid facts
-- **Planet Quizzes**: Test knowledge with interactive Q&A
-- **Phase Demonstrations**: Mercury phase visualization
-- **Naming Tools**: Interactive planet and asteroid naming features
+- **Per-planet Fact Hunts**: Short, discoverable facts and prompts for every planet, dwarf planet, and major moon — designed to encourage curiosity and quick learning.
+- **Per-planet Quizzes**: Lightweight, planet-specific quizzes and challenges to reinforce key facts and concepts.
+- **Phase & Phenomena Demonstrations**: Visual demonstrations of observable phenomena (phases, rings, storms, magnetospheric effects) — Mercury and lunar phases included where relevant.
+- **Naming & Exploration Tools**: Interactive naming, notes, and simple exploration tools for planets, moons, and asteroids to personalize learning.
+- **Mini-games & Discovery Activities**: Short, accessible interactions (fact hunts, matching, and discovery prompts) across the system to make learning playful.
 
 ### ♿ Accessibility Features
-- **Grandma Mode**: Large, high-contrast interface for enhanced accessibility
-- **Keyboard Navigation**: Full functionality without mouse
-- **Screen Reader Support**: Semantic HTML with proper ARIA labels
-- **Responsive Design**: Works on all devices from mobile to desktop
+- **Grandma Mode**: Large, high-contrast, easy-to-read interface with bigger controls and generous spacing for users who prefer simplified layouts.
+- **Readable typography & contrast**: Larger base font sizes and higher-contrast colors applied to improve legibility.
+- **Dark-icon alternatives**: Certain planet icons have darker symbol alternatives in Grandma Mode for improved visibility.
+- **Responsive, touch-first layout**: UI and controls scale and reflow for mobile, tablet, and desktop for easier touch interaction.
+- **Semantic structure for assistive tech**: Headings, lists and labeled controls are used to make the page easier to navigate; ARIA enhancements can be added later where needed.
 
 ### 🎨 Visual Excellence
 - **Pure CSS Animations**: Smooth planetary orbits and transitions
