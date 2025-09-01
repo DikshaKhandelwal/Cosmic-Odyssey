@@ -468,9 +468,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     position: relative;
-    margin-top: 1.5em;
+    margin-top: 2rem;
 }
 .mercury-phase-input { display: none; }
 .mercury-phase-label {
@@ -480,12 +480,14 @@
     cursor: pointer;
     font-weight: 600;
     font-size: 1.1em;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 2em;
-    padding: 0.4em 1.2em;
+    padding: 0.6em 1.4em;
     box-shadow: 0 0 8px #bfc1c6;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8rem;
     transition: background 0.3s;
+    position: relative;
+    z-index: 1;
 }
 .phase-sun { color: #ffe066; filter: drop-shadow(0 0 6px #ffe066cc); }
 .phase-moon { color: #222; filter: drop-shadow(0 0 6px #2228); }
@@ -495,7 +497,7 @@
     height: 60px;
     border-radius: 20px;
     background: radial-gradient(circle at 60% 40%, #fffbe6 0%, #ffe066 60%, #bfc1c6 100%);
-    margin-top: -2.5em;
+    margin-top: 0.5rem;
     z-index: -1;
     transition: background 0.5s;
 }
