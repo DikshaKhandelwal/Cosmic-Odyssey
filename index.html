@@ -17,19 +17,26 @@
         </p>
     </div>
 
+    <!-- Navigation Toggle -->
+    <input type="checkbox" id="cosmicNavToggle" class="cosmic-nav-toggle">
+    
     <!-- Enter Cosmos Button -->
-    <button class="enter-cosmos-btn" id="enterCosmosBtn" onclick="openCosmicNavigation()">
+    <label for="cosmicNavToggle" class="enter-cosmos-btn">
         <span class="cosmos-icon">✨</span>
         <span class="cosmos-text">Enter Cosmos</span>
         <span class="cosmos-sparkle">🌟</span>
-    </button>
+    </label>
 
-    <!-- Right Side Planet Navigation Menu (Hidden by default) -->
-    <div class="planet-nav-menu" id="planetNavMenu" style="display: none;">
+    <!-- Right Side Planet Navigation Menu -->
+    <div class="planet-nav-menu" id="planetNavMenu">
         <div class="nav-menu-header">
             <h3>🌌 Cosmic Navigation</h3>
-            <button class="menu-close" id="menuClose" onclick="closeCosmicNavigation()">✕</button>
+            <label for="cosmicNavToggle" class="menu-close">✕</label>
         </div>
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="mobileMenuToggle" class="mobile-menu-toggle">
+        <label for="mobileMenuToggle" class="nav-mobile-toggle">☰</label>
+        
         <div class="nav-menu-content" id="navMenuContent">
             <a href="#sun-menu" class="nav-planet-link sun-nav" title="Sun - Control Center">
                 <span class="planet-emoji">☀️</span>
@@ -634,12 +641,22 @@
                     <p>Which moon of Neptune is the largest?</p>
                 </div>
                 <div class="bubble-quiz">
-                    <div class="quiz-bubble wrong" data-answer="Nereid">Nereid</div>
-                    <div class="quiz-bubble correct" data-answer="Triton">Triton</div>
-                    <div class="quiz-bubble wrong" data-answer="Proteus">Proteus</div>
-                    <div class="quiz-bubble wrong" data-answer="Larissa">Larissa</div>
+                    <input type="radio" id="quiz-nereid" name="neptune-quiz" class="quiz-input">
+                    <label for="quiz-nereid" class="quiz-bubble wrong" data-answer="Nereid">Nereid</label>
+                    
+                    <input type="radio" id="quiz-triton" name="neptune-quiz" class="quiz-input">
+                    <label for="quiz-triton" class="quiz-bubble correct" data-answer="Triton">Triton</label>
+                    
+                    <input type="radio" id="quiz-proteus" name="neptune-quiz" class="quiz-input">
+                    <label for="quiz-proteus" class="quiz-bubble wrong" data-answer="Proteus">Proteus</label>
+                    
+                    <input type="radio" id="quiz-larissa" name="neptune-quiz" class="quiz-input">
+                    <label for="quiz-larissa" class="quiz-bubble wrong" data-answer="Larissa">Larissa</label>
                 </div>
-                <div class="quiz-result"></div>
+                <div class="quiz-result">
+                    <div class="quiz-correct-result">🎉 Correct! Triton is Neptune's largest moon!</div>
+                    <div class="quiz-wrong-result">💙 Try again! Think of the largest moon...</div>
+                </div>
             </div>
 
             <!-- Echo Chamber -->
@@ -647,16 +664,37 @@
                 <h3>🌊 Echo Chamber</h3>
                 <p>Click the seashell to reveal mystical word illusions</p>
                 <div class="echo-container">
-                    <div class="seashell" data-illusion="LEVEL">🐚</div>
+                    <input type="checkbox" id="seashell-toggle" class="seashell-toggle">
+                    <label for="seashell-toggle" class="seashell" data-illusion="LEVEL">🐚</label>
                     <div class="illusion-text">
                         <p class="illusion-word">LEVEL</p>
                         <p class="illusion-description">This word reads the same forwards and backwards - like ocean waves that flow and return</p>
                     </div>
                 </div>
                 <div class="more-illusions">
-                    <div class="illusion-card" data-word="RADAR" data-desc="Like sonar through the depths">RADAR</div>
-                    <div class="illusion-card" data-word="CIVIC" data-desc="Community flows in perfect symmetry">CIVIC</div>
-                    <div class="illusion-card" data-word="KAYAK" data-desc="Navigate the waters of language">KAYAK</div>
+                    <input type="radio" id="illusion-radar" name="illusion-choice" class="illusion-input">
+                    <label for="illusion-radar" class="illusion-card" data-word="RADAR" data-desc="Like sonar through the depths">RADAR</label>
+                    
+                    <input type="radio" id="illusion-civic" name="illusion-choice" class="illusion-input">
+                    <label for="illusion-civic" class="illusion-card" data-word="CIVIC" data-desc="Community flows in perfect symmetry">CIVIC</label>
+                    
+                    <input type="radio" id="illusion-kayak" name="illusion-choice" class="illusion-input">
+                    <label for="illusion-kayak" class="illusion-card" data-word="KAYAK" data-desc="Navigate the waters of language">KAYAK</label>
+                    
+                    <div class="illusion-display">
+                        <div class="radar-display">
+                            <p class="illusion-word">RADAR</p>
+                            <p class="illusion-description">Like sonar through the depths</p>
+                        </div>
+                        <div class="civic-display">
+                            <p class="illusion-word">CIVIC</p>
+                            <p class="illusion-description">Community flows in perfect symmetry</p>
+                        </div>
+                        <div class="kayak-display">
+                            <p class="illusion-word">KAYAK</p>
+                            <p class="illusion-description">Navigate the waters of language</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -666,6 +704,7 @@
                 <p>Let the sea god's compass guide your decisions</p>
                 <div class="decision-spinner">
                     <div class="compass-container">
+                        <input type="checkbox" id="compass-spin" class="compass-spin-toggle">
                         <div class="compass-dial">
                             <div class="compass-needle"></div>
                             <div class="compass-labels">
@@ -673,9 +712,12 @@
                                 <span class="compass-no">NO</span>
                             </div>
                         </div>
-                        <button class="spin-button">🌊 Ask Neptune</button>
+                        <label for="compass-spin" class="spin-button">🌊 Ask Neptune</label>
                     </div>
-                    <div class="decision-result"></div>
+                    <div class="decision-result">
+                        <div class="yes-result">✨ Neptune says: YES ✨</div>
+                        <div class="no-result">🌊 Neptune says: NO 🌊</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -798,17 +840,17 @@
                     </div>
                     <div class="spaceship-controls">
                         <input type="radio" name="ship-lane" id="lane1" class="lane-radio">
-                        <label for="lane1" class="ship-position">🚀</label>
+                        <label for="lane1" class="ship-position lane-1-ship">🚀</label>
                         
                         <input type="radio" name="ship-lane" id="lane2" class="lane-radio" checked>
-                        <label for="lane2" class="ship-position">🚀</label>
+                        <label for="lane2" class="ship-position lane-2-ship">🚀</label>
                         
                         <input type="radio" name="ship-lane" id="lane3" class="lane-radio">
-                        <label for="lane3" class="ship-position">🚀</label>
+                        <label for="lane3" class="ship-position lane-3-ship">🚀</label>
                     </div>
                     <div class="game-status">
-                        <button class="start-game">🎮 Start Mission</button>
-                        <div class="score">Safe Passages: 0</div>
+                        <p>🎮 Choose your lane to avoid asteroids!</p>
+                        <p>Use the ship controls above to navigate safely through the asteroid field</p>
                     </div>
                 </div>
             </div>
@@ -818,7 +860,8 @@
                 <h3>🎯 Asteroid Fortune Wheel</h3>
                 <p>Spin the cosmic wheel to discover what treasures await!</p>
                 <div class="fortune-wheel-container">
-                    <div class="asteroid-wheel" id="fortuneWheel">
+                    <input type="checkbox" id="wheel-spin" class="wheel-spin-toggle">
+                    <div class="asteroid-wheel">
                         <div class="wheel-section" data-fortune="You discovered Stardust! ✨">✨</div>
                         <div class="wheel-section" data-fortune="Ancient Relic found! 🏛️">🏛️</div>
                         <div class="wheel-section" data-fortune="Rare Metal detected! 🥇">🥇</div>
@@ -827,8 +870,10 @@
                         <div class="wheel-section" data-fortune="Alien Artifact located! 👽">👽</div>
                         <div class="wheel-pointer">📍</div>
                     </div>
-                    <button class="spin-wheel" id="spinButton">🌪️ Spin the Belt</button>
-                    <div class="fortune-result" id="fortuneResult"></div>
+                    <label for="wheel-spin" class="spin-wheel">🌪️ Spin the Belt</label>
+                    <div class="fortune-result">
+                        <div class="fortune-message">Click the wheel to discover cosmic treasures!</div>
+                    </div>
                 </div>
             </div>
 
@@ -844,12 +889,13 @@
                             <div class="name-orbit-dot"></div>
                             <div class="name-orbit-dot"></div>
                         </div>
-                        <input type="text" id="asteroidName" class="asteroid-name-input" placeholder="Enter asteroid name..." maxlength="20">
-                        <button class="register-name" id="registerButton">🌟 Register Name</button>
+                        <input type="text" id="asteroidNameInput" class="asteroid-name-input" placeholder="Enter asteroid name..." maxlength="20">
+                        <label for="asteroidNameInput" class="register-name">🌟 Name Your Asteroid</label>
                     </div>
-                    <div class="named-asteroid" id="namedAsteroid">
+                    <div class="named-asteroid">
                         <div class="asteroid-tag">🪨</div>
-                        <div class="asteroid-label-text">Unnamed Rock</div>
+                        <div class="asteroid-label-text">Your Named Asteroid</div>
+                        <p class="naming-tip">💡 Type in the box above to see your asteroid name appear!</p>
                     </div>
                 </div>
             </div>
@@ -1629,12 +1675,20 @@
                 <h3>❄️ Frozen Fortune Teller</h3>
                 <p>Click the cosmic ice crystal to reveal icy wisdom from the edge of space</p>
                 <div class="fortune-container">
-                    <div class="ice-crystal" id="fortuneCrystal">
+                    <input type="checkbox" id="fortune-crystal" class="fortune-toggle">
+                    <label for="fortune-crystal" class="ice-crystal">
                         <div class="crystal-core">❄️</div>
                         <div class="crystal-glow"></div>
-                    </div>
-                    <div class="fortune-text" id="fortuneText">
-                        <p>Click the crystal to reveal your frozen fortune...</p>
+                    </label>
+                    <div class="fortune-text">
+                        <div class="fortune-default">Click the crystal to reveal your frozen fortune...</div>
+                        <div class="fortune-revealed">
+                            <p>Even the smallest shines brightest in the cosmos ✨</p>
+                            <p>Distance means nothing when you carry secrets 🌑</p>
+                            <p>Your unique path will lead to extraordinary discoveries 🔮</p>
+                            <p>Like me, you are more than others perceive you to be 💫</p>
+                            <p>From the edge of space, I see your hidden potential ❄️</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1642,35 +1696,30 @@
             <!-- Ice Maze -->
             <div class="planet-activity">
                 <h3>🧊 Ice Maze to Charon</h3>
-                <p>Navigate through the frozen paths to reach Pluto's loyal moon</p>
+                <p>Navigate through the frozen paths to reach Pluto's loyal moon (hover over paths)</p>
                 <div class="ice-maze">
                     <div class="maze-grid">
-                        <div class="maze-cell start" data-position="0,0">🌑</div>
-                        <div class="maze-cell path" data-position="0,1"></div>
-                        <div class="maze-cell wall" data-position="0,2"></div>
-                        <div class="maze-cell path" data-position="0,3"></div>
-                        <div class="maze-cell path" data-position="1,0"></div>
-                        <div class="maze-cell wall" data-position="1,1"></div>
-                        <div class="maze-cell path" data-position="1,2"></div>
-                        <div class="maze-cell path" data-position="1,3"></div>
-                        <div class="maze-cell path" data-position="2,0"></div>
-                        <div class="maze-cell path" data-position="2,1"></div>
-                        <div class="maze-cell wall" data-position="2,2"></div>
-                        <div class="maze-cell path" data-position="2,3"></div>
-                        <div class="maze-cell wall" data-position="3,0"></div>
-                        <div class="maze-cell path" data-position="3,1"></div>
-                        <div class="maze-cell path" data-position="3,2"></div>
-                        <div class="maze-cell goal" data-position="3,3">🌕</div>
+                        <div class="maze-cell start current" data-position="0,0" title="Start - Pluto">🌑</div>
+                        <div class="maze-cell path" data-position="0,1" title="Ice Path"></div>
+                        <div class="maze-cell wall" data-position="0,2" title="Frozen Wall">❄️</div>
+                        <div class="maze-cell path" data-position="0,3" title="Ice Path"></div>
+                        <div class="maze-cell path" data-position="1,0" title="Ice Path"></div>
+                        <div class="maze-cell wall" data-position="1,1" title="Frozen Wall">❄️</div>
+                        <div class="maze-cell path" data-position="1,2" title="Ice Path"></div>
+                        <div class="maze-cell path" data-position="1,3" title="Ice Path"></div>
+                        <div class="maze-cell path" data-position="2,0" title="Ice Path"></div>
+                        <div class="maze-cell path" data-position="2,1" title="Ice Path"></div>
+                        <div class="maze-cell wall" data-position="2,2" title="Frozen Wall">❄️</div>
+                        <div class="maze-cell path" data-position="2,3" title="Ice Path"></div>
+                        <div class="maze-cell wall" data-position="3,0" title="Frozen Wall">❄️</div>
+                        <div class="maze-cell path" data-position="3,1" title="Ice Path"></div>
+                        <div class="maze-cell path" data-position="3,2" title="Ice Path"></div>
+                        <div class="maze-cell goal" data-position="3,3" title="Goal - Charon">🌕</div>
                     </div>
-                    <div class="maze-controls">
-                        <button class="maze-btn" data-direction="up">↑</button>
-                        <div class="maze-controls-row">
-                            <button class="maze-btn" data-direction="left">←</button>
-                            <button class="maze-btn" data-direction="down">↓</button>
-                            <button class="maze-btn" data-direction="right">→</button>
-                        </div>
+                    <div class="maze-info">
+                        <p>🎯 Goal: Reach Charon (🌕) by following the ice paths</p>
+                        <p>❄️ Avoid the frozen walls - they block your way</p>
                     </div>
-                    <div class="maze-status">Position: Start</div>
                 </div>
             </div>
 
@@ -1681,16 +1730,22 @@
                 <div class="identity-quiz">
                     <div class="quiz-question">Is Pluto a planet?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option planet-btn" data-answer="planet">
+                        <input type="radio" id="pluto-planet" name="pluto-identity" class="identity-input">
+                        <label for="pluto-planet" class="quiz-option planet-btn">
                             <span class="option-icon">🪐</span>
                             <span class="option-text">Planet</span>
-                        </button>
-                        <button class="quiz-option dwarf-btn" data-answer="dwarf">
+                        </label>
+                        
+                        <input type="radio" id="pluto-dwarf" name="pluto-identity" class="identity-input">
+                        <label for="pluto-dwarf" class="quiz-option dwarf-btn">
                             <span class="option-icon">🌑</span>
                             <span class="option-text">Dwarf Planet</span>
-                        </button>
+                        </label>
                     </div>
-                    <div class="quiz-response" id="quizResponse"></div>
+                    <div class="quiz-response">
+                        <div class="planet-response">🪐 Once upon a time... maybe! I was discovered in 1930 and was a planet for 76 years!</div>
+                        <div class="dwarf-response">🌑 You got it! I'm officially a dwarf planet since 2006, but I'm still special and mysterious!</div>
+                    </div>
                 </div>
             </div>
 
@@ -1699,13 +1754,14 @@
                 <h3>🌌 Orbit Dance</h3>
                 <p>Watch my unique tilted orbit around the Sun</p>
                 <div class="orbit-container">
+                    <input type="checkbox" id="orbit-toggle" class="orbit-toggle">
                     <div class="solar-system-mini">
                         <div class="mini-sun">☀️</div>
                         <div class="pluto-orbit">
-                            <div class="orbiting-pluto" id="orbitingPluto">🌑</div>
+                            <div class="orbiting-pluto">🌑</div>
                         </div>
                     </div>
-                    <button class="orbit-btn" id="startOrbit">🚀 Start Orbit Dance</button>
+                    <label for="orbit-toggle" class="orbit-btn">🚀 Toggle Orbit Dance</label>
                     <div class="orbit-info">
                         <p>My orbit is tilted 17° and takes 248 Earth years!</p>
                     </div>
@@ -1714,452 +1770,5 @@
         </div>
     </div>
 
-    <script>
-        function openCosmicNavigation() {
-            const navMenu = document.getElementById('planetNavMenu');
-            const enterBtn = document.getElementById('enterCosmosBtn');
-            
-            navMenu.style.display = 'block';
-            enterBtn.style.display = 'none';
-            
-            // Add entrance animation
-            setTimeout(() => {
-                navMenu.classList.add('menu-active');
-            }, 10);
-        }
-        
-        function closeCosmicNavigation() {
-            const navMenu = document.getElementById('planetNavMenu');
-            const enterBtn = document.getElementById('enterCosmosBtn');
-            
-            navMenu.classList.remove('menu-active');
-            
-            // Hide menu after animation
-            setTimeout(() => {
-                navMenu.style.display = 'none';
-                enterBtn.style.display = 'flex';
-            }, 300);
-        }
-        
-        function toggleMenu() {
-            const menuContent = document.getElementById('navMenuContent');
-            menuContent.classList.toggle('active');
-        }
-        
-        // Close menu when clicking on a planet link
-        document.querySelectorAll('.nav-planet-link').forEach(link => {
-            link.addEventListener('click', () => {
-                // On mobile, close the mobile submenu
-                const menuContent = document.getElementById('navMenuContent');
-                if (window.innerWidth <= 768) {
-                    menuContent.classList.remove('active');
-                }
-                
-                // Close the entire cosmic navigation after a short delay
-                setTimeout(() => {
-                    closeCosmicNavigation();
-                }, 500);
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const menu = document.querySelector('.planet-nav-menu');
-            const enterBtn = document.getElementById('enterCosmosBtn');
-            const menuContent = document.getElementById('navMenuContent');
-            
-            // If clicking outside the menu and enter button
-            if (menu && !menu.contains(e.target) && !enterBtn.contains(e.target)) {
-                if (window.innerWidth <= 768) {
-                    menuContent.classList.remove('active');
-                }
-                // Close cosmic navigation
-                closeCosmicNavigation();
-            }
-        });
-        
-        // Add keyboard support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeCosmicNavigation();
-            }
-        });
-
-        // ===== NEPTUNE INTERACTIVE FEATURES =====
-        
-        // Bubble Pop Quiz
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizBubbles = document.querySelectorAll('.quiz-bubble');
-            const quizResult = document.querySelector('.quiz-result');
-            
-            quizBubbles.forEach(bubble => {
-                bubble.addEventListener('click', function() {
-                    if (this.classList.contains('popped')) return;
-                    
-                    this.classList.add('popped');
-                    
-                    if (this.classList.contains('correct')) {
-                        quizResult.textContent = '🎉 Correct! Triton is Neptune\'s largest moon!';
-                        quizResult.style.color = '#00ff7f';
-                    } else {
-                        quizResult.textContent = '💙 Try again! Think of the largest moon...';
-                        quizResult.style.color = '#00d4ff';
-                    }
-                    
-                    // Reset quiz after 3 seconds
-                    setTimeout(() => {
-                        quizBubbles.forEach(b => b.classList.remove('popped'));
-                        quizResult.textContent = '';
-                    }, 3000);
-                });
-            });
-            
-            // Echo Chamber functionality
-            const seashell = document.querySelector('.seashell');
-            const illusionText = document.querySelector('.illusion-text');
-            const illusionCards = document.querySelectorAll('.illusion-card');
-            
-            if (seashell) {
-                seashell.addEventListener('click', function() {
-                    illusionText.classList.toggle('revealed');
-                });
-            }
-            
-            illusionCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const word = this.dataset.word;
-                    const desc = this.dataset.desc;
-                    
-                    document.querySelector('.illusion-word').textContent = word;
-                    document.querySelector('.illusion-description').textContent = desc;
-                    illusionText.classList.add('revealed');
-                });
-            });
-            
-            // Poseidon's Choice Spinner
-            const spinButton = document.querySelector('.spin-button');
-            const compassNeedle = document.querySelector('.compass-needle');
-            const decisionResult = document.querySelector('.decision-result');
-            
-            if (spinButton) {
-                spinButton.addEventListener('click', function() {
-                    // Random rotation between 720-1440 degrees (2-4 full spins)
-                    const randomRotation = Math.random() * 720 + 720;
-                    const finalAngle = randomRotation % 360;
-                    
-                    // Apply rotation
-                    compassNeedle.style.transform = `translate(-50%, -100%) rotate(${randomRotation}deg)`;
-                    
-                    // Determine result based on final angle
-                    setTimeout(() => {
-                        const result = finalAngle < 180 ? 'YES' : 'NO';
-                        const emoji = result === 'YES' ? '✨' : '🌊';
-                        decisionResult.textContent = `${emoji} Neptune says: ${result} ${emoji}`;
-                        
-                        // Clear result after 4 seconds
-                        setTimeout(() => {
-                            decisionResult.textContent = '';
-                        }, 4000);
-                    }, 2000);
-                });
-            }
-
-            // ===== PLUTO INTERACTIVE FEATURES =====
-            
-            // Frozen Fortune Teller
-            const fortuneCrystal = document.getElementById('fortuneCrystal');
-            const fortuneText = document.getElementById('fortuneText');
-            const plutoOrb = document.getElementById('plutoOrb');
-            
-            const fortunes = [
-                "Even the smallest shines brightest in the cosmos ✨",
-                "Distance means nothing when you carry secrets 🌑",
-                "Your unique path will lead to extraordinary discoveries 🔮",
-                "Like me, you are more than others perceive you to be 💫",
-                "From the edge of space, I see your hidden potential ❄️",
-                "Small steps in the right direction change everything 🌌",
-                "Your story is just beginning, don't let others define it 🌟",
-                "In the quiet corners of existence, magic happens ✨"
-            ];
-            
-            if (fortuneCrystal) {
-                fortuneCrystal.addEventListener('click', function() {
-                    const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-                    fortuneText.innerHTML = `<p>${randomFortune}</p>`;
-                    
-                    // Add sparkle effect
-                    this.style.transform = 'scale(1.2) rotate(360deg)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 600);
-                });
-            }
-            
-            // Pluto size changing effect
-            if (plutoOrb) {
-                plutoOrb.addEventListener('click', function() {
-                    this.style.animation = 'pluto-pulse 0.6s ease-out';
-                    setTimeout(() => {
-                        this.style.animation = 'pluto-peek 6s ease-in-out infinite';
-                    }, 600);
-                });
-            }
-            
-            // Ice Maze Game
-            let currentPosition = [0, 0];
-            const mazeGrid = [
-                [1, 1, 0, 1], // 1 = path, 0 = wall
-                [1, 0, 1, 1],
-                [1, 1, 0, 1],
-                [0, 1, 1, 1]
-            ];
-            
-            const mazeCells = document.querySelectorAll('.maze-cell');
-            const mazeStatus = document.querySelector('.maze-status');
-            const mazeBtns = document.querySelectorAll('.maze-btn');
-            
-            function updateMazeDisplay() {
-                mazeCells.forEach(cell => {
-                    cell.classList.remove('current');
-                    const pos = cell.dataset.position.split(',').map(Number);
-                    if (pos[0] === currentPosition[0] && pos[1] === currentPosition[1]) {
-                        cell.classList.add('current');
-                    }
-                });
-                
-                if (currentPosition[0] === 0 && currentPosition[1] === 0) {
-                    mazeStatus.textContent = 'Position: Start (Pluto)';
-                } else if (currentPosition[0] === 3 && currentPosition[1] === 3) {
-                    mazeStatus.textContent = '🎉 Reached Charon! Well done!';
-                    setTimeout(() => {
-                        currentPosition = [0, 0];
-                        updateMazeDisplay();
-                    }, 2000);
-                } else {
-                    mazeStatus.textContent = `Position: [${currentPosition[0]}, ${currentPosition[1]}]`;
-                }
-            }
-            
-            mazeBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const direction = this.dataset.direction;
-                    let newPos = [...currentPosition];
-                    
-                    switch(direction) {
-                        case 'up':
-                            newPos[0] = Math.max(0, currentPosition[0] - 1);
-                            break;
-                        case 'down':
-                            newPos[0] = Math.min(3, currentPosition[0] + 1);
-                            break;
-                        case 'left':
-                            newPos[1] = Math.max(0, currentPosition[1] - 1);
-                            break;
-                        case 'right':
-                            newPos[1] = Math.min(3, currentPosition[1] + 1);
-                            break;
-                    }
-                    
-                    // Check if move is valid (not into a wall)
-                    if (mazeGrid[newPos[0]] && mazeGrid[newPos[0]][newPos[1]] === 1) {
-                        currentPosition = newPos;
-                        updateMazeDisplay();
-                    } else {
-                        // Invalid move - shake the button
-                        this.style.animation = 'shake 0.5s ease-in-out';
-                        setTimeout(() => {
-                            this.style.animation = '';
-                        }, 500);
-                    }
-                });
-            });
-            
-            // Initialize maze
-            updateMazeDisplay();
-            
-            // Secret Identity Quiz
-            const quizOptions = document.querySelectorAll('.quiz-option');
-            const quizResponse = document.getElementById('quizResponse');
-            
-            quizOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const answer = this.dataset.answer;
-                    quizResponse.classList.remove('show');
-                    
-                    setTimeout(() => {
-                        if (answer === 'planet') {
-                            quizResponse.textContent = '🪐 Once upon a time... maybe! I was discovered in 1930 and was a planet for 76 years!';
-                            quizResponse.style.background = 'linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(200, 230, 255, 0.2))';
-                        } else {
-                            quizResponse.textContent = '🌑 You got it! I\'m officially a dwarf planet since 2006, but I\'m still special and mysterious!';
-                            quizResponse.style.background = 'linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(200, 230, 255, 0.2))';
-                        }
-                        quizResponse.classList.add('show');
-                    }, 100);
-                });
-            });
-            
-            // Orbit Dance
-            const startOrbitBtn = document.getElementById('startOrbit');
-            const orbitingPluto = document.getElementById('orbitingPluto');
-            
-            if (startOrbitBtn && orbitingPluto) {
-                startOrbitBtn.addEventListener('click', function() {
-                    orbitingPluto.classList.toggle('dancing');
-                    
-                    if (orbitingPluto.classList.contains('dancing')) {
-                        this.textContent = '⏸️ Stop Orbit';
-                        this.style.background = 'linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(123, 104, 238, 0.2))';
-                    } else {
-                        this.textContent = '🚀 Start Orbit Dance';
-                        this.style.background = 'linear-gradient(145deg, rgba(200, 230, 255, 0.3), rgba(123, 104, 238, 0.2))';
-                    }
-                });
-            }
-
-            // ===== ASTEROID BELT INTERACTIVE FEATURES =====
-            
-            // Dodge the Asteroid Game
-            const startGameBtn = document.querySelector('.start-game');
-            const fallingAsteroids = document.querySelectorAll('.falling-asteroid');
-            const scoreElement = document.querySelector('.score');
-            let gameActive = false;
-            let score = 0;
-            let gameInterval;
-            
-            if (startGameBtn) {
-                startGameBtn.addEventListener('click', function() {
-                    if (!gameActive) {
-                        startAsteroidGame();
-                    } else {
-                        stopAsteroidGame();
-                    }
-                });
-            }
-            
-            function startAsteroidGame() {
-                gameActive = true;
-                score = 0;
-                startGameBtn.textContent = '⏹️ Stop Mission';
-                startGameBtn.style.background = 'linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(64, 64, 64, 0.2))';
-                
-                gameInterval = setInterval(() => {
-                    // Randomly activate asteroid fall animation
-                    const randomAsteroid = fallingAsteroids[Math.floor(Math.random() * fallingAsteroids.length)];
-                    randomAsteroid.style.animation = 'asteroid-fall 2s linear';
-                    
-                    // Check for collision after animation
-                    setTimeout(() => {
-                        score++;
-                        scoreElement.textContent = `Safe Passages: ${score}`;
-                        randomAsteroid.style.animation = 'asteroid-fall 3s linear infinite';
-                    }, 2000);
-                }, 3000);
-            }
-            
-            function stopAsteroidGame() {
-                gameActive = false;
-                clearInterval(gameInterval);
-                startGameBtn.textContent = '🎮 Start Mission';
-                startGameBtn.style.background = 'linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(64, 64, 64, 0.2))';
-            }
-            
-            // Asteroid Fortune Wheel
-            const asteroidFortuneWheel = document.getElementById('fortuneWheel');
-            const asteroidSpinButton = document.getElementById('spinButton');
-            const asteroidFortuneResult = document.getElementById('fortuneResult');
-            
-            if (asteroidSpinButton && asteroidFortuneWheel) {
-                asteroidSpinButton.addEventListener('click', function() {
-                    // Random rotation between 1080-2160 degrees (3-6 full spins)
-                    const randomRotation = Math.random() * 1080 + 1080;
-                    const finalAngle = randomRotation % 360;
-                    
-                    // Apply rotation
-                    asteroidFortuneWheel.style.transform = `rotate(${randomRotation}deg)`;
-                    
-                    // Determine which section we landed on (6 sections, 60 degrees each)
-                    const sectionIndex = Math.floor((360 - finalAngle) / 60);
-                    const sections = document.querySelectorAll('.wheel-section');
-                    
-                    setTimeout(() => {
-                        const selectedSection = sections[sectionIndex];
-                        const fortune = selectedSection.dataset.fortune;
-                        asteroidFortuneResult.textContent = fortune;
-                        
-                        // Add sparkle effect to the result
-                        asteroidFortuneResult.style.animation = 'cosmic-glow 2s ease-in-out';
-                        setTimeout(() => {
-                            asteroidFortuneResult.style.animation = '';
-                        }, 2000);
-                        
-                        // Clear result after 5 seconds
-                        setTimeout(() => {
-                            asteroidFortuneResult.textContent = '';
-                        }, 5000);
-                    }, 3000);
-                });
-            }
-            
-            // Asteroid Naming Station
-            const asteroidNameInput = document.getElementById('asteroidName');
-            const registerButton = document.getElementById('registerButton');
-            const namedAsteroid = document.getElementById('namedAsteroid');
-            const asteroidLabelText = document.querySelector('.asteroid-label-text');
-            
-            if (registerButton && asteroidNameInput) {
-                registerButton.addEventListener('click', function() {
-                    const name = asteroidNameInput.value.trim();
-                    
-                    if (name) {
-                        asteroidLabelText.textContent = name;
-                        namedAsteroid.classList.add('glowing');
-                        
-                        // Success animation
-                        registerButton.textContent = '✨ Registered!';
-                        registerButton.style.background = 'linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(64, 64, 64, 0.2))';
-                        
-                        // Reset after 3 seconds
-                        setTimeout(() => {
-                            registerButton.textContent = '🌟 Register Name';
-                            registerButton.style.background = 'linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(64, 64, 64, 0.2))';
-                            asteroidNameInput.value = '';
-                            namedAsteroid.classList.remove('glowing');
-                            asteroidLabelText.textContent = 'Unnamed Rock';
-                        }, 3000);
-                    } else {
-                        // Error animation
-                        asteroidNameInput.style.animation = 'shake 0.5s ease-in-out';
-                        asteroidNameInput.placeholder = 'Please enter a name!';
-                        setTimeout(() => {
-                            asteroidNameInput.style.animation = '';
-                            asteroidNameInput.placeholder = 'Enter asteroid name...';
-                        }, 500);
-                    }
-                });
-                
-                // Allow Enter key to register name
-                asteroidNameInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        registerButton.click();
-                    }
-                });
-            }
-            
-            // Floating asteroids collision effect
-            const floatingAsteroids = document.querySelectorAll('.floating-asteroid');
-            floatingAsteroids.forEach(asteroid => {
-                asteroid.addEventListener('click', function() {
-                    this.style.animation = 'asteroid-shake 0.5s ease-in-out';
-                    this.style.pointerEvents = 'auto';
-                    
-                    setTimeout(() => {
-                        this.style.animation = 'asteroid-float 6s ease-in-out infinite';
-                        this.style.animationDelay = Math.random() * 3 + 's';
-                    }, 500);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

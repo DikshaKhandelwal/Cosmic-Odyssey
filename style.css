@@ -8907,6 +8907,425 @@ input[type="checkbox"]:checked + .balance-option {
     opacity: 1;
 }
 
+/* ===== CSS-ONLY NAVIGATION SYSTEM ===== */
+
+/* Navigation Toggle System - CSS Only */
+.cosmic-nav-toggle,
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* Navigation Menu - Hidden by default */
+.planet-nav-menu {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 360px;
+    height: 100vh;
+    background: linear-gradient(145deg, rgba(15, 25, 45, 0.95), rgba(30, 50, 80, 0.9));
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(15px);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Show navigation when toggle is checked */
+.cosmic-nav-toggle:checked ~ .planet-nav-menu {
+    right: 0;
+}
+
+/* Hide enter button when nav is open */
+.cosmic-nav-toggle:checked ~ .enter-cosmos-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100px);
+}
+
+/* Mobile menu content - hidden by default on mobile */
+@media (max-width: 768px) {
+    .nav-menu-content {
+        display: none;
+    }
+    
+    .mobile-menu-toggle:checked + .nav-mobile-toggle + .nav-menu-content {
+        display: block;
+    }
+}
+
+/* ===== CSS-ONLY INTERACTIVE FEATURES ===== */
+
+/* Neptune Quiz System */
+.quiz-input {
+    display: none;
+}
+
+.quiz-result {
+    min-height: 30px;
+    margin-top: 15px;
+}
+
+.quiz-correct-result,
+.quiz-wrong-result {
+    display: none;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.quiz-correct-result {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(200, 230, 255, 0.2));
+    color: #00ff7f;
+}
+
+.quiz-wrong-result {
+    background: linear-gradient(145deg, rgba(0, 212, 255, 0.3), rgba(200, 230, 255, 0.2));
+    color: #00d4ff;
+}
+
+/* Show correct result when correct answer is selected */
+#quiz-triton:checked ~ .quiz-result .quiz-correct-result {
+    display: block;
+}
+
+/* Show wrong result when wrong answers are selected */
+#quiz-nereid:checked ~ .quiz-result .quiz-wrong-result,
+#quiz-proteus:checked ~ .quiz-result .quiz-wrong-result,
+#quiz-larissa:checked ~ .quiz-result .quiz-wrong-result {
+    display: block;
+}
+
+/* Quiz bubble effects */
+.quiz-input:checked + .quiz-bubble {
+    transform: scale(0.8);
+    opacity: 0.7;
+    animation: bubble-pop 0.5s ease-out;
+}
+
+@keyframes bubble-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+/* Neptune Echo Chamber */
+.seashell-toggle,
+.illusion-input {
+    display: none;
+}
+
+.illusion-text {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+}
+
+.seashell-toggle:checked + .seashell + .illusion-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.illusion-display {
+    margin-top: 15px;
+    min-height: 60px;
+}
+
+.radar-display,
+.civic-display,
+.kayak-display {
+    display: none;
+    padding: 15px;
+    background: linear-gradient(145deg, rgba(0, 255, 255, 0.2), rgba(0, 150, 255, 0.1));
+    border-radius: 10px;
+    text-align: center;
+}
+
+#illusion-radar:checked ~ .illusion-display .radar-display {
+    display: block;
+}
+
+#illusion-civic:checked ~ .illusion-display .civic-display {
+    display: block;
+}
+
+#illusion-kayak:checked ~ .illusion-display .kayak-display {
+    display: block;
+}
+
+/* Neptune Compass Spinner */
+.compass-spin-toggle {
+    display: none;
+}
+
+.compass-needle {
+    transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.compass-spin-toggle:checked ~ .compass-dial .compass-needle {
+    transform: translate(-50%, -100%) rotate(720deg);
+}
+
+.decision-result {
+    min-height: 40px;
+    margin-top: 15px;
+}
+
+.yes-result,
+.no-result {
+    display: none;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.yes-result {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(200, 230, 255, 0.2));
+    color: #ffd700;
+}
+
+.no-result {
+    background: linear-gradient(145deg, rgba(0, 150, 255, 0.3), rgba(200, 230, 255, 0.2));
+    color: #0096ff;
+}
+
+/* Randomly show yes or no result with pseudo-random CSS */
+.compass-spin-toggle:checked ~ .decision-result .yes-result {
+    display: block;
+    animation: result-appear 3s ease-out;
+}
+
+@keyframes result-appear {
+    0%, 66% { opacity: 0; }
+    67%, 100% { opacity: 1; }
+}
+
+/* ===== PLUTO INTERACTIVE FEATURES ===== */
+
+/* Pluto Fortune Teller */
+.fortune-toggle {
+    display: none;
+}
+
+.fortune-text {
+    min-height: 60px;
+}
+
+.fortune-default,
+.fortune-revealed {
+    transition: all 0.4s ease;
+}
+
+.fortune-revealed {
+    display: none;
+}
+
+.fortune-toggle:checked + .ice-crystal + .fortune-text .fortune-default {
+    display: none;
+}
+
+.fortune-toggle:checked + .ice-crystal + .fortune-text .fortune-revealed {
+    display: block;
+    animation: fortune-glow 2s ease-out;
+}
+
+.fortune-toggle:checked + .ice-crystal {
+    transform: scale(1.2) rotate(360deg);
+    transition: transform 0.6s ease-out;
+}
+
+@keyframes fortune-glow {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Pluto Maze Hover Effects */
+.maze-cell.path:hover {
+    background: linear-gradient(145deg, rgba(173, 216, 230, 0.3), rgba(200, 230, 255, 0.2));
+    box-shadow: 0 0 15px rgba(173, 216, 230, 0.5);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.maze-cell.goal:hover {
+    animation: goal-pulse 1s ease-in-out infinite;
+}
+
+@keyframes goal-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+}
+
+/* Pluto Identity Quiz */
+.identity-input {
+    display: none;
+}
+
+.quiz-response {
+    min-height: 50px;
+    margin-top: 15px;
+}
+
+.planet-response,
+.dwarf-response {
+    display: none;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.planet-response {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(200, 230, 255, 0.2));
+    color: #ffd700;
+}
+
+.dwarf-response {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(200, 230, 255, 0.2));
+    color: #00ff7f;
+}
+
+#pluto-planet:checked ~ .quiz-response .planet-response {
+    display: block;
+    animation: response-slide 0.5s ease-out;
+}
+
+#pluto-dwarf:checked ~ .quiz-response .dwarf-response {
+    display: block;
+    animation: response-slide 0.5s ease-out;
+}
+
+@keyframes response-slide {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Pluto Orbit Dance */
+.orbit-toggle {
+    display: none;
+}
+
+.orbiting-pluto {
+    transition: animation-play-state 0.5s ease;
+}
+
+.orbit-toggle:checked ~ .solar-system-mini .orbiting-pluto {
+    animation: pluto-dance 8s linear infinite;
+}
+
+.orbit-toggle:checked + .solar-system-mini + .orbit-btn {
+    background: linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(123, 104, 238, 0.2));
+}
+
+.orbit-toggle:checked + .solar-system-mini + .orbit-btn::after {
+    content: " (Dancing!)";
+}
+
+@keyframes pluto-dance {
+    0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+/* ===== ASTEROID BELT INTERACTIVE FEATURES ===== */
+
+/* Asteroid Dodge Game */
+.lane-radio {
+    display: none;
+}
+
+.ship-position {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#lane1:checked ~ .spaceship-controls .lane-1-ship {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 33.33%;
+    transform: translateX(-50%);
+}
+
+#lane2:checked ~ .spaceship-controls .lane-2-ship {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 66.66%;
+    transform: translateX(-50%);
+}
+
+#lane3:checked ~ .spaceship-controls .lane-3-ship {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Asteroid Fortune Wheel */
+.wheel-spin-toggle {
+    display: none;
+}
+
+.asteroid-wheel {
+    transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wheel-spin-toggle:checked ~ .asteroid-wheel {
+    transform: rotate(1440deg); /* 4 full rotations */
+}
+
+.fortune-result {
+    min-height: 40px;
+    margin-top: 15px;
+}
+
+.fortune-message {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(160, 160, 160, 0.3), rgba(64, 64, 64, 0.2));
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+.wheel-spin-toggle:checked ~ .fortune-result .fortune-message {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(64, 64, 64, 0.2));
+    color: #ffd700;
+    animation: cosmic-glow 2s ease-in-out;
+}
+
+.wheel-spin-toggle:checked ~ .fortune-result .fortune-message::before {
+    content: "✨ ";
+}
+
+.wheel-spin-toggle:checked ~ .fortune-result .fortune-message::after {
+    content: " Found cosmic treasure! ✨";
+}
+
+@keyframes cosmic-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+}
+
+/* Asteroid Naming Station - Display input value */
+.asteroid-name-input:focus + .register-name {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(64, 64, 64, 0.2));
+    transform: scale(1.05);
+}
+
+.naming-tip {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-top: 10px;
+}
+
 /* Enter Cosmos Button */
 .enter-cosmos-btn {
     position: fixed;
@@ -9007,24 +9426,27 @@ input[type="checkbox"]:checked + .balance-option {
     letter-spacing: 0.5px;
 }
 
-/* Right Side Planet Navigation Menu */
+/* Right Side Planet Navigation Menu - Updated for CSS-only */
 .planet-nav-menu {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 280px;
-    background: linear-gradient(145deg, rgba(15, 15, 30, 0.95), rgba(25, 25, 50, 0.95));
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateX(100%) scale(0.8);
+    top: 0;
+    right: -400px;
+    width: 360px;
+    height: 100vh;
+    background: linear-gradient(145deg, rgba(15, 25, 45, 0.95), rgba(30, 50, 80, 0.9));
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(15px);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-.planet-nav-menu.menu-active {
+/* Show navigation when toggle is checked - override existing styles */
+.cosmic-nav-toggle:checked ~ .planet-nav-menu {
+    right: 0;
     opacity: 1;
     transform: translateX(0) scale(1);
 }
