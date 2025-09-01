@@ -1296,38 +1296,142 @@
     <div id="uranus-goals" class="modal">
         <div class="modal-content uranus-theme">
             <a href="#" class="close">&times;</a>
-            <h2>⛢ Uranus - Ice Giant Mysteries</h2>
-            <p style="text-align:center; color:#b5e3e3; font-style:italic; margin-bottom:1em;">
-                "Uranus whispers sideways: 'I roll uniquely through space, hiding mysteries in my tilted rings.'"
-            </p>
             
-            <div class="planet-activity">
-                <h3>🎮 Tilted Perspective</h3>
-                <div class="uranus-rings">
-                    <div class="ice-crystal">❄️</div>
-                    <div class="ice-crystal">🔵</div>
-                    <div class="ice-crystal">💎</div>
-                    <div class="ice-crystal">🌀</div>
-                </div>
-                <p style="text-align:center; margin:1rem 0;"><em>🧊 Mystery Keeper: Unique perspective reveals hidden truths</em></p>
+            <!-- Aurora Background Effect -->
+            <div class="aurora-background">
+                <div class="aurora-band aurora-1"></div>
+                <div class="aurora-band aurora-2"></div>
+                <div class="aurora-band aurora-3"></div>
             </div>
             
-            <div class="goals-container">
-                <div class="goal-category">
-                    <h3>Short-term Goals</h3>
-                    <div class="goal-item">Finish solar system interface</div>
-                    <div class="goal-item">Learn advanced CSS techniques</div>
-                    <div class="goal-item">Complete project documentation</div>
-                    <div class="goal-item">Master ice crystal patterns</div>
-                    <div class="goal-item">Unlock tilted perspective insights</div>
+            <h2>⛢ Uranus - The Sideways Planet</h2>
+            <p style="text-align:center; color:#b5e3e3; font-style:italic; margin-bottom:1em;">
+                "Uranus is like a cosmic ballerina — spinning on its side, rolling around the Sun instead of spinning upright like other planets."
+            </p>
+            
+            <!-- Animated Uranus Planet -->
+            <div class="uranus-planet-container">
+                <div class="uranus-planet">
+                    <div class="uranus-rings"></div>
+                    <div class="uranus-glow"></div>
                 </div>
-                <div class="goal-category">
-                    <h3>Long-term Vision</h3>
-                    <div class="goal-item">Master creative coding</div>
-                    <div class="goal-item">Build stellar portfolio</div>
-                    <div class="goal-item">Share knowledge with community</div>
-                    <div class="goal-item">Explore unique perspectives</div>
-                    <div class="goal-item">Discover hidden cosmic truths</div>
+                <p class="planet-label">🌌 The Rolling Ice Giant</p>
+            </div>
+            
+            <!-- Tilt Test Interactive -->
+            <div class="planet-activity">
+                <h3>� Tilt Test Interactive</h3>
+                <div class="tilt-test">
+                    <input type="checkbox" id="tilt-trigger" class="tilt-checkbox">
+                    <label for="tilt-trigger" class="tilt-button">
+                        <span class="button-text">Click to Tilt Uranus!</span>
+                    </label>
+                    <div class="tilt-test-container">
+                        <div class="tilt-uranus"></div>
+                        <p style="color: #000; font-weight: 600; text-shadow: 0 0 10px rgba(255,255,255,0.8);">
+                            Watch Uranus rotate to its unique 98° sideways position!
+                        </p>
+                    </div>
+                    <div class="tilt-result">
+                        <p>🌀 Amazing! You've witnessed Uranus's unique 98° sideways tilt - the only planet that rolls instead of spins!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sideways Quiz -->
+            <div class="planet-activity">
+                <h3>🧠 Sideways or Normal Quiz</h3>
+                <div class="sideways-quiz">
+                    <div class="quiz-question">
+                        <h4>Which object spins sideways?</h4>
+                        <div class="quiz-options">
+                            <div class="quiz-item">
+                                <input type="radio" name="q1" id="sunflower" value="normal">
+                                <label for="sunflower" class="quiz-option">
+                                    <span class="option-icon">🌻</span>
+                                    <span class="option-text">Sunflower</span>
+                                    <span class="result-indicator">Normal ✓</span>
+                                </label>
+                            </div>
+                            <div class="quiz-item">
+                                <input type="radio" name="q1" id="wheel" value="normal">
+                                <label for="wheel" class="quiz-option">
+                                    <span class="option-icon">🎡</span>
+                                    <span class="option-text">Ferris Wheel</span>
+                                    <span class="result-indicator">Normal ✓</span>
+                                </label>
+                            </div>
+                            <div class="quiz-item">
+                                <input type="radio" name="q1" id="uranus" value="sideways">
+                                <label for="uranus" class="quiz-option">
+                                    <span class="option-icon">⛢</span>
+                                    <span class="option-text">Uranus</span>
+                                    <span class="result-indicator">Sideways! ⛢</span>
+                                </label>
+                            </div>
+                            <div class="quiz-item">
+                                <input type="radio" name="q1" id="saturn" value="normal">
+                                <label for="saturn" class="quiz-option">
+                                    <span class="option-icon">🪐</span>
+                                    <span class="option-text">Saturn</span>
+                                    <span class="result-indicator">Normal ✓</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ice Giant Fact Flip Cards -->
+            <div class="planet-activity">
+                <h3>🧊 Ice Giant Fact Flip</h3>
+                <div class="fact-flip-container">
+                    <div class="fact-card" data-tooltip="Extreme cold temperatures">
+                        <div class="fact-front">❄️</div>
+                        <div class="fact-back">
+                            <h5>Coldest Planet</h5>
+                            <p>-224°C</p>
+                        </div>
+                    </div>
+                    <div class="fact-card" data-tooltip="Unique sideways rotation">
+                        <div class="fact-front">🌀</div>
+                        <div class="fact-back">
+                            <h5>Unique Tilt</h5>
+                            <p>98° sideways</p>
+                        </div>
+                    </div>
+                    <div class="fact-card" data-tooltip="Shakespeare-named moons">
+                        <div class="fact-front">🌙</div>
+                        <div class="fact-back">
+                            <h5>27 Moons</h5>
+                            <p>Shakespeare names</p>
+                        </div>
+                    </div>
+                    <div class="fact-card" data-tooltip="Ice giant composition">
+                        <div class="fact-front">💎</div>
+                        <div class="fact-back">
+                            <h5>Ice Giant</h5>
+                            <p>Made of ice & rock</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Goals Section (Enhanced) -->
+            <div class="goals-container">
+                <div class="goal-category tilted-goals">
+                    <h3>🎯 Unique Perspective Goals</h3>
+                    <div class="goal-item">Think outside conventional patterns</div>
+                    <div class="goal-item">Embrace unconventional approaches</div>
+                    <div class="goal-item">Find beauty in being different</div>
+                    <div class="goal-item">Roll with life's unexpected tilts</div>
+                </div>
+                <div class="goal-category ice-goals">
+                    <h3>❄️ Ice Giant Achievements</h3>
+                    <div class="goal-item">Master cool, calculated decisions</div>
+                    <div class="goal-item">Stay calm under pressure</div>
+                    <div class="goal-item">Discover hidden depths</div>
+                    <div class="goal-item">Shine with unique brilliance</div>
                 </div>
             </div>
         </div>
