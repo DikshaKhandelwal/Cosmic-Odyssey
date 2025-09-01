@@ -9143,26 +9143,242 @@ input[type="checkbox"]:checked + .balance-option {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Pluto Maze Hover Effects */
-.maze-cell.path:hover {
-    background: linear-gradient(145deg, rgba(173, 216, 230, 0.3), rgba(200, 230, 255, 0.2));
-    box-shadow: 0 0 15px rgba(173, 216, 230, 0.5);
-    transform: scale(1.1);
+/* Pluto Quiz System */
+.quiz-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(173, 216, 230, 0.1), rgba(200, 230, 255, 0.05));
+    border-radius: 15px;
+    border: 1px solid rgba(173, 216, 230, 0.3);
+}
+
+.quiz-container .quiz-question {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #b8d4f0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.quiz-container .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quiz-container .quiz-input {
+    display: none;
+}
+
+.quiz-container .quiz-option {
+    padding: 12px 15px;
+    background: linear-gradient(145deg, rgba(173, 216, 230, 0.2), rgba(200, 230, 255, 0.1));
+    border: 2px solid rgba(173, 216, 230, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.maze-cell.goal:hover {
-    animation: goal-pulse 1s ease-in-out infinite;
+.quiz-container .quiz-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(173, 216, 230, 0.3);
 }
 
-@keyframes goal-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+/* Correct Answer Glow Effect */
+.quiz-container .quiz-input:checked + .correct-answer {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.4), rgba(173, 216, 230, 0.3));
+    border-color: #00ff7f;
+    color: #00ff7f;
+    box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+    animation: correct-glow 2s ease-in-out infinite;
+    transform: scale(1.05);
+}
+
+@keyframes correct-glow {
+    0%, 100% { 
+        box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+    }
+    50% { 
+        box-shadow: 0 0 35px rgba(0, 255, 127, 0.9);
+    }
+}
+
+/* Wrong Answer Effect */
+.quiz-container .quiz-input:checked + .wrong-answer {
+    background: linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(173, 216, 230, 0.2));
+    border-color: #ff6347;
+    color: #ff6347;
+    animation: wrong-shake 0.5s ease-in-out;
+}
+
+@keyframes wrong-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Quiz Result Messages */
+.quiz-container .quiz-result {
+    min-height: 40px;
+}
+
+.quiz-container .correct-message,
+.quiz-container .wrong-message {
+    display: none;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    animation: message-appear 0.5s ease-out;
+}
+
+.quiz-container .correct-message {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.3), rgba(173, 216, 230, 0.2));
+    color: #00ff7f;
+    border: 2px solid rgba(0, 255, 127, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.3);
+}
+
+.quiz-container .wrong-message {
+    background: linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(173, 216, 230, 0.2));
+    color: #ff6347;
+    border: 2px solid rgba(255, 99, 71, 0.5);
+}
+
+/* Show correct message when correct answer is selected */
+.quiz-container .quiz-input:checked + .correct-answer ~ .quiz-result .correct-message {
+    display: block;
+}
+
+/* Show wrong message when wrong answer is selected */
+.quiz-container .quiz-input:checked + .wrong-answer ~ .quiz-result .wrong-message {
+    display: block;
+}
+
+@keyframes message-appear {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Pluto Identity Quiz */
 .identity-input {
     display: none;
+}
+
+/* Quiz option styling with hover tooltips */
+.identity-quiz .quiz-option {
+    position: relative;
+    display: block;
+    padding: 15px 20px;
+    margin: 10px;
+    background: linear-gradient(145deg, rgba(173, 216, 230, 0.2), rgba(200, 230, 255, 0.1));
+    border: 2px solid rgba(173, 216, 230, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.identity-quiz .quiz-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(173, 216, 230, 0.4);
+}
+
+/* Hover hint text */
+.hover-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Tooltip on hover */
+.quiz-option::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(30, 30, 50, 0.95));
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.quiz-option::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    border: 8px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.quiz-option:hover::after,
+.quiz-option:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.quiz-option:hover::before {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+/* Hide hover hint when showing tooltip */
+.quiz-option:hover .hover-hint {
+    opacity: 0;
+}
+
+/* Correct answer glow effect when selected */
+.identity-input:checked + .correct-identity {
+    background: linear-gradient(145deg, rgba(0, 255, 127, 0.4), rgba(173, 216, 230, 0.3));
+    border-color: #00ff7f;
+    color: #00ff7f;
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.8);
+    animation: correct-identity-glow 2s ease-in-out infinite;
+    transform: scale(1.05) translateY(-3px);
+}
+
+@keyframes correct-identity-glow {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(0, 255, 127, 0.8);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(0, 255, 127, 1), 0 0 60px rgba(0, 255, 127, 0.6);
+    }
+}
+
+/* Wrong answer effect when selected */
+.identity-input:checked + .wrong-identity {
+    background: linear-gradient(145deg, rgba(255, 99, 71, 0.3), rgba(173, 216, 230, 0.2));
+    border-color: #ff6347;
+    color: #ff6347;
+    animation: wrong-identity-shake 0.5s ease-in-out;
+}
+
+@keyframes wrong-identity-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
 
 .quiz-response {

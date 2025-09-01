@@ -1693,32 +1693,74 @@
                 </div>
             </div>
 
-            <!-- Ice Maze -->
+            <!-- Pluto Knowledge Quiz -->
             <div class="planet-activity">
-                <h3>🧊 Ice Maze to Charon</h3>
-                <p>Navigate through the frozen paths to reach Pluto's loyal moon (hover over paths)</p>
-                <div class="ice-maze">
-                    <div class="maze-grid">
-                        <div class="maze-cell start current" data-position="0,0" title="Start - Pluto">🌑</div>
-                        <div class="maze-cell path" data-position="0,1" title="Ice Path"></div>
-                        <div class="maze-cell wall" data-position="0,2" title="Frozen Wall">❄️</div>
-                        <div class="maze-cell path" data-position="0,3" title="Ice Path"></div>
-                        <div class="maze-cell path" data-position="1,0" title="Ice Path"></div>
-                        <div class="maze-cell wall" data-position="1,1" title="Frozen Wall">❄️</div>
-                        <div class="maze-cell path" data-position="1,2" title="Ice Path"></div>
-                        <div class="maze-cell path" data-position="1,3" title="Ice Path"></div>
-                        <div class="maze-cell path" data-position="2,0" title="Ice Path"></div>
-                        <div class="maze-cell path" data-position="2,1" title="Ice Path"></div>
-                        <div class="maze-cell wall" data-position="2,2" title="Frozen Wall">❄️</div>
-                        <div class="maze-cell path" data-position="2,3" title="Ice Path"></div>
-                        <div class="maze-cell wall" data-position="3,0" title="Frozen Wall">❄️</div>
-                        <div class="maze-cell path" data-position="3,1" title="Ice Path"></div>
-                        <div class="maze-cell path" data-position="3,2" title="Ice Path"></div>
-                        <div class="maze-cell goal" data-position="3,3" title="Goal - Charon">🌕</div>
+                <h3>❄️ Pluto Knowledge Quiz</h3>
+                <p>Test your knowledge about the mysterious dwarf planet</p>
+                
+                <!-- Quiz Question 1 -->
+                <div class="quiz-container">
+                    <div class="quiz-question">What year was Pluto discovered?</div>
+                    <div class="quiz-options">
+                        <input type="radio" id="pluto-q1-1925" name="pluto-discovery" class="quiz-input">
+                        <label for="pluto-q1-1925" class="quiz-option wrong-answer">1925</label>
+                        
+                        <input type="radio" id="pluto-q1-1930" name="pluto-discovery" class="quiz-input">
+                        <label for="pluto-q1-1930" class="quiz-option correct-answer">1930 ✨</label>
+                        
+                        <input type="radio" id="pluto-q1-1935" name="pluto-discovery" class="quiz-input">
+                        <label for="pluto-q1-1935" class="quiz-option wrong-answer">1935</label>
+                        
+                        <input type="radio" id="pluto-q1-1940" name="pluto-discovery" class="quiz-input">
+                        <label for="pluto-q1-1940" class="quiz-option wrong-answer">1940</label>
                     </div>
-                    <div class="maze-info">
-                        <p>🎯 Goal: Reach Charon (🌕) by following the ice paths</p>
-                        <p>❄️ Avoid the frozen walls - they block your way</p>
+                    <div class="quiz-result">
+                        <div class="correct-message">🎉 Correct! Pluto was discovered by Clyde Tombaugh in 1930! ✨</div>
+                        <div class="wrong-message">❄️ Not quite! Pluto was discovered in 1930 by astronomer Clyde Tombaugh.</div>
+                    </div>
+                </div>
+
+                <!-- Quiz Question 2 -->
+                <div class="quiz-container">
+                    <div class="quiz-question">What is Pluto's largest moon called?</div>
+                    <div class="quiz-options">
+                        <input type="radio" id="pluto-q2-europa" name="pluto-moon" class="quiz-input">
+                        <label for="pluto-q2-europa" class="quiz-option wrong-answer">Europa</label>
+                        
+                        <input type="radio" id="pluto-q2-charon" name="pluto-moon" class="quiz-input">
+                        <label for="pluto-q2-charon" class="quiz-option correct-answer">Charon 🌕</label>
+                        
+                        <input type="radio" id="pluto-q2-titan" name="pluto-moon" class="quiz-input">
+                        <label for="pluto-q2-titan" class="quiz-option wrong-answer">Titan</label>
+                        
+                        <input type="radio" id="pluto-q2-io" name="pluto-moon" class="quiz-input">
+                        <label for="pluto-q2-io" class="quiz-option wrong-answer">Io</label>
+                    </div>
+                    <div class="quiz-result">
+                        <div class="correct-message">🎉 Excellent! Charon is Pluto's largest moon and loyal companion! 🌕</div>
+                        <div class="wrong-message">❄️ Try again! Charon is Pluto's largest moon - almost half Pluto's size!</div>
+                    </div>
+                </div>
+
+                <!-- Quiz Question 3 -->
+                <div class="quiz-container">
+                    <div class="quiz-question">How long does it take Pluto to orbit the Sun?</div>
+                    <div class="quiz-options">
+                        <input type="radio" id="pluto-q3-50" name="pluto-orbit" class="quiz-input">
+                        <label for="pluto-q3-50" class="quiz-option wrong-answer">50 years</label>
+                        
+                        <input type="radio" id="pluto-q3-150" name="pluto-orbit" class="quiz-input">
+                        <label for="pluto-q3-150" class="quiz-option wrong-answer">150 years</label>
+                        
+                        <input type="radio" id="pluto-q3-248" name="pluto-orbit" class="quiz-input">
+                        <label for="pluto-q3-248" class="quiz-option correct-answer">248 years 🌌</label>
+                        
+                        <input type="radio" id="pluto-q3-300" name="pluto-orbit" class="quiz-input">
+                        <label for="pluto-q3-300" class="quiz-option wrong-answer">300 years</label>
+                    </div>
+                    <div class="quiz-result">
+                        <div class="correct-message">� Amazing! Pluto takes 248 Earth years to complete one orbit! 🌌</div>
+                        <div class="wrong-message">❄️ Close! Pluto's orbit takes about 248 Earth years - that's one slow dance!</div>
                     </div>
                 </div>
             </div>
@@ -1731,15 +1773,17 @@
                     <div class="quiz-question">Is Pluto a planet?</div>
                     <div class="quiz-options">
                         <input type="radio" id="pluto-planet" name="pluto-identity" class="identity-input">
-                        <label for="pluto-planet" class="quiz-option planet-btn">
+                        <label for="pluto-planet" class="quiz-option planet-btn wrong-identity" data-tooltip="Pluto was reclassified as a dwarf planet in 2006">
                             <span class="option-icon">🪐</span>
                             <span class="option-text">Planet</span>
+                            <span class="hover-hint">Hover to see the answer!</span>
                         </label>
                         
                         <input type="radio" id="pluto-dwarf" name="pluto-identity" class="identity-input">
-                        <label for="pluto-dwarf" class="quiz-option dwarf-btn">
+                        <label for="pluto-dwarf" class="quiz-option dwarf-btn correct-identity" data-tooltip="Correct! Pluto is officially classified as a dwarf planet since 2006">
                             <span class="option-icon">🌑</span>
                             <span class="option-text">Dwarf Planet</span>
+                            <span class="hover-hint">Hover to see the answer!</span>
                         </label>
                     </div>
                     <div class="quiz-response">
