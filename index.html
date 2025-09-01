@@ -778,74 +778,207 @@
                 </div>
             </div>
         </div>
+    </div>
 
-    <!-- Mars Projects Modal -->
+    <!-- Mars Projects Modal - The Restless Pioneer -->
     <div id="mars-projects" class="modal">
-        <div class="modal-content mars-theme">
+        <div class="modal-content mars-card-theme">
             <a href="#" class="close">&times;</a>
-            <h2>♂️ Mars - Challenges & Mission Control</h2>
-            <p style="text-align:center; color:#cf3921; font-style:italic; margin-bottom:1em;">
-                "Mars declares: 'Navigate my maze, and I shall track your earthly goals.'"
-            </p>
             
-            <div class="planet-activity">
-                <h3>🎮 Martian Base Builder</h3>
-                <div class="mars-maze" id="mars-maze">
-                    <div class="maze-cell path start">🚗</div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell crystal">💎</div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell crystal">💎</div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell path"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell base goal">🏭</div>
-                    <div class="maze-cell crystal">💎</div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell wall"></div>
-                    <div class="maze-cell wall"></div>
-                </div>
-                
-                <div class="mars-stats">
-                    <div class="stat">🔋 Energy: <span id="mars-energy">0</span>/3</div>
-                    <div class="stat">📍 Position: <span id="rover-position">Start</span></div>
-                    <div class="stat">🎯 Mission: Collect crystals and reach base</div>
-                </div>
-                
-                <h4>🚀 Mission Control</h4>
-                <div class="mission-controls">
-                    <button class="mission-btn">🔄 Reset Mission</button>
-                    <button class="mission-btn">🤖 Auto-Pilot</button>
-                    <button class="mission-btn">💡 Mission Hint</button>
+            <!-- Mars Card Header -->
+            <div class="mars-card-header">
+                <h2>♂️ Mars — The Restless Pioneer</h2>
+                <div class="mars-metaphor">
+                    The red warrior symbol of exploration and resilience, 
+                    forever seeking new frontiers beyond the horizon.
                 </div>
             </div>
             
-            <div class="projects-container">
-                <div class="project-status">
-                    <h3>Active Projects</h3>
-                    <div class="progress-item">
-                        <span>Website Redesign</span>
-                        <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+            <!-- Mars Fact Flip Card -->
+            <div class="mars-flip-card">
+                <input type="checkbox" id="mars-fact-flip" class="mars-flip-input">
+                <label for="mars-fact-flip" class="mars-flip-container">
+                    <div class="mars-flip-inner">
+                        <div class="mars-flip-front">
+                            <div class="mars-flip-icon">🏔️</div>
+                            <div class="mars-flip-title">Tallest Mountain</div>
+                            <div class="mars-flip-hint">Tap to reveal height →</div>
+                        </div>
+                        <div class="mars-flip-back">
+                            <div class="mars-flip-icon">⛰️</div>
+                            <div class="mars-flip-title">Olympus Mons</div>
+                            <div class="mars-flip-detail">3x taller than Mount Everest!</div>
+                            <div class="mars-flip-hint">← Tap to flip back</div>
+                        </div>
                     </div>
-                    <div class="progress-item">
-                        <span>Mobile App Development</span>
-                        <div class="progress-bar"><div class="progress" style="width: 40%"></div></div>
+                </label>
+            </div>
+            
+            <!-- Rover Path Puzzle -->
+            <div class="mars-rover-puzzle">
+                <h3>🎮 Rover Path Navigator</h3>
+                <div class="rover-description">Guide the Mars rover across the rocky terrain to unlock exploration secrets</div>
+                
+                <div class="rover-track">
+                    <input type="radio" id="rover-step-0" name="rover-path" checked class="rover-radio">
+                    <input type="radio" id="rover-step-1" name="rover-path" class="rover-radio">
+                    <input type="radio" id="rover-step-2" name="rover-path" class="rover-radio">
+                    <input type="radio" id="rover-step-3" name="rover-path" class="rover-radio">
+                    <input type="radio" id="rover-step-4" name="rover-path" class="rover-radio">
+                    <input type="radio" id="rover-step-5" name="rover-path" class="rover-radio">
+                    
+                    <div class="track-grid">
+                        <div class="track-cell start-cell">
+                            <label for="rover-step-0" class="cell-label">START</label>
+                        </div>
+                        <div class="track-cell path-cell">
+                            <label for="rover-step-1" class="cell-label">🪨</label>
+                        </div>
+                        <div class="track-cell path-cell">
+                            <label for="rover-step-2" class="cell-label">�</label>
+                        </div>
+                        <div class="track-cell path-cell">
+                            <label for="rover-step-3" class="cell-label">🧊</label>
+                        </div>
+                        <div class="track-cell path-cell">
+                            <label for="rover-step-4" class="cell-label">⛰️</label>
+                        </div>
+                        <div class="track-cell goal-cell">
+                            <label for="rover-step-5" class="cell-label">BASE</label>
+                        </div>
                     </div>
-                    <div class="progress-item">
-                        <span>Documentation Update</span>
-                        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                    
+                    <!-- Rover (moves based on which radio is checked) -->
+                    <div class="mars-rover">🤖</div>
+                </div>
+                
+                <!-- Discovery Display -->
+                <div class="mars-discovery">
+                    <div class="discovery-content discovery-start">Welcome, Pioneer! Begin your Mars exploration journey.</div>
+                    <div class="discovery-content discovery-step-1">🪨 Rocky Terrain: Mars surface is covered in iron oxide (rust).</div>
+                    <div class="discovery-content discovery-step-2">🌋 Volcanic Region: Olympus Mons - largest volcano in solar system!</div>
+                    <div class="discovery-content discovery-step-3">🧊 Polar Ice: Mars has water ice at both poles.</div>
+                    <div class="discovery-content discovery-step-4">⛰️ Canyon System: Valles Marineris stretches 4,000 km across Mars.</div>
+                    <div class="discovery-content discovery-step-5">🎯 Mission Complete! Mars holds keys to life's possibilities.</div>
+                </div>
+            </div>
+            
+            <!-- Orbit Pulse Line -->
+            <div class="mars-orbit-pulse"></div>
+            
+            <!-- Countdown to Launch Bar -->
+            <div class="mars-countdown">
+                <div class="countdown-label">� Mars Mission Countdown</div>
+                <div class="countdown-bar">
+                    <div class="countdown-progress"></div>
+                </div>
+                <div class="countdown-text">Mission Launch: Ready!</div>
+            </div>
+            
+            <!-- Mars Pioneer Quiz -->
+            <div class="mars-quiz">
+                <h3>🧠 Pioneer Knowledge Test</h3>
+                <div class="quiz-description">Test your Mars exploration knowledge!</div>
+                
+                <div class="quiz-question-container">
+                    <div class="quiz-question">How long is a day on Mars compared to Earth?</div>
+                    
+                    <div class="quiz-options">
+                        <input type="radio" id="mars-q1a" name="mars-quiz" class="mars-quiz-radio">
+                        <label for="mars-q1a" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">Same as Earth (24 hours)</span>
+                            <span class="option-icon">🌍</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q1b" name="mars-quiz" class="mars-quiz-radio">
+                        <label for="mars-q1b" class="mars-quiz-option" data-correct="true">
+                            <span class="option-text">24 hours 37 minutes</span>
+                            <span class="option-icon">✨</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q1c" name="mars-quiz" class="mars-quiz-radio">
+                        <label for="mars-q1c" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">18 hours</span>
+                            <span class="option-icon">⏰</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q1d" name="mars-quiz" class="mars-quiz-radio">
+                        <label for="mars-q1d" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">30 hours</span>
+                            <span class="option-icon">🕰️</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Quiz Results removed: selection glow shows correctness -->
+                </div>
+                
+                <!-- Second Quiz Question -->
+                <div class="quiz-question-container">
+                    <div class="quiz-question">What makes Mars appear red?</div>
+                    
+                    <div class="quiz-options">
+                        <input type="radio" id="mars-q2a" name="mars-quiz-2" class="mars-quiz-radio">
+                        <label for="mars-q2a" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">Hot volcanic activity</span>
+                            <span class="option-icon">🌋</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q2b" name="mars-quiz-2" class="mars-quiz-radio">
+                        <label for="mars-q2b" class="mars-quiz-option" data-correct="true">
+                            <span class="option-text">Iron oxide (rust) on surface</span>
+                            <span class="option-icon">🦀</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q2c" name="mars-quiz-2" class="mars-quiz-radio">
+                        <label for="mars-q2c" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">Red crystal formations</span>
+                            <span class="option-icon">💎</span>
+                        </label>
+                        
+                        <input type="radio" id="mars-q2d" name="mars-quiz-2" class="mars-quiz-radio">
+                        <label for="mars-q2d" class="mars-quiz-option" data-correct="false">
+                            <span class="option-text">Atmospheric reflection</span>
+                            <span class="option-icon">🌤️</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Quiz 2 Results removed: selection glow shows correctness -->
+                </div>
+            </div>
+            
+            <!-- Project Tracking Section -->
+            <div class="mars-projects-section">
+                <h3>🎯 Active Missions</h3>
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-icon">🌍</div>
+                        <div class="project-details">
+                            <div class="project-name">Website Redesign</div>
+                            <div class="project-progress">
+                                <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                                <span class="progress-text">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-icon">📱</div>
+                        <div class="project-details">
+                            <div class="project-name">Mobile App Development</div>
+                            <div class="project-progress">
+                                <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+                                <span class="progress-text">40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-icon">📚</div>
+                        <div class="project-details">
+                            <div class="project-name">Documentation Update</div>
+                            <div class="project-progress">
+                                <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                <span class="progress-text">90%</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
