@@ -5,22 +5,18 @@ An educational journey through our solar system built with pure CSS magic! Explo
 ## 📸 Screenshots
 
 ### Main Interface
-*[Screenshot of the main solar system interface with orbital animations]*
 
 ![Main Interface](screenshots/main-interface.png)
 
 ### Cosmic Navigation Menu
-*[Screenshot of the right-side navigation panel with all planet links]*
 
 ![Navigation Menu](screenshots/navigation-menu.png)
 
 ### Grandma Mode - Accessible Learning
-*[Screenshot of the large, accessible Grandma Mode interface]*
 
 ![Grandma Mode](screenshots/grandma-mode.png)
 
 ### Planet Cards
-*[Screenshot showing the glowing effects when planets are selected in Grandma Mode]*
 
 ![Glowing Effects](screenshots/planet-card.png)
 
@@ -196,4 +192,4 @@ This project demonstrates mastery of three specific optimization tracks, each pu
 
 ---
 
-*Created with ❤️ using pure CSS astronomy - proving that the best user experiences come from thoughtful design, not complex code.*
+*Created by Cosmic Coders using pure CSS astronomy - proving that the best user experiences come from thoughtful design, not complex code.*
